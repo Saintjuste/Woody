@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<window id="200">
+	<coordinates>
+		<system>1</system>
+		<posx>0</posx>
+		<posy>0</posy>
+	</coordinates>
+
+<include>popup</include>
+  
+	
+	
+	<controls>
+		<control type="group">
+			<posx>360</posx>
+			<posy>200</posy>
+			<control type="image">
+				<texture>dialograting_bg.png</texture>
+				<aspectratio>keep</aspectratio>
+			</control>
+			<control type="label" id="1">
+				<posx>100</posx>
+				<posy>35</posy>
+				<width>366</width>
+				<align>center</align>
+				<label>SET RATING</label>
+				<font>aller_4_c_24</font>
+				<textcolor>greymd</textcolor>
+			</control>
+			<control type="label" id="2">
+				<posx>100</posx>
+				<posy>70</posy>
+				<width>366</width>
+				<align>center</align>
+				<font>aller_3_24</font>
+				<textcolor>greyl</textcolor>
+			</control>
+			<control type="image" id="10">
+				<posx>143</posx>
+				<posy>135</posy>
+				<aspectratio>keep</aspectratio>
+			</control>
+		</control>
+	</controls>
+</window>

@@ -1,0 +1,71 @@
+<window id="2000">
+<defaultcontrol always="true">3</defaultcontrol>
+<allowoverlay>yes</allowoverlay>
+  
+<coordinates>
+  <system>1</system>
+  <posx>330</posx>
+  <posy>150</posy>
+</coordinates>
+
+<include>popup</include>
+  
+<controls>
+
+	<control type="image">
+		<posx>115</posx>
+		<posy>0</posy>
+		<texture>dialogselect_bg.png</texture>
+    	<aspectratio>keep</aspectratio>
+	</control>
+
+	<control type="label">
+		<posx>133</posx>
+		<posy>30</posy>
+		<width>330</width>
+		<height>30</height>
+		<font>aller_4_24</font>
+		<textcolor>greyd</textcolor>
+		<label>SKIN</label>
+		<scroll>false</scroll>
+		<align>center</align>
+	</control>
+	
+  <control type="list" id="3">
+		<posx>200</posx>
+		<posy>90</posy>
+		<width>340</width>
+		<height>300</height>
+		<onleft>5</onleft>
+		<onright>5</onright>
+		<onup>3</onup>
+		<ondown>3</ondown>
+    	<focusposition>1</focusposition>
+		<itemlayout height="50">
+			<control type="label">
+				<posx>100</posx>
+				<width>330</width>
+				<height>30</height>
+				<font>aller_3_24</font>
+				<textcolor>greyl</textcolor>
+				<info>ListItem.Label</info>
+				<scroll>false</scroll>
+				<align>center</align>
+			</control>
+	  </itemlayout>
+	  <focusedlayout height="50">
+			<control type="label">
+				<posx>100</posx>
+				<width>330</width>
+				<height>30</height>
+				<font>aller_3_24</font>
+				<textcolor>blue</textcolor>
+				<info>ListItem.Label</info>
+				<align>center</align>
+			</control>
+	  </focusedlayout>
+  </control>
+
+</controls>
+    
+</window>

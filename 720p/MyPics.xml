@@ -1,0 +1,282 @@
+<window id="2">
+<defaultcontrol always="true">50</defaultcontrol>
+<allowoverlay>yes</allowoverlay>
+  
+<controls>
+
+<control type="group">
+<visible>Control.IsVisible(50)</visible>
+<!--Background-->
+<control type="group">
+	<include>background_v</include>
+</control>
+
+<!--Poster-->
+<control type="group">
+		<posx>0</posx>
+		<posy>10</posy>
+	<control type="image">
+		<posx>39</posx>
+		<posy>204</posy>
+		<aspectratio>keep</aspectratio>
+	    <texture>frames/frame_album_large.png</texture>
+		<visible>Container.Content(photo) | Container.Content(plugins) | Container.Content(plugincontent)</visible>
+	</control>
+	<control type="image">
+		<posx>46</posx>
+		<posy>210</posy>
+		<width>280</width>
+		<height>280</height>
+		<aspectratio scalediffuse="false" align="center">scale</aspectratio>
+	    <texture diffuse="frames/mask_album_large.png">$INFO[ListItem.Thumb]</texture>
+		<visible>Container.Content(photo) | Container.Content(plugins) | Container.Content(plugincontent)</visible>
+	</control>
+</control>	
+	
+<!--List-->	
+	<control type="fixedlist" id="50">
+		<posx>390</posx>
+		<posy>70</posy>
+		<width>850</width>
+		<height>550</height>
+		<onleft>XBMC.ActivateWindow(99)</onleft>
+		<onright>XBMC.ActivateWindow(99)</onright>
+		<onup>50</onup>
+		<ondown>50</ondown>
+		<focusposition>3</focusposition>
+		<viewtype label="List">List</viewtype>
+		<scrolltime>200</scrolltime>
+      	<itemlayout height="45">
+			<control type="label">
+				<posx>90</posx>
+				<posy>25</posy>
+				<width>1000</width>
+				<height>30</height>
+				<font>aller_3_23</font>
+				<label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
+				<textcolor>greyl</textcolor>
+				<scroll>false</scroll>
+			</control>
+		</itemlayout>
+		<focusedlayout height="85">
+			<control type="label">
+			    <posx>40</posx>
+				<posy>40</posy>
+			    <width>1000</width>
+			    <height>30</height>
+				<font>aller_4_40</font>
+			    <textcolor>greyd</textcolor>
+			    <label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
+		    </control>
+	    </focusedlayout>
+	</control>
+
+
+</control>
+
+<!----------------------------Slide View-------------------------->	
+<control type="group">
+	<visible>Control.IsVisible(51)</visible>
+	
+<!--Background-->
+<control type="group">
+	<include>background_h</include>
+</control>
+
+
+<!--Scrollbar-->
+<include>scrollbar_h</include>
+
+<!--Big Thumb-->
+<control type="group">
+		<posx>75</posx>
+		<posy>30</posy>
+	<control type="image">
+		<posx>34</posx>
+		<posy>28</posy>
+		<height>-</height>
+		<width>-</width>
+		<aspectratio>keep</aspectratio>
+	    <texture>frames/frame_album_xlarge.png</texture>
+	</control>
+	<control type="image">
+		<posx>40</posx>
+		<posy>33</posy>
+		<width>410</width>
+		<height>410</height>
+		<align>center</align>
+		<aligny>center</aligny>
+		<texture diffuse="frames/mask_album_xlarge.png">$INFO[ListItem.Thumb]</texture>
+		<aspectratio scalediffuse="false" align="center">scale</aspectratio>
+	</control>
+</control>
+
+<!--Title Label-->		
+	<control type="label">
+		<posx>600</posx>
+		<posy>220</posy>
+		<width>650</width>
+		<height>30</height>
+		<font>aller_3_30</font>
+		<label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
+		<textcolor>greyd</textcolor>
+		<scroll>false</scroll>
+	</control>
+	
+<!--Slide-->				
+	<control type="fixedlist" id="51">
+		<posx>-15</posx>
+		<posy>540</posy>
+		<width>1300</width>
+		<height>500</height>
+		<onup>23</onup>
+		<ondown>XBMC.ActivateWindow(99)</ondown>
+		<pagecontrol>23</pagecontrol>
+		<focusposition>4</focusposition>
+		<scrolltime>200</scrolltime>
+		<viewtype label="icon">icon</viewtype>
+		<orientation>horizontal</orientation>
+      		<itemlayout height="200" width="147">
+			<control type="image">
+				<posx>34</posx>
+				<posy>28</posy>
+				<height>-</height>
+				<width>-</width>
+				<aspectratio>keep</aspectratio>
+			    <texture>frames/uframe_album_small.png</texture>
+			</control>
+			<control type="image">
+				<posx>40</posx>
+				<posy>33</posy>
+				<width>111</width>
+				<height>111</height>
+				<align>center</align>
+				<aligny>center</aligny>
+				<texture diffuse="frames/mask_album_small.png">$INFO[ListItem.Thumb]</texture>
+				<aspectratio scalediffuse="false" align="center">scale</aspectratio>
+			</control>
+		</itemlayout>
+		<focusedlayout height="200" width="147">
+			<control type="image">
+				<posx>34</posx>
+				<posy>28</posy>
+				<height>-</height>
+				<width>-</width>
+				<aspectratio>keep</aspectratio>
+			    <texture>frames/frame_album_small.png</texture>
+			</control>
+			<control type="image">
+				<posx>40</posx>
+				<posy>33</posy>
+				<width>111</width>
+				<height>111</height>
+				<align>center</align>
+				<aligny>center</aligny>
+				<texture diffuse="frames/mask_album_small.png">$INFO[ListItem.Thumb]</texture>
+				<aspectratio scalediffuse="false" align="center">scale</aspectratio>
+			</control>
+	      	</focusedlayout>
+	</control>
+</control>
+
+<!----------------------------Thumb View-------------------------->	
+<control type="group">
+<visible>Control.IsVisible(56)</visible>
+<!--Background-->
+<control type="group">
+	<include>background_h</include>
+</control>
+	
+	<control type="textbox">
+      	<posx>690</posx>
+	    <posy>560</posy>
+	    <width>550</width>
+	    <height>135</height>
+		<label>$INFO[ListItem.PlotOutline]</label>
+	    <visible>true</visible>
+	   	<colordiffuse>FFFFFFFF</colordiffuse>
+	   	<font>aller_2_18</font>
+		<textcolor>FFFFFFFF</textcolor>
+		<pulseonselect></pulseonselect>
+      	<pagecontrol>13</pagecontrol>
+      	<autoscroll delay="5000" time="1400" repeat="10000">true</autoscroll>
+	</control>
+	
+<!--Panel-->	
+	<control type="panel" id="56">
+		<posx>0</posx>
+		<posy>100</posy>
+		<width>1280</width>
+		<height>420</height>
+		<onleft>23</onleft>
+		<onright>XBMC.ActivateWindow(99)</onright>
+		<onup>56</onup>
+		<ondown>56</ondown>
+		<focusposition>4</focusposition>
+		<pagecontrol>23</pagecontrol>
+		<viewtype label="icon">icon</viewtype>
+		<scrolltime>200</scrolltime>
+      	<itemlayout condition="Container.Content(plugins)" height="207" width="207">
+			<control type="image">
+				<posx>29</posx>
+				<posy>9</posy>
+				<aspectratio>keep</aspectratio>
+		        <texture border="20" background="true">frames/uframe_album_medium.png</texture>
+			</control>
+			<control type="image">
+				<posx>35</posx>
+				<posy>14</posy>
+				<width>162</width>
+				<height>162</height>
+		        <texture diffuse="frames/mask_album_medium.png" background="false">$INFO[ListItem.Thumb]</texture>
+				<aspectratio scalediffuse="false" align="center">scale</aspectratio>
+			</control>
+		</itemlayout>
+		<focusedlayout condition="Container.Content(plugins)"  height="230" width="210">
+			<control type="image">
+				<posx>29</posx>
+				<posy>9</posy>
+				<aspectratio>keep</aspectratio>
+				<texture>frames/frame_album_medium.png</texture>
+			</control>
+			<control type="image">
+				<posx>35</posx>
+				<posy>14</posy>
+				<width>162</width>
+				<height>162</height>
+		        <texture diffuse="frames/mask_album_medium.png" background="false">$INFO[ListItem.Thumb]</texture>
+				<aspectratio scalediffuse="false" align="center">scale</aspectratio>
+			</control>
+	    </focusedlayout>
+	</control>
+	
+		<control type="label">		
+			<posx>42</posx>
+			<posy>618</posy>
+		    <width>1200</width>
+		    <height>30</height>
+			<font>aller_4_48</font>
+			<align>left</align>
+			<textcolor>FFFFFFFF</textcolor>
+		    <label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
+			<visible>!Container.Content(plugincontent) + [Container.Content(plugins) | Container.Content(photo)]</visible>
+		</control>
+		<control type="label">		
+			<posx>42</posx>
+			<posy>618</posy>
+		    <width>600</width>
+		    <height>30</height>
+			<font>aller_4_30</font>
+			<align>left</align>
+			<textcolor>FFFFFFFF</textcolor>
+		    <label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
+			<visible>Container.Content(plugincontent)</visible>
+		</control>
+</control>
+
+
+
+<include>time</include>
+</controls>
+
+</window>

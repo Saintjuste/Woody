@@ -1,0 +1,18 @@
+<window type="buttonMenu" id="111">
+<defaultcontrol always="true">-</defaultcontrol>
+<allowoverlay>yes</allowoverlay>
+  
+
+<coordinates>
+  <system>1</system>
+  <posx>100</posx>
+  <posy>80</posy>
+</coordinates>
+  
+<controls>
+  
+
+  
+</controls>
+  
+</window>

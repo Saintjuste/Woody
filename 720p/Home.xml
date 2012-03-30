@@ -1,0 +1,748 @@
+<window id="0">
+<defaultcontrol always="true">300</defaultcontrol>
+<allowoverlay>yes</allowoverlay>
+
+	<!--animation type="WindowOpen">
+		<effect type="fade" start="0" end="100" time="200"/>
+	</animation>
+	<animation type="WindowClose">
+		<effect type="fade" start="100" end="0" time="200"/>
+	</animation-->
+
+<controls>
+<!--Background-->
+<control type="group">
+	<include condition="!Skin.HasSetting(slideshow)">background_h</include>
+</control>
+<control type="group">
+	<include condition="Skin.HasSetting(slideshow)">background_h_slideshow</include>
+</control>
+
+<!--Time--> 
+<include>time</include>
+<!--Tutorial--> 
+<include condition="Skin.HasSetting(tutorial)">tutorial</include>
+
+
+<control type="group" id="7000"> 
+	<posy>-50</posy>
+<!--------------------------------------------Main Menu------------------------------------------>  
+	<control type="wraplist" id="300">
+		<posx>-35</posx>
+		<posy>430</posy>
+		<width>1375</width>
+		<height>250</height>
+		<visible>true</visible>
+		<onup>304</onup>
+        <ondown>350</ondown>
+		<onleft>300</onleft>
+		<onright>300</onright>
+		<orientation>horizontal</orientation>
+    	<focusposition>1</focusposition>
+		<scrolltime>200</scrolltime>
+		<itemlayout width="470" height="80">
+			<control type="label">
+				<posx>205</posx>
+				<posy>80</posy>
+				<width>400</width>
+				<label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
+				<font>aller_4_48</font>
+				<textcolor>greyl</textcolor>
+          		<scroll>false</scroll>
+          		<align>center</align>
+			</control>
+			<control type="label">
+				<posx>205</posx>
+				<posy>117</posy>
+				<width>400</width>
+				<label>$INFO[ListItem.Label2]</label>
+				<font>aller_1_26</font>
+				<textcolor>99666666</textcolor>
+          		<align>center</align>
+				<visible>!IsEmpty(ListItem.Label2)</visible>
+			</control>
+		</itemlayout>
+		<focusedlayout width="470" height="80">
+			<control type="label">
+				<posx>205</posx>
+				<posy>80</posy>
+				<width>400</width>
+				<label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
+				<font>aller_4_48</font>
+				<textcolor>greyd</textcolor>
+          		<align>center</align>
+			</control>
+			<control type="label">
+				<posx>205</posx>
+				<posy>117</posy>
+				<width>400</width>
+				<label>$INFO[ListItem.Label2]</label>
+				<font>aller_1_26</font>
+				<textcolor>99666666</textcolor>
+          		<align>center</align>
+				<visible>!IsEmpty(ListItem.Label2)</visible>
+			</control>
+		</focusedlayout>
+      	<content>	
+			<item id="10">
+				<label>DVD</label>
+				<label2>dvd</label2>
+				<visible>System.HasMediadvd</visible>
+				<onclick>XBMC.PlayDVD</onclick>
+			</item>
+			<item id="1">
+				<description>My Videos</description>
+          		<label>VIDEO</label>
+				<label2>Channels</label2>
+				<onclick>XBMC.ActivateWindow(24)</onclick>
+		    	</item>	
+			<item id="2">
+				<description>My Music</description>
+				<label>MUSIC</label>
+				<label2>Channels</label2>
+				<onclick>XBMC.ActivateWindow(5)</onclick>
+			</item>
+			<item id="3">
+				<description>My Pics</description>
+				<label>PICTURE</label>
+				<label2>Channels</label2>
+				<onclick>XBMC.ActivateWindow(2)</onclick>
+			</item>
+			<item id="4">
+				<description>Applications</description>
+				<label>APPLICATIONS</label>
+				<visible>Skin.HasSetting(applications)</visible>
+				<onclick>XBMC.ActivateWindow(1)</onclick>
+			</item>
+			<!------------- The following code might fix a crash issue with Plex ---------->
+			<item id="6">
+				<description>Preferences Menu</description>
+				<label>$LOCALIZE[31200]</label>
+				<onclick>SetFocus(506)</onclick>
+				<visible>false</visible>
+			</item>
+			<item id="7">
+				<description>Search Menu</description>
+				<label>$LOCALIZE[31400]</label>
+				<onclick>Plex.ActivateWindow(10051)</onclick>
+				<visible>false</visible>
+			</item>
+			<item id="111">
+				<description>Quit Button</description>
+				<label>$LOCALIZE[31104]</label>
+				<onclick>Plex.ShutDown</onclick>
+				<visible>false</visible>
+			</item>
+			<item id="112">
+				<description>Sleep Button</description>
+				<label>$LOCALIZE[31105]</label>
+				<onclick>Plex.SleepSystem</onclick>
+				<visible>false</visible>
+			</item>
+			<item id="113">
+				<description>Shut Down Button</description>
+				<label>$LOCALIZE[31106]</label>
+				<onclick>Plex.ShutDownSystem</onclick>
+				<visible>false</visible>
+			</item>
+			<item id="13">
+				<description>Help Menu</description>
+				<label>-</label>
+				<visible>false</visible>
+				<onclick>Plex.ActivateWindow(1,plex://127.0.0.1/system/help,return)</onclick>
+			</item>
+		</content>
+	</control>
+</control>
+
+<!--------------------------------------------Labels On Deck / Added / Used------------------------------------------> 	
+
+	<control type="label">
+		<visible allowhiddenfocus="true">Control.IsVisible(11000) + Container(11000).ListItem(0).Type(movie) + [Control.HasFocus(11000) | !Control.IsVisible(11001)]</visible>
+		<animation effect="fade" start="0" end="100" time="200" delay="0">Visible</animation>
+		<posx>415</posx>
+		<posy>426</posy>
+		<width>450</width>
+		<label>ADDED</label>
+		<font>aller_2_24</font>
+		<textcolor>99666666</textcolor>
+        <scroll>false</scroll>
+        <align>center</align>
+	</control>
+	<control type="label">
+		<visible allowhiddenfocus="true">Control.IsVisible(11001) + Container(11001).ListItem(0).Type(movie) + !Control.HasFocus(11000)</visible>
+		<animation effect="fade" start="0" end="100" time="200" delay="0">Visible</animation>
+		<posx>415</posx>
+		<posy>426</posy>
+		<width>450</width>
+		<label>ON DECK</label>
+		<font>aller_2_24</font>
+		<textcolor>99666666</textcolor>
+        <scroll>false</scroll>
+        <align>center</align>
+	</control>
+	<control type="label">
+		<visible allowhiddenfocus="true">Control.IsVisible(11001) + Container(11001).ListItem(0).Type(episode) + !Control.HasFocus(11000)</visible>
+		<animation effect="fade" start="0" end="100" time="200" delay="0">Visible</animation>
+		<posx>415</posx>
+		<posy>426</posy>
+		<width>450</width>
+		<label>ON DECK</label>
+		<font>aller_2_24</font>
+      	<textcolor>99666666</textcolor>
+      	<scroll>false</scroll>
+        <align>center</align>
+	</control>
+	<control type="label">
+		<visible allowhiddenfocus="true">Control.IsVisible(11000) + Container(11000).ListItem(0).Type(episode) + [Control.HasFocus(11000) | !Control.IsVisible(11001)]</visible>
+		<animation effect="fade" start="0" end="100" time="200" delay="0">Visible</animation>
+		<posx>415</posx>
+		<posy>426</posy>
+		<width>450</width>
+		<label>ADDED</label>
+		<font>aller_2_24</font>
+		<textcolor>99666666</textcolor>
+		<scroll>false</scroll>
+        <align>center</align>
+	</control>
+	<control type="label">
+		<visible allowhiddenfocus="true">Control.IsVisible(11000) + [Container(11000).ListItem(0).Type(album) | Container(11000).ListItem(0).Type(photo)]</visible>
+		<animation effect="fade" start="0" end="100" time="200" delay="0">Visible</animation>
+		<posx>415</posx>
+		<posy>426</posy>
+		<width>450</width>
+		<label>ADDED</label>
+		<font>aller_2_24</font>
+		<textcolor>99666666</textcolor>
+		<scroll>false</scroll>
+        <align>center</align>
+	</control>
+
+<!--------------------------------------------Focus Control Button------------------------------------------>  
+	<control type="group" id="350">
+		<posy>900</posy>
+		<control type="button">
+			<visible>Control.IsVisible(11001)</visible>
+			<onfocus>SetFocus(11001)</onfocus>
+		</control>
+		<control type="button">
+			<visible>!Control.IsVisible(11001) + Control.IsVisible(11000)</visible>
+			<onfocus>SetFocus(11000)</onfocus>
+		</control>
+		<control type="button">
+			<visible>Control.IsVisible(11002)</visible>
+			<onfocus>SetFocus(11002)</onfocus>
+		</control>
+		<control type="button">
+			<visible>Control.IsVisible(11003)</visible>
+			<onfocus>SetFocus(11003)</onfocus>
+		</control>
+		<!--control type="button">
+			<visible>Stringcompare(Container(300).ListItem(0).Label2,chan)</visible>
+			<onfocus>SetFocus(304,0)</onfocus>
+		</control-->
+		<!--control type="button">
+			<visible>Stringcompare(Container(300).ListItem(0).Label2,dvd)</visible>
+			<onfocus>SetFocus(303,0)</onfocus>
+		</control-->
+	</control>
+
+<!--------------------------------------------Buttons Quit / Search / Add Channel / Preferences------------------------------------------>  
+
+	<control type="button" id="301">
+		<description>Quit</description>
+		<height>-</height>
+		<width>-</width>
+		<posx>60</posx>
+		<posy>35</posy>
+		<ondown>300</ondown>
+		<onup>-</onup>
+		<onleft>304</onleft>
+		<onright>302</onright>
+		<label>-</label>
+        <texturefocus>home_quit_focused.png</texturefocus>
+        <texturenofocus>home_quit_unfocused.png</texturenofocus>
+     	<focusedcolor>greyd</focusedcolor>
+		<onclick>Plex.ShutDown</onclick>
+	</control>
+	<control type="button" id="302">
+		<description>Preferences</description>
+		<height>-</height>
+		<width>-</width>
+		<posx>115</posx>
+		<posy>37</posy>
+		<ondown>300</ondown>
+		<onup>-</onup>
+		<onleft>301</onleft>
+		<onright>303</onright>
+        <label>-</label>
+	    <texturefocus>home_settings_focused.png</texturefocus>
+		<texturenofocus>home_settings_unfocused.png</texturenofocus>
+        <focusedcolor>greyd</focusedcolor>
+        <onclick>XBMC.ActivateWindow(Settings)</onclick>
+	</control>
+	<control type="button" id="303">
+		<description>Search</description>
+		<height>-</height>
+		<width>-</width>
+		<posx>170</posx>
+		<posy>37</posy>
+		<ondown>300</ondown>
+		<onup>-</onup>
+		<onleft>302</onleft>
+		<onright>304</onright>
+		<label>-</label>
+		<texturefocus>home_add_focused.png</texturefocus>
+		<texturenofocus>home_add_unfocused.png</texturenofocus>
+		<focusedcolor>greyd</focusedcolor>
+		<onclick>Plex.ActivateWindow(1,plex://127.0.0.1/system/plexonline,return)</onclick>
+	</control>
+	<control type="button" id="304">
+		<description>Search</description>
+		<height>-</height>
+		<width>-</width>
+		<posx>225</posx>
+		<posy>35</posy>
+		<ondown>300</ondown>
+		<onup>-</onup>
+		<onleft>303</onleft>
+		<onright>301</onright>
+		<label>-</label>
+		<texturefocus>home_search_focused.png</texturefocus>
+		<texturenofocus>home_search_unfocused.png</texturenofocus>
+		<focusedcolor>greyd</focusedcolor>
+		<onclick>Plex.ActivateWindow(10051)</onclick>
+	</control>
+
+
+
+<!----------------------On Deck 11001 / Recently Added 11000 / Channels 11002 / Queue 11003---------------------->  
+<control type="grouplist">
+	<animation effect="fade" start="0" end="100" time="400" delay="0">Visible</animation>
+	<visible>Control.IsVisible(11000) | Control.IsVisible(11001)</visible>
+	<posx>-5</posx>
+	<posy>540</posy>
+	<height>170</height>
+	<itemgap>0</itemgap>
+	<onup>300</onup>
+	<control type="list" id="11001">
+		<posx>0</posx>
+		<posy>0</posy>
+		<width>1290</width>
+		<height>170</height>
+		<onup>300</onup>
+		<ondown>11000</ondown>
+		<scrolltime>200</scrolltime>
+		<orientation>horizontal</orientation>
+		<itemlayout height="200" width="138" condition="Container(11001).ListItem(0).Type(movie)">
+			<control type="image">
+				<posx>41</posx>
+				<posy>16</posy>
+				<aspectratio>keep</aspectratio>
+				<texture border="20" background="true">frames/uframe_movie_small.png</texture>
+			</control>
+			<control type="image">
+				<posx>47</posx>
+				<posy>21</posy>
+				<width>93</width>
+				<height>138</height>
+		        <texture diffuse="frames/mask_movie_small.png" background="false">$INFO[ListItem.Thumb]</texture>
+				<aspectratio scalediffuse="false" align="center">scale</aspectratio>
+			</control>
+		</itemlayout>
+		<itemlayout height="200" width="138" condition="Container(11001).ListItem(0).Type(episode)">
+			<control type="image">
+				<posx>41</posx>
+				<posy>16</posy>
+				<aspectratio>keep</aspectratio>
+				<texture border="20" background="true">frames/uframe_movie_small.png</texture>
+			</control>
+			<control type="image">
+				<posx>47</posx>
+				<posy>21</posy>
+				<width>93</width>
+				<height>138</height>
+				<texture diffuse="frames/mask_movie_small.png" background="false">$INFO[ListItem.GrandparentThumb]</texture>
+				<aspectratio scalediffuse="false" align="center">scale</aspectratio>
+			</control>
+			<control type="image">
+				<posx>54</posx>
+				<posy>132</posy>
+		        <texture>home_posterlabel.png</texture>
+				<aspectratio>keep</aspectratio>
+			</control>
+			<control type="label">
+				<posx>94</posx>
+				<posy>132</posy>
+				<height>20</height>
+				<width>100</width>
+				<font>aller_3_13</font>
+				<label>S$INFO[ListItem.Season] - E$INFO[ListItem.Episode]</label>
+				<align>center</align>
+			</control>
+		</itemlayout>
+		<focusedlayout height="200" width="138" condition="Container(11001).ListItem(0).Type(movie)">
+			<control type="image">
+				<posx>41</posx>
+				<posy>16</posy>
+				<width></width>
+				<height></height>
+				<aspectratio>keep</aspectratio>
+				<texture border="20" background="true">frames/frame_movie_small.png</texture>
+			</control>
+			<control type="image">
+				<posx>47</posx>
+				<posy>21</posy>
+				<width>93</width>
+				<height>138</height>
+				<texture diffuse="frames/mask_movie_small.png" background="false">$INFO[ListItem.Thumb]</texture>
+				<aspectratio scalediffuse="false" align="center">scale</aspectratio>
+			</control>
+	    </focusedlayout>
+		<focusedlayout height="200" width="138" condition="Container(11001).ListItem(0).Type(episode)">
+			<control type="image">
+				<posx>41</posx>
+				<posy>16</posy>
+				<width></width>
+				<height></height>
+				<aspectratio>keep</aspectratio>
+				<texture border="20" background="true">frames/frame_movie_small.png</texture>
+			</control>
+			<control type="image">
+				<posx>47</posx>
+				<posy>21</posy>
+				<width>93</width>
+				<height>138</height>
+				<texture diffuse="frames/mask_movie_small.png" background="false">$INFO[ListItem.GrandparentThumb]</texture>
+				<aspectratio scalediffuse="false" align="center">scale</aspectratio>
+			</control>
+			<control type="image">
+				<posx>54</posx>
+				<posy>132</posy>
+		        <texture>home_posterlabel.png</texture>
+				<aspectratio>keep</aspectratio>
+			</control>
+			<control type="label">
+				<posx>94</posx>
+				<posy>132</posy>
+				<height>20</height>
+				<width>100</width>
+				<font>aller_3_13</font>
+				<label>S$INFO[ListItem.Season] - E$INFO[ListItem.Episode]</label>
+				<align>center</align>
+			</control>
+	    </focusedlayout>
+	</control>
+	<control type="list" id="11000">
+		<posx>0</posx>
+		<posy>0</posy>
+		<width>1290</width>
+		<height>170</height>
+		<onup>11001</onup>
+		<ondown>-</ondown>
+		<scrolltime>200</scrolltime>
+		<orientation>horizontal</orientation>
+		<itemlayout height="200" width="138" condition="Container(11000).ListItem(0).Type(movie)">
+			<control type="image">
+				<posx>41</posx>
+				<posy>16</posy>
+				<aspectratio>keep</aspectratio>
+				<texture border="20" background="true">frames/uframe_movie_small.png</texture>
+			</control>
+			<control type="image">
+				<posx>47</posx>
+				<posy>21</posy>
+				<width>93</width>
+				<height>138</height>
+		        <texture diffuse="frames/mask_movie_small.png" background="false">$INFO[ListItem.Thumb]</texture>
+				<aspectratio scalediffuse="false" align="center">scale</aspectratio>
+			</control>
+		</itemlayout>
+		<itemlayout height="200" width="138" condition="Container(11000).ListItem(0).Type(episode)">
+			<control type="image">
+				<posx>41</posx>
+				<posy>16</posy>
+				<aspectratio>keep</aspectratio>
+				<texture border="20" background="true">frames/uframe_movie_small.png</texture>
+			</control>
+			<control type="image">
+				<posx>47</posx>
+				<posy>21</posy>
+				<width>93</width>
+				<height>138</height>
+				<texture diffuse="frames/mask_movie_small.png" background="false">$INFO[ListItem.GrandparentThumb]</texture>
+				<aspectratio scalediffuse="false" align="center">scale</aspectratio>
+			</control>
+			<control type="image">
+				<posx>54</posx>
+				<posy>132</posy>
+		        <texture>home_posterlabel.png</texture>
+				<aspectratio>keep</aspectratio>
+			</control>
+			<control type="label">
+				<posx>94</posx>
+				<posy>132</posy>
+				<height>20</height>
+				<width>100</width>
+				<font>aller_3_13</font>
+				<label>S$INFO[ListItem.Season] - E$INFO[ListItem.Episode]</label>
+				<align>center</align>
+			</control>
+		</itemlayout>
+		<itemlayout height="200" width="158" condition="Container(11000).ListItem(0).Type(album)">
+			<control type="image">
+				<posx>34</posx>
+				<posy>28</posy>
+				<height>-</height>
+				<width>-</width>
+				<aspectratio>keep</aspectratio>
+			    <texture>frames/uframe_album_small.png</texture>
+			</control>
+			<control type="image">
+				<posx>40</posx>
+				<posy>33</posy>
+				<width>111</width>
+				<height>111</height>
+				<align>center</align>
+				<aligny>center</aligny>
+				<texture diffuse="frames/mask_album_small.png">$INFO[ListItem.Thumb]</texture>
+				<aspectratio scalediffuse="false" align="center">scale</aspectratio>
+			</control>
+		</itemlayout>
+		<itemlayout height="200" width="158" condition="Container(11000).ListItem(0).Type(photo)">
+			<control type="image">
+				<posx>34</posx>
+				<posy>28</posy>
+				<height>-</height>
+				<width>-</width>
+				<aspectratio>keep</aspectratio>
+			    <texture>frames/uframe_album_small.png</texture>
+			</control>
+			<control type="image">
+				<posx>40</posx>
+				<posy>33</posy>
+				<width>111</width>
+				<height>111</height>
+				<align>center</align>
+				<aligny>center</aligny>
+				<texture diffuse="frames/mask_album_small.png">$INFO[ListItem.Thumb]</texture>
+				<aspectratio scalediffuse="false" align="center">scale</aspectratio>
+			</control>
+		</itemlayout>
+		<focusedlayout height="200" width="138" condition="Container(11000).ListItem(0).Type(movie)">
+			<control type="image">
+				<posx>41</posx>
+				<posy>16</posy>
+				<width></width>
+				<height></height>
+				<aspectratio>keep</aspectratio>
+				<texture border="20" background="true">frames/frame_movie_small.png</texture>
+			</control>
+			<control type="image">
+				<posx>47</posx>
+				<posy>21</posy>
+				<width>93</width>
+				<height>138</height>
+				<texture diffuse="frames/mask_movie_small.png" background="false">$INFO[ListItem.Thumb]</texture>
+				<aspectratio scalediffuse="false" align="center">scale</aspectratio>
+			</control>
+	      	</focusedlayout>
+		<focusedlayout height="200" width="138" condition="Container(11000).ListItem(0).Type(episode)">
+			<control type="image">
+				<posx>41</posx>
+				<posy>16</posy>
+				<width></width>
+				<height></height>
+				<aspectratio>keep</aspectratio>
+				<texture border="20" background="true">frames/frame_movie_small.png</texture>
+			</control>
+			<control type="image">
+				<posx>47</posx>
+				<posy>21</posy>
+				<width>93</width>
+				<height>138</height>
+				<texture diffuse="frames/mask_movie_small.png" background="false">$INFO[ListItem.GrandparentThumb]</texture>
+				<aspectratio scalediffuse="false" align="center">scale</aspectratio>
+			</control>
+			<control type="image">
+				<posx>54</posx>
+				<posy>132</posy>
+		        <texture>home_posterlabel.png</texture>
+				<aspectratio>keep</aspectratio>
+			</control>
+			<control type="label">
+				<posx>94</posx>
+				<posy>132</posy>
+				<height>20</height>
+				<width>100</width>
+				<font>aller_3_13</font>
+				<label>S$INFO[ListItem.Season] - E$INFO[ListItem.Episode]</label>
+				<align>center</align>
+			</control>
+	    </focusedlayout>
+		<focusedlayout height="200" width="158" condition="Container(11000).ListItem(0).Type(album)">
+			<control type="image">
+				<posx>34</posx>
+				<posy>28</posy>
+				<height>-</height>
+				<width>-</width>
+				<aspectratio>keep</aspectratio>
+			    <texture>frames/frame_album_small.png</texture>
+			</control>
+			<control type="image">
+				<posx>40</posx>
+				<posy>33</posy>
+				<width>111</width>
+				<height>111</height>
+				<align>center</align>
+				<aligny>center</aligny>
+				<texture diffuse="frames/mask_album_small.png">$INFO[ListItem.Thumb]</texture>
+				<aspectratio scalediffuse="false" align="center">scale</aspectratio>
+			</control>
+		</focusedlayout>
+		<focusedlayout height="200" width="158" condition="Container(11000).ListItem(0).Type(photo)">
+			<control type="image">
+				<posx>34</posx>
+				<posy>28</posy>
+				<height>-</height>
+				<width>-</width>
+				<aspectratio>keep</aspectratio>
+			    <texture>frames/frame_album_small.png</texture>
+			</control>
+			<control type="image">
+				<posx>40</posx>
+				<posy>33</posy>
+				<width>111</width>
+				<height>111</height>
+				<align>center</align>
+				<aligny>center</aligny>
+				<texture diffuse="frames/mask_album_small.png">$INFO[ListItem.Thumb]</texture>
+				<aspectratio scalediffuse="false" align="center">scale</aspectratio>
+			</control>
+		</focusedlayout>
+	</control>
+</control>
+
+<!--Recently Used-->
+<control type="group" id="5002">
+	<animation effect="fade" start="0" end="100" time="400" delay="0">Visible</animation>
+	<visible>Control.IsVisible(11002)</visible>
+	<control type="list" id="11002">
+		<posx>-5</posx>
+		<posy>545</posy>
+		<width>1290</width>
+		<height>170</height>
+		<onup>300</onup>
+		<ondown>-</ondown>
+		<onleft>-</onleft>
+		<onright>-</onright>
+		<scrolltime>200</scrolltime>
+		<orientation>horizontal</orientation>
+		<itemlayout height="200" width="158">
+			<control type="image">
+				<posx>34</posx>
+				<posy>28</posy>
+				<height>-</height>
+				<width>-</width>
+				<aspectratio>keep</aspectratio>
+			    <texture>frames/uframe_album_small.png</texture>
+			</control>
+			<control type="image">
+				<posx>40</posx>
+				<posy>33</posy>
+				<width>111</width>
+				<height>111</height>
+				<align>center</align>
+				<aligny>center</aligny>
+				<texture diffuse="frames/mask_album_small.png">$INFO[ListItem.Thumb]</texture>
+				<aspectratio scalediffuse="false" align="center">scale</aspectratio>
+			</control>
+		</itemlayout>
+		<focusedlayout height="200" width="158">
+			<control type="image">
+				<posx>34</posx>
+				<posy>28</posy>
+				<height>-</height>
+				<width>-</width>
+				<aspectratio>keep</aspectratio>
+			    <texture>frames/frame_album_small.png</texture>
+			</control>
+			<control type="image">
+				<posx>40</posx>
+				<posy>33</posy>
+				<width>111</width>
+				<height>111</height>
+				<align>center</align>
+				<aligny>center</aligny>
+				<texture diffuse="frames/mask_album_small.png">$INFO[ListItem.Thumb]</texture>
+				<aspectratio scalediffuse="false" align="center">scale</aspectratio>
+			</control>
+		</focusedlayout>
+	</control>
+</control>
+
+<control type="group">
+	<animation effect="fade" start="0" end="100" time="400" delay="0">Visible</animation>
+	<visible>Control.IsVisible(11003)</visible>
+	<control type="list" id="11003">
+		<posx>-5</posx>
+		<posy>545</posy>
+		<width>1290</width>
+		<height>170</height>
+		<onup>300</onup>
+		<ondown>-</ondown>
+		<scrolltime>200</scrolltime>
+		<orientation>horizontal</orientation>
+		<itemlayout height="200" width="158">
+			<control type="image">
+				<posx>34</posx>
+				<posy>28</posy>
+				<height>-</height>
+				<width>-</width>
+				<aspectratio>keep</aspectratio>
+			    <texture>frames/uframe_album_small.png</texture>
+			</control>
+			<control type="image">
+				<posx>40</posx>
+				<posy>33</posy>
+				<width>111</width>
+				<height>111</height>
+				<align>center</align>
+				<aligny>center</aligny>
+				<texture diffuse="frames/mask_album_small.png">$INFO[ListItem.Thumb]</texture>
+				<aspectratio scalediffuse="false" align="center">scale</aspectratio>
+			</control>
+		</itemlayout>
+		<focusedlayout height="200" width="158">
+			<control type="image">
+				<posx>34</posx>
+				<posy>28</posy>
+				<height>-</height>
+				<width>-</width>
+				<aspectratio>keep</aspectratio>
+			    <texture>frames/frame_album_small.png</texture>
+			</control>
+			<control type="image">
+				<posx>40</posx>
+				<posy>33</posy>
+				<width>111</width>
+				<height>111</height>
+				<align>center</align>
+				<aligny>center</aligny>
+				<texture diffuse="frames/mask_album_small.png">$INFO[ListItem.Thumb]</texture>
+				<aspectratio scalediffuse="false" align="center">scale</aspectratio>
+			</control>
+		</focusedlayout>
+	</control>
+</control>
+
+			<!--control type="image">
+				<posx>0</posx>
+				<posy>0</posy>
+				<texture>mid.png</texture>
+				<aspectratio>keep</aspectratio>
+			</control-->
+</controls>
+
+	
+</window>

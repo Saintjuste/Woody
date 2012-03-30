@@ -1,0 +1,255 @@
+<window id="501">
+<defaultcontrol always="false">50</defaultcontrol>
+<allowoverlay>yes</allowoverlay>
+  
+<controls>
+
+
+<control type="group">
+<visible>Control.IsVisible(50)</visible>
+<!--Background Vertical-->
+<control type="group">
+	<include>background_v</include>
+</control>
+
+<!--Poster-->
+<control type="group">
+	<posx>0</posx>
+	<posy>10</posy>
+	<control type="image">
+		<visible>!IsEmpty(ListItem.Thumb)</visible>
+		<posx>39</posx>
+		<posy>204</posy>
+		<aspectratio>keep</aspectratio>
+		<texture>frames/frame_album_large.png</texture>
+		<visible>Container.Content(albums) | Container.Content(songs) | Container.Content(artists) | Container.Content(plugins) | Container.Content(plugincontent)</visible>
+	</control>
+	<control type="image">
+		<posx>46</posx>
+		<posy>210</posy>
+		<width>280</width>
+		<height>280</height>
+		<aspectratio scalediffuse="false" align="center">scale</aspectratio>
+	    <texture diffuse="frames/mask_album_large.png">$INFO[ListItem.Thumb]</texture>
+		<visible>Container.Content(albums) | Container.Content(songs) | Container.Content(artists) | Container.Content(plugins) | Container.Content(plugincontent)</visible>
+	</control>
+<!--Artist Name-->
+	<control type="label">
+		<posx>36</posx>
+		<posy>110</posy>
+	    <width>300</width>
+	    <height>30</height>
+		<font>aller_4_30</font>
+		<textcolor>White</textcolor>
+		<label>[UPPERCASE]$INFO[Container.SecondTitle][/UPPERCASE]</label>
+		<visible>Container.Content(albums)</visible>
+		<align>center</align>
+    </control>
+	<control type="label">
+	    <posx>36</posx>
+		<posy>110</posy>
+	    <width>300</width>
+	    <height>30</height>
+		<font>aller_4_30</font>
+	    <textcolor>White</textcolor>
+	    <label>[UPPERCASE]$INFO[Container.FirstTitle][/UPPERCASE]</label>
+		<visible>Container.Content(songs)</visible>
+		<align>center</align>
+    </control>
+	<control type="label">
+	    <posx>36</posx>
+		<posy>155</posy>
+	    <width>300</width>
+	    <height>30</height>
+		<font>aller_2_24</font>
+	    <textcolor>White</textcolor>
+	    <label>[UPPERCASE]$INFO[Container.SecondTitle][/UPPERCASE]</label>
+		<visible>Container.Content(songs)</visible>
+		<align>center</align>
+    </control>
+</control>
+
+<!--Artist Description-->	
+	<control type="textbox">
+      	    <posx>50</posx>
+	        <posy>555</posy>
+	      	<width>280</width>
+	      	<height>138</height>
+			<label>$INFO[ListItem.PlotOutline]</label>
+	      	<visible>true</visible>
+	      	<font>aller_2_16</font>
+	      	<textcolor>FFFFFFFF</textcolor>
+	      	<pulseonselect></pulseonselect>
+	      	<autoscroll delay="5000" time="1400" repeat="10000">true</autoscroll>
+			<!--visible>!Skin.HasSetting(Plot)</visible-->
+	</control>
+
+<!--List-->			
+	<control type="fixedlist" id="50">
+		<posx>390</posx>
+		<posy>70</posy>
+		<width>850</width>
+		<height>550</height>
+		<onleft>XBMC.ActivateWindow(99)</onleft>
+		<onright>XBMC.ActivateWindow(99)</onright>
+		<onup>50</onup>
+		<ondown>50</ondown>
+		<focusposition>3</focusposition>
+		<viewtype label="list">list</viewtype>
+		<scrolltime>200</scrolltime>
+      	<itemlayout height="45">
+			<control type="label">
+				<posx>90</posx>
+				<posy>25</posy>
+				<width>1000</width>
+				<height>30</height>
+				<font>aller_3_23</font>
+				<label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
+				<textcolor>greyl</textcolor>
+				<scroll>false</scroll>
+			</control>
+		</itemlayout>
+		<focusedlayout height="85">
+			<control type="label">
+			    <posx>40</posx>
+				<posy>40</posy>
+			    <width>1000</width>
+			    <height>30</height>
+				<font>aller_4_40</font>
+			    <textcolor>greyd</textcolor>
+			    <label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
+		    </control>
+	    </focusedlayout>
+	</control>
+</control>
+
+<control type="group">
+<visible>Control.IsVisible(56)</visible>
+
+<!--Background-->
+<control type="group">
+	<include>background_h</include>
+</control>
+
+<!--Thumbs-->	
+<control type="panel" id="56">
+		<posx>0</posx>
+		<posy>100</posy>
+		<width>1280</width>
+		<height>420</height>
+		<onleft>23</onleft>
+		<onright>XBMC.ActivateWindow(99)</onright>
+		<onup>56</onup>
+		<ondown>56</ondown>
+		<focusposition>4</focusposition>
+		<pagecontrol>23</pagecontrol>
+		<viewtype label="thumb">icon</viewtype>
+		<scrolltime>200</scrolltime>
+      	<itemlayout condition="Container.Content(plugins) | Container.Content(plugincontent) | Container.Content(albums)" height="207" width="207">
+			<control type="image">
+				<posx>29</posx>
+				<posy>9</posy>
+				<aspectratio>keep</aspectratio>
+		        <texture border="20" background="true">frames/uframe_album_medium.png</texture>
+			</control>
+			<control type="image">
+				<posx>35</posx>
+				<posy>14</posy>
+				<width>162</width>
+				<height>162</height>
+		        <texture diffuse="frames/mask_album_medium.png" background="false">$INFO[ListItem.Thumb]</texture>
+				<aspectratio scalediffuse="false" align="center">scale</aspectratio>
+			</control>
+		</itemlayout>
+		<focusedlayout condition="Container.Content(plugins) | Container.Content(plugincontent) | Container.Content(albums)"  height="230" width="210">
+			<control type="image">
+				<posx>29</posx>
+				<posy>9</posy>
+				<aspectratio>keep</aspectratio>
+				<texture>frames/frame_album_medium.png</texture>
+			</control>
+			<control type="image">
+				<posx>35</posx>
+				<posy>14</posy>
+				<width>162</width>
+				<height>162</height>
+		        <texture diffuse="frames/mask_album_medium.png" background="false">$INFO[ListItem.Thumb]</texture>
+				<aspectratio scalediffuse="false" align="center">scale</aspectratio>
+			</control>
+	    </focusedlayout>
+	</control>
+	
+<!--Artist / Album Labels-->
+	<control type="grouplist">
+			<posx>-10</posx>
+			<posy>618</posy>
+      		<width>1200</width>
+      		<height>300</height>
+      		<itemgap>15</itemgap>
+      		<scrolltime>200</scrolltime>
+      		<orientation>horizontal</orientation>
+      		<usecontrolcoords>false</usecontrolcoords>
+			<control type="label">
+				<width min="29" max="800">auto</width>
+		        <height>35</height>
+				<font>aller_4_48</font>
+	        	<textcolor>FFFFFFFF</textcolor>
+		        <label>[UPPERCASE]$INFO[Container.SecondTitle][/UPPERCASE]</label>
+				<visible>Container.Content(albums)</visible>
+			</control>
+			<control type="label">
+				<width min="29" max="800">auto</width>
+		        <height>35</height>
+				<font>aller_4_48</font>
+	        	<textcolor>FFFFFFFF</textcolor>
+		        <label>[UPPERCASE]$INFO[ListItem.Artist][/UPPERCASE]</label>
+				<visible>Container.Content(albums) + IsEmpty(Container.SecondTitle)</visible>
+			</control>
+			<control type="image">
+				<width>10</width>
+				<height>35</height>
+				<colordiffuse>FFFFFFFF</colordiffuse>
+				<aspectratio>scale</aspectratio>
+				<texture>whitestroke_v.png</texture>
+				<visible>Container.Content(albums)</visible>
+			</control>
+			<control type="label">		
+				<textoffsety>10</textoffsety>
+		        <width>800</width>
+		        <height>35</height>
+				<font>aller_4_42</font>
+		        <textcolor>FFFFFFFF</textcolor>
+		        <label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
+				<visible>Container.Content(albums)</visible>
+			</control>
+	</control>
+<!--Channel Labels-->
+	<control type="label">		
+			<posx>42</posx>
+			<posy>618</posy>
+		    <width>1200</width>
+		    <height>30</height>
+			<font>aller_4_48</font>
+			<align>left</align>
+			<textcolor>FFFFFFFF</textcolor>
+		    <label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
+			<visible>!Container.Content(plugincontent) + [Container.Content(plugins)]</visible>
+		</control>
+		<control type="label">		
+			<posx>42</posx>
+			<posy>618</posy>
+		    <width>600</width>
+		    <height>30</height>
+			<font>aller_4_30</font>
+			<align>left</align>
+			<textcolor>FFFFFFFF</textcolor>
+		    <label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
+			<visible>Container.Content(plugincontent)</visible>
+		</control>
+	
+</control>
+
+<include>time</include>
+</controls>
+  
+</window>

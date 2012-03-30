@@ -1,0 +1,168 @@
+<includes>
+  
+	<default type="label">
+		<description>heading</description>
+		<width>400</width>
+		<font>aller_4_30</font>
+		<align>left</align>
+		<textcolor>FFFFFFFF</textcolor>
+		<posx>0</posx>
+		<posy>0</posy>
+		<label>-</label>
+		<height>30</height>
+		<aligny>center</aligny>
+		<focusedcolor>blue</focusedcolor>
+		<selectedcolor>greyd</selectedcolor>
+		<scroll>true</scroll>
+  	</default>
+
+	<default type="image">
+    		<posx>0</posx>
+    		<posy>0</posy>
+    		<width>-</width>
+    		<height>-</height>
+    		<align>center</align>
+    		<aligny>center</aligny>
+    		<texture>-</texture>
+    		<aspectratio>keep</aspectratio>
+  	</default>
+
+  	<default type="button">  
+    		<posx>0</posx>
+    		<posy>0</posy>
+    		<width>300</width>
+    		<height>30</height>
+    		<align>center</align>
+    		<aligny>center</aligny>
+    		<label>-</label>
+    		<font>aller_4_30</font>
+    		<textcolor>greyl</textcolor>
+    		<focusedcolor>blue</focusedcolor>
+    		<disabledcolor>greyd</disabledcolor>
+    		<pulseonselect>false</pulseonselect>
+  	</default>
+
+	<default type="scrollbar">
+		<width>18</width>
+		<showonepage>true</showonepage>
+		<texturesliderbackground border="1,1,1,1">views/scrollBackground.png</texturesliderbackground>
+		<texturesliderbar border="1,10,1,10">views/scrollbarGrip.png</texturesliderbar>
+		<texturesliderbarfocus border="1,10,1,10">views/scrollbarGrip-focus.png</texturesliderbarfocus>
+		<textureslidernib border="1">-</textureslidernib>
+		<textureslidernibfocus border="1">-</textureslidernibfocus>
+	</default>
+	
+	<default type="textbox">
+			<align>justify</align>
+	</default>
+
+	
+
+  	<default type="togglebutton">
+    		<posx>0</posx>
+    		<posy>0</posy>
+    		<width>150</width>
+    		<height>30</height>
+    		<label>-</label>
+    		<font>aller_4_30</font>
+    		<textcolor>Black</textcolor>
+    		<focusedcolor>White</focusedcolor>
+    		<disabledcolor>Red</disabledcolor>
+    		<align>center</align>
+    		<aligny>center</aligny>
+    		<pulseonselect>false</pulseonselect>
+		<textoffsetx>0</textoffsetx>
+  	</default>
+
+  	<default type="radiobutton">
+    		<posx>0</posx>
+    		<posy>0</posy>
+    		<width>150</width>
+    		<height>30</height>
+    		<aligny>center</aligny>
+		<font>aller_2_24</font>
+    		<textcolor>greyl</textcolor>
+		<focusedcolor>greyd</focusedcolor>
+    		<align>left</align>
+    		<disabledcolor>FF444444</disabledcolor>
+    		<pulseonselect>false</pulseonselect>
+    		<textureradiofocus>RadiobuttonFo.png</textureradiofocus>
+    		<textureradionofocus>RadiobuttonNF.png</textureradionofocus>
+    		<radiowidth>12</radiowidth>
+    		<radioheight>12</radioheight>
+  	</default>
+
+  	<default type="spincontrolex">
+    		<posx>0</posx>
+    		<posy>0</posy>
+    		<width>500</width>
+    		<height>30</height>
+		<font>aller_3_24</font>
+    		<textureup>ArrowUpNF.png</textureup>
+    		<texturedown>ArrowDownNF.png</texturedown>
+    		<textureupfocus>ArrowUpFo.png</textureupfocus>
+    		<texturedownfocus>ArrowDownFo.png</texturedownfocus>
+		<spinwidth>20</spinwidth>
+		<spinheight>12</spinheight>
+    		<textcolor>greyl</textcolor>
+		<focusedcolor>blue</focusedcolor>
+    		<disabledcolor>greyd</disabledcolor>
+		<align>left</align>
+    		<aligny>center</aligny>
+    		<reverse>yes</reverse>
+    		<pulseonselect>false</pulseonselect>
+  	</default>
+  
+  	<default type="spincontrol">
+		<focusedcolor>greyd</focusedcolor>
+    		<posx>0</posx>
+    		<posy>0</posy>
+    		<width>500</width>
+    		<height>30</height>
+    		<label>-</label>
+		<font>aller_3_24</font>
+    		<textureup>ArrowUpNF.png</textureup>
+    		<texturedown>ArrowDownNF.png</texturedown>
+    		<textureupfocus>ArrowUpFo.png</textureupfocus>
+    		<texturedownfocus>ArrowDownFo.png</texturedownfocus>
+		<spinwidth>20</spinwidth>
+		<spinheight>12</spinheight>
+		<textoffsetx>20</textoffsetx>
+    		<textcolor>greyl</textcolor>
+		<focusedcolor>blue</focusedcolor>
+    		<disabledcolor>55FFFFFF</disabledcolor>
+		<align>left</align>
+    		<aligny>center</aligny>
+    		<reverse>yes</reverse>
+    		<pulseonselect>false</pulseonselect>
+  	</default>
+
+  	<default type="sliderex">
+		<posx>0</posx>
+		<posy>0</posy>
+		<height>30</height>
+		<width>150</width>
+		<align>left</align>
+		<sliderwidth>89</sliderwidth>
+		<sliderheight>13</sliderheight>
+		<texturesliderbar>osd_slider_bg.png</texturesliderbar>
+		<textureslidernib>osd_slider_knob.png</textureslidernib>
+		<textureslidernibfocus>osd_slider_knob.png</textureslidernibfocus>
+		<font>aller_2_20</font>
+		<textcolor>greym</textcolor>
+		<focusedcolor>blue</focusedcolor>
+		<disabledcolor>greymd</disabledcolor>
+  	</default>
+  
+
+  	<default type="slider">
+    		<posx>0</posx>
+    		<posy>0</posy>
+    		<width>280</width>
+    		<height>15</height>
+    		<texturesliderbar>OSDSliderBack.png</texturesliderbar>
+    		<textureslidernib>OSDSliderNibNF.png</textureslidernib>
+    		<textureslidernibfocus>OSDSliderNibFO.png</textureslidernibfocus>
+  	</default>
+
+</includes>

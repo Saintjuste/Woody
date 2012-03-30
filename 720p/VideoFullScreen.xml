@@ -1,0 +1,51 @@
+<window id="2005">
+<include>popup</include>  
+
+
+
+	<controls>
+		<control type="group">
+			<width>1280</width>
+			<height>300</height>
+			<control type="image" id="1">
+				<posx>10</posx>
+				<posy>-40</posy>
+				<width>1280</width>
+				<height>180</height>
+				<aspectratio>keep</aspectratio>
+				<texture flipy="false">VideoFull_bg.png</texture>
+			</control>
+			<control type="label" id="10">
+				<description>row 1 label</description>
+				<posx>20</posx>
+				<posy>10</posy>
+				<width>1260</width>
+				<label>-</label>
+				<align>center</align>
+				<textcolor>greyl</textcolor>
+				<font>aller_2_18</font>
+			</control>
+			<control type="label" id="11">
+				<description>row 2 label</description>
+				<posx>20</posx>
+				<posy>40</posy>
+				<width>1260</width>
+				<label>-</label>
+				<align>center</align>
+				<font>aller_2_18</font>
+				<textcolor>greyl</textcolor>
+			</control>
+			<control type="label" id="12">
+				<description>row 3 label</description>
+				<posx>20</posx>
+				<posy>65</posy>
+				<width>1260</width>
+				<height>60</height>
+				<label>-</label>
+				<align>center</align>
+				<textcolor>greyl</textcolor>
+				<font>aller_2_18</font>
+			</control>
+		</control>
+	</controls>
+</window>

@@ -1,0 +1,219 @@
+<window id="115">
+<defaultcontrol always="true">901</defaultcontrol>
+<allowoverlay>yes</allowoverlay>
+
+<visible>!Window.IsActive(0) + !Window.IsActive(50) + !Player.Caching + !Window.IsActive(2901) + [player.seeking | player.displayafterSeek | player.paused | player.forwarding | player.rewinding]</visible>
+
+	<animation type="WindowOpen">
+		<effect type="zoom" start="99" end="100" center="auto" tween="back" time="200"/>
+		<effect type="fade" start="50" end="100" time="100"/>
+	</animation>
+	<animation type="WindowClose">
+		<effect type="zoom" start="100" end="95" center="auto" time="200"/>
+		<effect type="fade" start="100" end="0" time="100"/>
+	</animation>
+
+  
+<coordinates>
+  <system>1</system>
+  <posx>0</posx>
+  <posy>80</posy>
+</coordinates>
+
+<controls>
+	
+	<control type="image">
+		<!--animation effect="fade" start="0" end="100" time="200" condition="!Window.IsActive(115)">WindowOpen</animation-->
+		<!--animation effect="fade" start="100" end="0" time="200" condition="!Window.IsActive(115)">WindowClose</animation-->
+		<posx>50</posx>
+		<posy>520</posy>
+		<height>-</height>
+		<texture>osd_bg.png</texture>
+		<colordiffuse>FFFFFFFF</colordiffuse>
+		<aspectratio>keep</aspectratio>
+	</control>
+
+	<control type="group">
+		<posx>50</posx>
+		<posy>300</posy>
+		<control type="image">
+			<texture>ff_bg.png</texture>
+			<aspectratio>keep</aspectratio>
+			<visible>player.forwarding | player.rewinding</visible>
+		</control>
+ 		<control type="label">
+			<posx>-166</posx>
+			<posy>15</posy>
+			<font>aller_4_25</font>
+			<textcolor>greym</textcolor>
+			<label>x2</label>
+			<align>center</align>
+			<visible>player.forwarding2x | player.rewinding2x</visible>
+		</control>
+ 		<control type="label">
+			<posx>-166</posx>
+			<posy>15</posy>
+			<font>aller_4_25</font>
+			<textcolor>greym</textcolor>
+			<label>x4</label>
+			<align>center</align>
+			<visible>player.forwarding4x | player.rewinding4x</visible>
+		</control>
+ 		<control type="label">
+			<posx>-166</posx>
+			<posy>15</posy>
+			<font>aller_4_25</font>
+			<textcolor>greym</textcolor>
+			<label>x8</label>
+			<align>center</align>
+			<visible>player.forwarding8x | player.rewinding8x</visible>
+		</control>
+ 		<control type="label">
+			<posx>-166</posx>
+			<posy>15</posy>
+			<font>aller_4_25</font>
+			<textcolor>greym</textcolor>
+			<label>x16</label>
+			<align>center</align>
+			<visible>player.forwarding16x | player.rewinding16x</visible>
+		</control>
+ 		<control type="label">
+			<posx>-166</posx>
+			<posy>15</posy>
+			<font>aller_4_25</font>
+			<textcolor>greym</textcolor>
+			<label>x32</label>
+			<align>center</align>
+			<visible>player.forwarding32x | player.rewinding32x</visible>
+		</control>
+	</control>
+
+<!--Time / End Time-->
+	<control type="group">
+		<posy>-4</posy>
+ 		<control type="label" id="0">
+			<posx>75</posx>
+			<posy>535</posy>
+			<font>aller_4_20</font>
+			<textcolor>greymd</textcolor>
+			<label>TIME</label>
+			<align>left</align>
+		</control>
+ 		<control type="label" id="0">
+			<posx>130</posx>
+			<posy>535</posy>
+			<font>aller_4_20</font>
+			<textcolor>greym</textcolor>
+			<label>$INFO[System.Time]</label>
+			<align>left</align>
+		</control>
+		<control type="label" id="0">
+			<posx>1020</posx>
+			<posy>535</posy>
+			<font>aller_4_20</font>
+			<textcolor>greymd</textcolor>
+			<label>END TIME</label>
+			<align>left</align>
+		</control>
+		<control type="label" id="0">
+			<posx>1200</posx>
+			<posy>535</posy>
+			<font>aller_4_20</font>
+			<textcolor>greym</textcolor>
+			<label>$INFO[Player.FinishTime]</label>
+			<align>right</align>
+		</control>
+	</control>
+
+		<control type="label">
+			<posx>445</posx>
+			<posy>547</posy>
+			<font>aller_3_14</font>
+			<textcolor>greym</textcolor>
+			<label>PAUSED</label>
+			<align>center</align>
+			<visible>Player.Paused</visible>
+		</control>
+		<control type="label">
+			<posx>340</posx>
+			<posy>533</posy>
+			<width>650</width>
+			<font>aller_4_20</font>
+			<textcolor>greym</textcolor>
+			<label>[UPPERCASE]$INFO[Videoplayer.Title]  [COLOR greymd]($INFO[Videoplayer.Year])[/COLOR][/UPPERCASE]</label>
+			<align>center</align>
+			<visible>VideoPlayer.Content(movies) + !Player.Paused</visible>
+		</control>
+		<control type="label">
+			<posx>340</posx>
+			<posy>526</posy>
+			<width>650</width>
+			<font>aller_4_20</font>
+			<textcolor>greym</textcolor>
+			<label>[UPPERCASE]$INFO[Videoplayer.Title]  [COLOR greymd]($INFO[Videoplayer.Year])[/COLOR][/UPPERCASE]</label>
+			<align>center</align>
+			<visible>VideoPlayer.Content(movies) + Player.Paused</visible>
+		</control>
+		<control type="label">
+			<posx>340</posx>
+			<posy>533</posy>
+			<width>650</width>
+			<font>aller_4_20</font>
+			<textcolor>greym</textcolor>
+			<label>[UPPERCASE]$INFO[Videoplayer.Title]  [COLOR greymd](S$INFO[Videoplayer.Season] - E$INFO[Videoplayer.Episode])[/COLOR][/UPPERCASE]</label>
+			<align>center</align>
+			<visible>VideoPlayer.Content(episodes) + !Player.Paused</visible>
+		</control>
+		<control type="label">
+			<posx>340</posx>
+			<posy>526</posy>
+			<width>650</width>
+			<font>aller_4_20</font>
+			<textcolor>greym</textcolor>
+			<label>[UPPERCASE]$INFO[Videoplayer.Title]  [COLOR greymd](S$INFO[Videoplayer.Season] - E$INFO[Videoplayer.Episode])[/COLOR][/UPPERCASE]</label>
+			<align>center</align>
+			<visible>VideoPlayer.Content(episodes) + Player.Paused</visible>
+		</control>
+	
+<!--Progress & Duration/Position-->
+	<control type="group">
+		<control type="label" id="402">
+    			<description>current seek position</description>
+			<posx>75</posx>
+			<posy>568</posy>
+			<width>300</width>
+			<font>aller_3_18</font>
+			<textcolor>greym</textcolor>
+			<align>left</align>
+			<label>$INFO[Player.Time]</label>
+		</control>
+		<control type="label" id="0">
+			<posx>1200</posx>
+			<posy>568</posy>
+			<font>aller_3_18</font>
+			<textcolor>greym</textcolor>
+			<align>right</align>
+			<label>$INFO[Player.Duration]</label>
+		</control>
+  		<control type="progress" id="1">
+    			<description>Progress Bar</description>
+	    		<posx>183</posx>
+    			<posy>575</posy>
+			<aspectratio>keep</aspectratio>
+	    		<texturebg>ProgressBackLong.png</texturebg>
+    			<lefttexture>ProgressLeftLong.png</lefttexture>
+    			<midtexture>ProgressMidLong.png</midtexture>
+	    		<righttexture>ProgressRightLong.png</righttexture>
+    			<overlaytexture>-</overlaytexture>
+			<info>Player.Progress</info>
+	  	</control>
+	</control>
+
+
+
+
+	
+
+</controls>
+  
+</window>

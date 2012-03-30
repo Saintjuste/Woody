@@ -1,0 +1,258 @@
+<includes>
+  
+<include file="Defaults.xml" />
+<include file="CommonViews.xml" />
+<include file="ViewsVideo.xml" />
+
+<!--Tutorial-->
+<include name="tutorial">
+	<control type="image">
+		<posx>0</posx>
+		<posy>0</posy>
+		<aspectratio>keep</aspectratio>
+		<texture>tutorial.png</texture>
+	</control>
+	<control type="image">
+		<animation effect="fade" end="100" time="150" delay="0">Visible</animation>
+		<animation effect="fade" end="0" time="150" delay="0">Hidden</animation>
+		<posx>0</posx>
+		<posy>0</posy>
+		<aspectratio>keep</aspectratio>
+		<texture>tutorial_hint2x.png</texture>
+		<visible>Control.IsVisible(11000) + Control.IsVisible(11001) + !Control.HasFocus(301) + !Control.HasFocus(302) + !Control.HasFocus(303) + !Control.HasFocus(304)</visible>
+	</control>
+</include>
+	
+<!--Scrollbar-->
+<include name="scrollbar">
+	<control type="scrollbar" id="23">
+		<description>banner_v</description>
+		<posx>395</posx>
+		<posy>92</posy>
+		<height>580</height>
+		<onleft>50</onleft>
+		<onright>50</onright>
+		<visible allowhiddenfocus="true">Control.HasFocus(23)</visible>
+	</control>
+</include>	
+
+<!--Scrollbar Horizontal-->
+<include name="scrollbar_h">
+	<control type="scrollbar" id="23">
+		<description>banner_v</description>
+		<posx>30</posx>
+		<posy>519</posy>
+		<height>18</height>
+		<width>1220</width>
+		<onup>50</onup>
+		<ondown>50</ondown>
+		<visible allowhiddenfocus="true">Control.HasFocus(23)</visible>
+		<showonepage>true</showonepage>
+		<orientation>horizontal</orientation>
+		<height>8</height>
+		<texturesliderbackground border="8,1,8,1">views/scrollBackgroundHorizontal.png</texturesliderbackground>
+		<texturesliderbar border="10,1,10,1">views/scrollbarGripHorizontal.png</texturesliderbar>
+		<texturesliderbarfocus border="10,1,10,1">views/scrollbarGripHorizontal.png</texturesliderbarfocus>
+		<textureslidernib border="1">-</textureslidernib>
+		<textureslidernibfocus border="1">-</textureslidernibfocus>
+	</control>
+</include>
+
+<!-- Background Horizontal / Vertical -->
+<include name="background_v">
+	<control type="image">
+		<posx>0</posx>
+		<posy>0</posy>
+		<width>380</width>
+		<height>720</height>
+		<aspectratio>scale</aspectratio>
+		<texture>wood_bg_v.png</texture>
+	</control>
+	<control type="image">
+		<posx>379</posx>
+		<posy>0</posy>
+		<width>900</width>
+		<height>720</height>
+		<aspectratio>scale</aspectratio>
+		<aligny>center</aligny>
+		<texture>$INFO[Listitem.Property(Fanart_Image)]</texture>
+	</control>
+	<control type="image">
+		<posx>32</posx>
+		<posy>0</posy>
+		<width>1250</width>
+		<height>720</height>
+		<aspectratio>scale</aspectratio>
+		<colordiffuse>DDFFFFFF</colordiffuse>
+		<aligny>center</aligny>
+		<texture>grey.png</texture>
+	</control>
+</include>
+
+<include name="background_h">
+	<control type="image">
+		<posx>0</posx>
+		<posy>0</posy>
+		<width>1280</width>
+		<height>720</height>
+		<aspectratio>stretch</aspectratio>
+		<texture>wood_bg.png</texture>
+	</control>
+	<control type="image">
+		<animation effect="fade" time="100" start="0" end="100">WindowOpen</animation>
+		<animation effect="fade" time="100" start="100" end="0">WindowClose</animation>
+		<posx>0</posx>
+		<posy>0</posy>
+		<width>1280</width>
+		<height>537</height>
+		<aspectratio>scale</aspectratio>
+		<aligny>center</aligny>
+		<texture>$INFO[Listitem.Property(Fanart_Image)]</texture>
+	</control>
+	<control type="image">
+		<posx>0</posx>
+		<posy>0</posy>
+		<width>1280</width>
+		<height>660</height>
+		<aspectratio>scale</aspectratio>
+		<colordiffuse>EAFFFFFF</colordiffuse>
+		<aligny>center</aligny>
+		<texture>bg_grey_center.png</texture>
+	</control>
+</include>
+
+<include name="background_h_slideshow">
+	<control type="multiimage" id="10101">
+		<visible>![ControlGroup(5002).HasFocus]</visible>
+		<posx>0</posx>
+		<posy>0</posy>
+		<width>1280</width>
+		<height>720</height>
+		<aspectratio scalediffuse="false" aligny="top">scale</aspectratio>
+		<aligny>top</aligny>
+		<timeperimage>8000</timeperimage>
+		<fadetime>1000</fadetime>
+		<randomize>true</randomize>
+		<loop>yes</loop>
+	</control>
+	<!-- on deck -->
+	<control type="multiimage">
+		<visible>Control.HasFocus(11001)</visible>
+		<animation effect="fade" end="100" time="300" delay="0">Visible</animation>
+		<animation effect="fade" end="0" time="300" delay="0">Hidden</animation>
+		<info background="true">Container(11001).ListItem.Property(fanart_image)</info>
+		<aspectratio>scale</aspectratio>
+		<posx>0</posx>
+		<posy>0</posy>
+		<width>1280</width>
+		<height>720</height>
+		<fadetime>400</fadetime>
+	</control>
+	<!-- recently added -->
+	<control type="multiimage">
+		<visible>Control.HasFocus(11000)</visible>
+		<animation effect="fade" end="100" time="300" delay="0">Visible</animation>
+		<animation effect="fade" end="0" time="300" delay="0">Hidden</animation>
+		<info background="true">Container(11000).ListItem.Property(fanart_image)</info>
+		<aspectratio scalediffuse="false" aligny="top">scale</aspectratio>
+		<posx>0</posx>
+		<posy>0</posy>
+		<width>1280</width>
+		<height>720</height>
+		<fadetime>400</fadetime>
+	</control>
+	<!-- recently used -->
+	<control type="multiimage">
+		<visible>ControlGroup(5002).HasFocus</visible>
+		<animation effect="fade" end="100" time="300" delay="0">Visible</animation>
+		<animation effect="fade" end="0" time="300" delay="0">Hidden</animation>
+		<info background="true">Container(11002).ListItem.Property(fanart_image)</info>
+		<aspectratio scalediffuse="false" aligny="top">scale</aspectratio>
+		<posx>0</posx>
+		<posy>0</posy>
+		<width>1280</width>
+		<height>720</height>
+		<fadetime>400</fadetime>
+	</control>
+	<control type="image">
+		<posx>0</posx>
+		<posy>270</posy>
+		<width>1280</width>
+		<height>720</height>
+		<aspectratio>keep</aspectratio>
+		<texture>wood_bg_h.png</texture>
+	</control>
+	<control type="image">
+		<posx>0</posx>
+		<posy>0</posy>
+		<width>1280</width>
+		<height>660</height>
+		<aspectratio>scale</aspectratio>
+		<colordiffuse>EAFFFFFF</colordiffuse>
+		<aligny>center</aligny>
+		<texture>bg_grey_center.png</texture>
+	</control>
+</include>
+
+
+<include name="keyboardButton">
+	<font>aller_2_24</font>
+	<textcolor>greyl</textcolor>
+	<focusedcolor>blue</focusedcolor>
+</include>
+
+
+<include name="popup">
+	<animation type="WindowOpen">
+		<effect type="zoom" start="90" end="100" center="640,360" tween="back" time="200"/>
+		<effect type="fade" start="0" end="100" time="200"/>
+	</animation>
+	<animation type="WindowClose">
+		<effect type="zoom" start="100" end="90" center="640,360" time="100"/>
+		<effect type="fade" start="100" end="0" time="100"/>
+	</animation>
+</include>
+
+<include name="fade">
+	<animation type="WindowOpen">
+		<effect type="fade" start="0" end="100" time="200"/>
+	</animation>
+	<animation type="WindowClose">
+		<effect type="fade" start="100" end="0" time="200"/>
+	</animation>
+</include>
+
+<include name="settingsbuttonlabel">
+    <textcolor>greym</textcolor>
+	<font>aller_4_30</font>
+	<aligny>center</aligny>
+	<align>left</align>
+	<focusedcolor>blue</focusedcolor>
+	<disabledcolor>55FFFFFF</disabledcolor>
+</include>
+<include name="viewmenubutton">
+    	<posx>100</posx>
+    	<posy>100</posy>
+		<width>500</width>
+    	<height>36</height>
+    	<align>center</align>
+    	<aligny>center</aligny>
+    	<font>aller_2_24</font>
+    	<textcolor>AA777777</textcolor>
+    	<focusedcolor>blue</focusedcolor>
+    	<disabledcolor>blue</disabledcolor>
+    	<pulseonselect>false</pulseonselect>
+</include>
+
+<include name="time">
+	<control type="label">
+		<posx>1140</posx>
+		<posy>35</posy>
+		<font>aller_4_28</font>
+		<align>left</align>
+    	<label>$INFO[System.Time]</label>
+		<textcolor>58353533</textcolor>
+	</control>  
+</include>
+  
+</includes>

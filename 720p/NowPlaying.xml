@@ -1,0 +1,210 @@
+<?xml version="1.0"?>
+<window id="50">
+	<defaultcontrol always="true">50</defaultcontrol>
+	<controls>
+		<control type="image">
+			<posx>0</posx>
+			<posy>0</posy>
+			<width>1280</width>
+			<height>720</height>
+			<aspectratio>scale</aspectratio>
+			<texture>nowplayingbackground.png</texture>
+		</control>
+	<control type="group">
+		<posx>20</posx>
+		<control type="progress" id="21">
+			<description>Progress bar</description>
+			<posx>131</posx>
+			<posy>330</posy>
+			<height>18</height>
+			<width>460</width>
+			<aspectratio>keep</aspectratio>
+    		<texturebg>ProgressBack.png</texturebg>
+			<lefttexture>ProgressLeft.png</lefttexture>
+    		<midtexture>ProgressMid.png</midtexture>
+    		<righttexture>ProgressRight.png</righttexture>
+			<info>Player.Progress</info>
+			<visible>Player.HasMusicPlaylist</visible>
+		</control>
+		<!--Current Track Info-->
+		<control type="group">
+		<control type="label">
+			<font>aller_4_42</font>
+			<width>550</width>
+			<align>right</align>
+			<textcolor>blue</textcolor>
+			<posx>590</posx>
+			<posy>195</posy>
+			<label>[UPPERCASE]$INFO[MusicPlayer.Artist][/UPPERCASE]</label>
+			<height>30</height>
+			<aligny>center</aligny>
+			<scroll>true</scroll>
+		</control>
+		<control type="label">
+			<font>aller_4_30</font>
+			<width>550</width>
+			<align>right</align>
+			<textcolor>blued</textcolor>
+			<posx>590</posx>
+			<posy>237</posy>
+			<label>[UPPERCASE]$INFO[MusicPlayer.Title][/UPPERCASE]</label>
+			<height>30</height>
+			<aligny>center</aligny>
+			<scroll>true</scroll>
+		</control>
+		<control type="label">
+			<font>aller_3_20</font>
+			<width>600</width>
+			<align>right</align>
+			<textcolor>blued</textcolor>
+			<posx>590</posx>
+			<posy>270</posy>
+			<label>[UPPERCASE]$INFO[MusicPlayer.Album][/UPPERCASE]</label>
+			<height>30</height>
+			<aligny>center</aligny>
+			<scroll>true</scroll>
+		</control>
+		<control type="label">
+			<font>aller_3_13</font>
+			<width>550</width>
+			<align>right</align>
+			<textcolor>blued</textcolor>
+			<posx>590</posx>
+			<posy>293</posy>
+			<label>$INFO[MusicPlayer.Time] / $INFO[MusicPlayer.Duration]</label>
+			<height>30</height>
+			<aligny>center</aligny>
+			<scroll>true</scroll>
+		</control>
+		</control>
+		<!--Next Track Info-->
+		<control type="group">
+			<visible>MusicPlayer.HasNext</visible>
+			<posy>195</posy>
+		<control type="label">
+			<font>aller_3_13</font>
+			<width>550</width>
+			<align>right</align>
+			<textcolor>greym</textcolor>
+			<posx>590</posx>
+			<posy>160</posy>
+			<label>NEXT TRACK</label>
+			<height>30</height>
+			<aligny>center</aligny>
+			<scroll>true</scroll>
+		</control>
+		<control type="label">
+			<font>aller_4_32</font>
+			<width>550</width>
+			<align>right</align>
+			<textcolor>greym</textcolor>
+			<posx>590</posx>
+			<posy>190</posy>
+			<label>[UPPERCASE]$INFO[MusicPlayer.offset(1).Artist][/UPPERCASE]</label>
+			<height>30</height>
+			<aligny>center</aligny>
+			<scroll>true</scroll>
+		</control>
+		<control type="label">
+			<font>aller_4_24</font>
+			<width>550</width>
+			<align>right</align>
+			<textcolor>greymd</textcolor>
+			<posx>590</posx>
+			<posy>227</posy>
+			<label>[UPPERCASE]$INFO[MusicPlayer.offset(1).Title][/UPPERCASE]</label>
+			<height>30</height>
+			<aligny>center</aligny>
+			<scroll>true</scroll>
+		</control>
+		<control type="label">
+			<font>aller_3_18</font>
+			<width>550</width>
+			<align>right</align>
+			<textcolor>greymd</textcolor>
+			<posx>590</posx>
+			<posy>258</posy>
+			<label>[UPPERCASE]$INFO[MusicPlayer.offset(1).Album][/UPPERCASE]</label>
+			<height>30</height>
+			<aligny>center</aligny>
+			<scroll>true</scroll>
+		</control>
+		</control>
+		<!--Poster Current & Next-->
+		<control type="image">
+			<animation effect="fade" time="200" start="0" end="100">Visible</animation>
+			<animation effect="fade" time="200" start="100" end="0">Hidden</animation>
+			<visible>MusicPlayer.HasNext + !IsEmpty(MusicPlayer.offset(1).Cover)</visible>
+			<posx>860</posx>
+			<posy>455</posy>
+			<width>240</width>
+			<height>70</height>
+			<align>center</align>
+			<aligny>center</aligny>
+			<texture>shadow_albumcover.png</texture>
+			<aspectratio>stretch</aspectratio>
+		</control>
+		<control type="image">
+			<animation effect="fade" time="200" start="0" end="100">Visible</animation>
+			<animation effect="fade" time="200" start="100" end="0">Hidden</animation>
+			<posx>830</posx>
+			<posy>255</posy>
+			<width>240</width>
+			<height>240</height>
+			<align>center</align>
+			<aligny>center</aligny>
+			<info>MusicPlayer.offset(1).Cover</info>
+			<texture diffuse="frames/mask_album_large.png"/>
+			<aspectratio>keep</aspectratio>
+		</control>
+		<control type="image">
+			<animation effect="fade" time="200" start="0" end="100">Visible</animation>
+			<animation effect="fade" time="200" start="100" end="0">Hidden</animation>
+			<visible>MusicPlayer.HasNext + !IsEmpty(MusicPlayer.offset(1).Cover)</visible>
+			<posx>845</posx>
+			<posy>250</posy>
+			<width>240</width>
+			<height>249</height>
+			<align>center</align>
+			<aligny>center</aligny>
+			<texture>shadow_hr.png</texture>
+			<aspectratio>keep</aspectratio>
+		</control>
+		<control type="image">
+			<animation effect="fade" time="200" start="0" end="100">Visible</animation>
+			<animation effect="fade" time="200" start="100" end="0">Hidden</animation>
+			<visible>!IsEmpty(MusicPlayer.Cover)</visible>
+			<posx>560</posx>
+			<posy>460</posy>
+			<width>450</width>
+			<height>100</height>
+			<align>center</align>
+			<aligny>center</aligny>
+			<texture>shadow_albumcover.png</texture>
+			<aspectratio>keep</aspectratio>
+		</control>
+		<control type="image">
+			<animation effect="fade" time="200" start="0" end="100">Visible</animation>
+			<animation effect="fade" time="200" start="100" end="0">Hidden</animation>
+			<posx>625</posx>
+			<posy>185</posy>
+			<width>330</width>
+			<height>330</height>
+			<align>center</align>
+			<aligny>center</aligny>
+			<info>MusicPlayer.Cover</info>
+			<texture diffuse="frames/mask_album_xlarge.png"/>
+			<aspectratio>keep</aspectratio>
+		</control>
+		<control type="image">
+			<animation effect="fade" time="100" start="0" end="100">Visible</animation>
+			<animation effect="fade" time="100" start="100" end="0">Hidden</animation>
+			<visible>Player.Paused</visible>			
+			<posx>912</posx>
+			<posy>195</posy>
+			<texture>Overlay Icons/Big/OverlayInProgress.png</texture>
+			<aspectratio>keep</aspectratio>
+		</control>
+	</control>
+	</controls>
+</window>

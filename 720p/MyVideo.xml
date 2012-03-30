@@ -1,0 +1,27 @@
+<window id="6">
+<defaultcontrol always="false">50</defaultcontrol>
+<allowoverlay>yes</allowoverlay>
+
+
+<controls>
+
+
+	<!--Views-->
+	<include>view_list</include>
+	<include>view_slide</include>
+	<include>view_wall</include>
+	<include>view_thumb</include>
+	<include>view_stream</include>
+	<include>view_bigslide</include>
+	<include>view_biglist</include>
+	<include>view_banner</include>
+	<include>view_banner_v</include>
+
+		
+	<!--Time-->
+	<include>time</include>
+	
+	
+</controls>
+  
+</window>

@@ -1,0 +1,374 @@
+<window id="99">
+<defaultcontrol always="true">6000</defaultcontrol>
+<onunload>SetFocus(50)</onunload>
+<allowoverlay>yes</allowoverlay>
+<type>dialog</type>
+
+  <animation type="WindowOpen">
+		<effect type="zoom" start="80" end="100" center="640,360" tween="back" time="300"/>
+		<effect type="fade" start="0" end="100" time="200"/>
+	</animation>
+	<animation type="WindowClose">
+		<effect type="zoom" start="100" end="90" center="640,360" time="100"/>
+		<effect type="fade" start="100" end="0" time="100"/>
+	</animation>
+	
+<controls>
+<control type="group">
+	<posx>35</posx>
+	<posy>-70</posy>
+	<!---Background--->
+	<control type="image">	
+		<posx>476</posx>
+		<posy>251</posy>
+		<texture>ViewsMenuSmall_bg.png</texture>
+    	<aspectratio>keep</aspectratio>
+		<visible>!Container.Content(tvshows)</visible>
+	</control>
+    	<control type="image">	
+		<posx>476</posx>
+		<posy>250</posy>
+		<texture>ViewsMenu_bg.png</texture>
+		<aspectratio>keep</aspectratio>
+		<visible>Container.Content(tvshows)</visible>
+	</control>
+	<!---HEADER & DOTS--->
+    <control type="label">
+		<animation effect="fade" start="0" end="100" time="200">Visible</animation>
+		<posx>486</posx>
+		<posy>160</posy>
+		<width>250</width>
+		<height>250</height>
+		<label>Views</label>
+		<font>aller_4_24</font>
+    	<align>center</align>
+    	<aligny>center</aligny>
+    	<textcolor>greym</textcolor>
+		<visible allowhiddenfocus="true">ControlGroup(6000).HasFocus()</visible>
+	</control>
+    <control type="label">
+		<animation effect="fade" start="0" end="100" time="200">Visible</animation>
+		<posx>486</posx>
+		<posy>160</posy>
+		<width>250</width>
+		<height>250</height>
+		<label>Navigation</label>
+		<font>aller_4_24</font>
+    	<align>center</align>
+    	<aligny>center</aligny>
+    	<textcolor>greym</textcolor>
+		<visible allowhiddenfocus="true">ControlGroup(7000).HasFocus()</visible>
+	</control>
+    <control type="label">
+		<animation effect="fade" start="0" end="100" time="200">Visible</animation>
+		<posx>486</posx>
+		<posy>160</posy>
+		<width>250</width>
+		<height>250</height>
+		<label>Options</label>
+		<font>aller_4_24</font>
+    	<align>center</align>
+    	<aligny>center</aligny>
+    	<textcolor>greym</textcolor>
+		<visible allowhiddenfocus="true">ControlGroup(8000).HasFocus()</visible>
+	</control>
+	<control type="image">
+		<posx>590</posx>
+		<posy>302</posy>
+		<aspectratio>keep</aspectratio>
+	    <texture>dot_blue.png</texture>
+		<visible>ControlGroup(6000).HasFocus()</visible>
+	</control>
+	<control type="image">
+		<posx>590</posx>
+		<posy>302</posy>
+		<aspectratio>keep</aspectratio>
+	    <texture>dot_grey.png</texture>
+		<visible>!ControlGroup(6000).HasFocus()</visible>
+	</control>
+	<control type="image">
+		<posx>607</posx>
+		<posy>302</posy>
+		<aspectratio>keep</aspectratio>
+	    <texture>dot_blue.png</texture>
+		<visible>ControlGroup(7000).HasFocus()</visible>
+	</control>
+	<control type="image">
+		<posx>607</posx>
+		<posy>302</posy>
+		<aspectratio>keep</aspectratio>
+	    <texture>dot_grey.png</texture>
+		<visible>!ControlGroup(7000).HasFocus()</visible>
+	</control>
+	<control type="image">
+		<posx>624</posx>
+		<posy>302</posy>
+		<aspectratio>keep</aspectratio>
+	    <texture>dot_blue.png</texture>
+		<visible>ControlGroup(8000).HasFocus()</visible>
+	</control>
+	<control type="image">
+		<posx>624</posx>
+		<posy>302</posy>
+		<aspectratio>keep</aspectratio>
+	    <texture>dot_grey.png</texture>
+		<visible>!ControlGroup(8000).HasFocus()</visible>
+	</control>
+	<!---VIEWS--->
+	<control type="grouplist" id="6000">
+			<animation effect="fade" start="0" end="100" time="200">Visible</animation>
+			<visible allowhiddenfocus="true">ControlGroup(6000).HasFocus()</visible>
+			<posx>360</posx>
+      		<posy>330</posy>
+      		<width>400</width>
+			<height>400</height>
+      		<itemgap>-2</itemgap>
+      		<scrolltime>200</scrolltime>
+			<orientation>vertical</orientation>
+      		<onup>6000</onup>
+      		<ondown>6000</ondown>
+			<onleft>8000</onleft>
+      		<onright>7000</onright>
+			<control type="button" id="6001">
+				<label>List</label>
+				<font>aller_3_18</font>
+				<include>viewmenubutton</include>
+				<onclick>Container.SetViewMode(50)</onclick>
+				<onclick>SetFocus(6000)</onclick>
+				<visible>true</visible>
+			</control>
+			<control type="button" id="6002">
+				<label>Slide</label>
+				<font>aller_3_18</font>
+				<include>viewmenubutton</include>
+				<onclick>Container.SetViewMode(51)</onclick>
+				<onclick>SetFocus(6000)</onclick>
+				<visible>[Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | Window.IsActive(2)] + !Container.Content(plugins)</visible>
+			</control>
+			<control type="button" id="6003">
+				<label>Wall</label>
+				<font>aller_3_18</font>
+				<include>viewmenubutton</include>
+				<onclick>Container.SetViewMode(52)</onclick>
+				<onclick>SetFocus(6000)</onclick>
+				<visible>[Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons)]</visible>
+			</control>
+			<control type="button" id="6004">
+				<label>Thumbs</label>
+				<font>aller_3_18</font>
+				<include>viewmenubutton</include>
+				<onclick>Container.SetViewMode(53)</onclick>
+				<onclick>SetFocus(6000)</onclick>
+				<visible>[Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons)]</visible>
+			</control>
+			<control type="button" id="6009">
+				<label>Thumbs</label>
+				<font>aller_3_18</font>
+				<include>viewmenubutton</include>
+				<onclick>Container.SetViewMode(56)</onclick>
+				<onclick>SetFocus(6000)</onclick>
+				<visible>!Container.Content(movies) + !Container.Content(tvshows) + !Container.Content(seasons) + [Container.Content(plugins) | Container.Content(albums)]</visible>
+			</control>
+			<control type="button" id="6005">
+				<label>Big Slide</label>
+				<font>aller_3_18</font>
+				<include>viewmenubutton</include>
+				<onclick>Container.SetViewMode(54)</onclick>
+				<onclick>SetFocus(6000)</onclick>
+				<visible>[Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons)]</visible>
+			</control>
+			<control type="button" id="6006">
+				<label>Big List</label>
+				<font>aller_3_18</font>
+				<include>viewmenubutton</include>
+				<onclick>Container.SetViewMode(55)</onclick>
+				<onclick>SetFocus(6000)</onclick>
+				<visible>[Container.Content(episodes)]</visible>
+			</control>
+			<control type="button" id="6007">
+				<label>Banner</label>
+				<font>aller_3_18</font>
+				<include>viewmenubutton</include>
+				<onclick>Container.SetViewMode(57)</onclick>
+				<onclick>SetFocus(6000)</onclick>
+				<visible>[Container.Content(tvshows)]</visible>
+			</control>
+			<control type="button" id="6008">
+				<label>Banner V</label>
+				<font>aller_3_18</font>
+				<include>viewmenubutton</include>
+				<onclick>Container.SetViewMode(58)</onclick>
+				<onclick>SetFocus(6000)</onclick>
+				<visible>[Container.Content(tvshows)]</visible>
+			</control>
+	</control>
+	<!---NAVIGATION--->
+	<control type="grouplist" id="7000">
+			<animation effect="fade" start="0" end="100" time="200">Visible</animation>
+			<visible allowhiddenfocus="true">ControlGroup(7000).HasFocus()</visible>
+			<posx>360</posx>
+      		<posy>330</posy>
+      		<width>400</width>
+      		<height>400</height>
+      		<itemgap>-2</itemgap>
+      		<scrolltime>200</scrolltime>
+      		<orientation>vertical</orientation>
+      		<onup>7000</onup>
+      		<ondown>7000</ondown>
+			<onleft>6000</onleft>
+      		<onright>8000</onright>
+     		<control type="button" id="7001">
+			<label>Home</label>
+    		<font>aller_3_18</font>
+			<include>viewmenubutton</include>
+			<onclick>ActivateWindow(0)</onclick>
+			<onclick>Dialog.Close(all,true)</onclick>
+			<onclick>SetFocus(300)</onclick>
+		</control>
+		<control type="button" id="7002">
+			<label>Settings</label>
+    		<font>aller_3_18</font>
+			<include>viewmenubutton</include>
+			<onclick>ActivateWindow(4)</onclick>
+			<onclick>Dialog.Close(all,true)</onclick>
+			<onclick>SetFocus(9000)</onclick>
+		</control>
+		<control type="button" id="7003">
+			<label>Sleep System</label>
+    		<font>aller_3_18</font>
+			<include>viewmenubutton</include>
+			<onclick>Dialog.Close(shutdownmenu)</onclick>
+			<onclick>XBMC.SleepSystem()</onclick>
+		</control>
+		<control type="button" id="7004">
+			<label>Quit Plex</label>
+    		<font>aller_3_18</font>
+			<include>viewmenubutton</include>
+			<onclick>Dialog.Close(shutdownmenu)</onclick>
+			<onclick>dialog.close(all,true)</onclick>
+			<onclick>Plex.Shutdown()</onclick>
+		</control>
+	</control>
+	<!---OPTIONS--->
+	<control type="grouplist" id="8000">
+			<animation effect="fade" start="0" end="100" time="200">Visible</animation>
+			<visible allowhiddenfocus="true">ControlGroup(8000).HasFocus()</visible>
+			<posx>503</posx>
+      		<posy>330</posy>
+      		<width>400</width>
+      		<height>400</height>
+      		<itemgap>-2</itemgap>
+      		<scrolltime>200</scrolltime>
+      		<orientation>vertical</orientation>
+      		<onup>8000</onup>
+      		<ondown>8000</ondown>
+			<onleft>7000</onleft>
+      		<onright>6000</onright>
+		<control type="radiobutton" id="8001">
+				<width>500</width>
+   		     	<textoffsetx>0</textoffsetx>
+	        	<radioposx>200</radioposx>
+        		<radioposy>0</radioposy>
+				<align>left</align>
+	    		<textureradiofocus>RadiobuttonNF.png</textureradiofocus>
+    			<textureradionofocus>RadiobuttonFo.png</textureradionofocus>			
+    			<textcolor>AA777777</textcolor>
+				<focusedcolor>blue</focusedcolor>
+				<disabledcolor>blue</disabledcolor>
+				<label>HD Icon</label>
+    			<font>aller_3_18</font>
+				<onclick>Skin.ToggleSetting(HDIcon)</onclick>
+				<selected>Skin.HasSetting(HDIcon)</selected>
+				<visible>-</visible>
+		</control>
+		<control type="radiobutton" id="8002">
+				<width>500</width>
+        		<textoffsetx>0</textoffsetx>
+        		<radioposx>200</radioposx>
+        		<radioposy>0</radioposy>
+				<align>left</align>			
+    			<textcolor>AA777777</textcolor>
+    			<textureradiofocus>RadiobuttonNF.png</textureradiofocus>
+    			<textureradionofocus>RadiobuttonFo.png</textureradionofocus>	
+		    	<focusedcolor>blue</focusedcolor>
+		    	<disabledcolor>blue</disabledcolor>
+				<label>HD Overlays</label>
+    			<font>aller_3_18</font>
+				<onclick>Skin.ToggleSetting(HDPoster)</onclick>
+				<selected>Skin.HasSetting(HDPoster)</selected>
+				<visible>-</visible>
+		</control>
+		<control type="radiobutton" id="8003">
+				<width>500</width>
+        		<textoffsetx>0</textoffsetx>
+        		<radioposx>200</radioposx>
+        		<radioposy>0</radioposy>
+				<label>Unwatched Icons</label>
+    			<font>aller_3_18</font>
+				<align>left</align>			
+    			<textcolor>AA777777</textcolor>
+    			<textureradiofocus>RadiobuttonNF.png</textureradiofocus>
+    			<textureradionofocus>RadiobuttonFo.png</textureradionofocus>	
+		    	<focusedcolor>blue</focusedcolor>
+		    	<disabledcolor>blue</disabledcolor>
+				<onclick>Skin.ToggleSetting(UnwatchedPoster)</onclick>
+				<selected>Skin.HasSetting(UnwatchedPoster)</selected>
+				<visible>-</visible>
+		</control>
+		<control type="radiobutton" id="8004">
+				<width>500</width>
+        		<textoffsetx>0</textoffsetx>
+        		<radioposx>200</radioposx>
+        		<radioposy>0</radioposy>
+				<label>Studio Logo</label>
+    			<font>aller_3_18</font>
+        		<textoffsetx>200</textoffsetx>
+				<align>left</align>		
+    			<textureradiofocus>RadiobuttonNF.png</textureradiofocus>
+    			<textureradionofocus>RadiobuttonFo.png</textureradionofocus>		
+    			<textcolor>AA777777</textcolor>
+		    	<focusedcolor>blue</focusedcolor>
+		    	<disabledcolor>blue</disabledcolor>
+				<onclick>Skin.ToggleSetting(Studio)</onclick>
+				<selected>Skin.HasSetting(Studio)</selected>
+				<visible>-</visible>
+		</control>
+		<control type="radiobutton" id="8005">
+			<width>500</width>
+        		<textoffsetx>0</textoffsetx>
+        		<radioposx>200</radioposx>
+        		<radioposy>0</radioposy>
+				<label>Plot</label>
+    			<font>aller_3_18</font>
+    			<textureradiofocus>RadiobuttonNF.png</textureradiofocus>
+    			<textureradionofocus>RadiobuttonFo.png</textureradionofocus>	
+				<align>left</align>			
+    			<textcolor>AA777777</textcolor>
+		    	<focusedcolor>blue</focusedcolor>
+		    	<disabledcolor>blue</disabledcolor>
+				<onclick>Skin.ToggleSetting(Plot)</onclick>
+				<selected>Skin.HasSetting(Plot)</selected>
+				<visible>-</visible>
+		</control>
+		<control type="radiobutton" id="8006">
+				<width>500</width>
+        		<textoffsetx>0</textoffsetx>
+        		<radioposx>200</radioposx>
+        		<radioposy>0</radioposy>
+    			<textureradiofocus>RadiobuttonNF.png</textureradiofocus>
+    			<textureradionofocus>RadiobuttonFo.png</textureradionofocus>	
+				<label>MPAA Rating</label>
+    			<font>aller_3_18</font>
+				<align>left</align>			
+    			<textcolor>AA777777</textcolor>
+		    	<focusedcolor>blue</focusedcolor>
+		    	<disabledcolor>blue</disabledcolor>
+				<onclick>Skin.ToggleSetting(mpaa)</onclick>
+				<selected>Skin.HasSetting(mpaa)</selected>
+				<visible>-</visible>
+		</control>
+	</control>
+</control>
+</controls>
+  
+</window>

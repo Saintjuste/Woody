@@ -1,0 +1,22 @@
+<window id="113">
+<defaultcontrol always="true">901</defaultcontrol>
+<allowoverlay>yes</allowoverlay>
+  
+<coordinates>
+  <system>1</system>
+  <posx>1172</posx>
+  <posy>80</posy>
+</coordinates>
+
+
+
+<controls>  
+	<control type="image" id="901">
+		<description>Mute Image</description>	
+		<aspectratio>keep</aspectratio>
+		<texture>dialog_mute.png</texture>
+	</control>
+    
+</controls>
+  
+</window>

@@ -1,0 +1,74 @@
+<window id="2004">
+<defaultcontrol always="true">2</defaultcontrol>
+<allowoverlay>yes</allowoverlay>
+<visible>Window.IsActive(Home) + Player.HasAudio</visible>
+
+
+
+<coordinates>
+  <system>1</system>
+  <posx>125</posx>
+  <posy>-380</posy>
+</coordinates>
+
+<controls>
+
+
+  
+	<control type="image">
+    		<posx>-59</posx>
+    		<posy>492</posy>
+    		<align>center</align>
+    		<aligny>center</aligny>
+    		<texture>frames/uframe_album_small.png</texture>
+    		<aspectratio>keep</aspectratio>
+  	</control>
+	<control type="image">
+		<posx>-53</posx>
+		<posy>497</posy>
+		<width>110</width>
+		<height>111</height>
+		<align>center</align>
+		<aligny>center</aligny>
+		<info>MusicPlayer.Cover</info>
+		<texture diffuse="frames/mask_album_small.png"/>
+		<aspectratio scalediffuse="false" align="center">scale</aspectratio>
+	</control>
+	<control type="label" id="0">
+		<description>Artist</description>
+		<posx>78</posx>
+		<posy>497</posy>
+		<font>aller_4_32</font>
+		<textcolor>greymd</textcolor>
+		<label>[UPPERCASE]$INFO[MusicPlayer.Artist][/UPPERCASE]</label>
+	</control>
+	<control type="label" id="0">
+		<description>Title</description>
+		<posx>78</posx>
+		<posy>529</posy>
+		<width>790</width>
+		<font>aller_2_24</font>
+		<textcolor>greym</textcolor>
+		<label>[UPPERCASE]$INFO[MusicPlayer.Title][/UPPERCASE]</label>
+	</control>
+	<control type="label" id="0">
+		<description>Album</description>
+		<posx>78</posx>
+		<posy>557</posy>
+		<font>aller_2_20</font>
+		<textcolor>greym</textcolor>
+		<label>[UPPERCASE]$INFO[MusicPlayer.Album][/UPPERCASE]</label>
+	</control>
+	<control type="label" id="0">
+		<description>Play Time</description>
+		<posx>78</posx>
+		<posy>582</posy>
+		<font>aller_3_18</font>
+		<textcolor>greymd</textcolor>
+		<label>-</label>
+		<info>musicplayer.time</info>
+	</control>
+  
+</controls>
+  
+</window>

@@ -1,0 +1,224 @@
+<window id="56">
+<defaultcontrol always="true">202</defaultcontrol>
+<allowoverlay>yes</allowoverlay>
+  
+<controls>
+   	<control type="image">
+		<posx>0</posx>
+		<posy>0</posy>
+        <texture>settings_bg.png</texture>
+		<aspectratio>keep</aspectratio>
+	</control>
+	
+  	<control type="label">
+		<posx>1140</posx>
+		<posy>35</posy>
+		<font>aller_4_28</font>
+		<align>left</align>
+		<label>$INFO[System.Time]</label>
+		<textcolor>greym</textcolor>
+	</control> 
+	
+	<control type="label">
+	    	<posx>30</posx>
+		<posy>50</posy>
+		<width>800</width>
+		<height>30</height>
+		<font>aller_4_38</font>
+		<textcolor>greym</textcolor>
+		<label>PREFERENCES</label>
+	</control>
+	
+	<control type="grouplist">
+    		<posx>30</posx>
+	    	<posy>157</posy>
+		<width>300</width>
+    		<height>600</height>
+	    	<itemgap>31</itemgap>
+    		<orientation>vertical</orientation>
+	    	<control type="label">
+        		<description>Custom Settings</description>
+		    	<width>150</width>
+		       	<label>[UPPERCASE]Skin[/UPPERCASE]</label>
+			<textcolor>blue</textcolor>
+			<include>settingsbuttonlabel</include>
+		</control>
+		<control type="label">
+			<description>Appearance</description>
+	    		<width>220</width>
+			<label>[UPPERCASE]Appearance[/UPPERCASE]</label>
+			<include>settingsbuttonlabel</include>
+		</control>
+		<control type="label">
+			<description>Videos</description>
+	    		<width>142</width>
+			<label>[UPPERCASE]Videos[/UPPERCASE]</label>
+			<include>settingsbuttonlabel</include>
+		</control>
+		<control type="label">
+			<description>Music</description>
+		    	<width>126</width>
+			<label>[UPPERCASE]Music[/UPPERCASE]</label>
+			<include>settingsbuttonlabel</include>
+		</control>
+		<control type="label">
+			<description>Pictures</description>
+		    	<width>170</width>
+			<label>[UPPERCASE]Pictures[/UPPERCASE]</label>
+			<include>settingsbuttonlabel</include>
+		</control>
+		<control type="label">
+			<description>System</description>
+	    		<width>150</width>
+			<label>[UPPERCASE]System[/UPPERCASE]</label>
+			<include>settingsbuttonlabel</include>
+		</control>
+		<control type="label">
+			<description>Network</description>
+		    	<width>172</width>
+			<label>[UPPERCASE]Network[/UPPERCASE]</label>
+			<include>settingsbuttonlabel</include>
+		</control>
+	</control>
+	
+<!-- Linke Leiste-->
+<control type="grouplist" id="202">
+	<animation effect="fade" time="200" start="0" end="100">WindowOpen</animation>
+	<animation effect="fade" time="200" start="100" end="0">WindowClose</animation>
+	<posx>335</posx>
+     	<posy>157</posy>
+     	<width>1050</width>
+     	<height>400</height>
+    	<ondown>202</ondown>
+    	<onup>202</onup>
+    	<onleft>XBMC.activatewindow(settings)</onleft>
+    	<onright>203</onright>
+     	<itemgap>31</itemgap>
+     	<scrolltime>200</scrolltime>
+      	<orientation>vertical</orientation>
+		<control type="button" id="-3">
+			<posx>0</posx>
+			<posy>100</posy>
+			<width>750</width>
+			<label>Home Screen</label>
+			<font>aller_2_c_26</font>
+			<textcolor>greym</textcolor>
+			<focusedcolor>blue</focusedcolor>
+			<aligny>center</aligny>
+			<disabledcolor>FF444444</disabledcolor>
+			<align>left</align>
+		</control>
+		<!--control type="button" id="-2">
+			<posx>0</posx>
+			<posy>100</posy>
+			<width>750</width>
+			<label>Others</label>
+			<font>aller_2_c_26</font>
+			<textcolor>greym</textcolor>
+			<focusedcolor>blue</focusedcolor>
+			<aligny>center</aligny>
+			<disabledcolor>FF444444</disabledcolor>
+			<align>left</align>
+		</control-->
+	</control>
+	
+	<control type="label">
+		<posx>335</posx>
+		<posy>157</posy>
+		<width>750</width>
+		<label>Home Screen</label>
+		<font>aller_2_c_26</font>
+		<textcolor>blue</textcolor>
+		<aligny>center</aligny>
+		<align>left</align>
+		<visible>ControlGroup(203).HasFocus() + !ControlGroup(203).HasFocus(6) + !ControlGroup(203).HasFocus(7)</visible>
+	</control>
+	
+	<control type="label">
+		<posx>335</posx>
+		<posy>218</posy>
+		<width>750</width>
+		<label>Others</label>
+		<font>aller_2_c_26</font>
+		<textcolor>blue</textcolor>
+		<aligny>center</aligny>
+		<align>left</align>
+		<visible>ControlGroup(203).HasFocus() + [ControlGroup(203).HasFocus(6) | ControlGroup(203).HasFocus(7)]</visible>
+	</control>
+	
+<!-- Rechte Leiste-->
+<control type="grouplist" id="203">
+	<animation effect="fade" time="200" start="0" end="100">WindowOpen</animation>
+	<animation effect="fade" time="200" start="100" end="0">WindowClose</animation>
+	<posx>590</posx>
+     	<posy>157</posy>
+     	<width>675</width>
+     	<height>520</height>
+    	<ondown>203</ondown>
+    	<onup>203</onup>
+    	<onleft>202</onleft>
+    	<onright>-</onright>
+     	<itemgap>31</itemgap>
+     	<scrolltime>200</scrolltime>
+      	<orientation>vertical</orientation>
+		<control type="radiobutton" id="9">
+			<posx>50</posx>
+			<posy>100</posy>
+			<width>630</width>
+			<label>Show "Applications" in the main menu</label>
+			<font>aller_3_24</font>
+			<textcolor>greyl</textcolor>
+			<focusedcolor>blue</focusedcolor>
+			<align>left</align>
+			<disabledcolor>greyd</disabledcolor>
+			<textureradiofocus>RadiobuttonFo.png</textureradiofocus>
+			<textureradionofocus>RadiobuttonNF.png</textureradionofocus>
+			<onclick>Skin.ToggleSetting(applications)</onclick>
+			<selected>Skin.HasSetting(applications)</selected>
+			<visible>ControlGroup(202).HasFocus(-3)</visible>
+			<textoffsetx>20</textoffsetx>
+			<radioposx>635</radioposx>
+		</control>
+		<control type="radiobutton" id="10">
+			<posx>50</posx>
+			<posy>100</posy>
+			<width>630</width>
+			<label>Enable Home Screen Slideshow</label>
+			<font>aller_3_24</font>
+			<textcolor>greyl</textcolor>
+			<focusedcolor>blue</focusedcolor>
+			<align>left</align>
+			<disabledcolor>greyd</disabledcolor>
+			<textureradiofocus>RadiobuttonFo.png</textureradiofocus>
+			<textureradionofocus>RadiobuttonNF.png</textureradionofocus>
+			<onclick>Skin.ToggleSetting(slideshow)</onclick>
+			<selected>Skin.HasSetting(slideshow)</selected>
+			<visible>ControlGroup(202).HasFocus(-3)</visible>
+			<textoffsetx>20</textoffsetx>
+			<radioposx>635</radioposx>
+		</control>
+		<control type="radiobutton" id="11">
+			<posx>50</posx>
+			<posy>100</posy>
+			<width>630</width>
+			<label>Turn off Tutorial on Home Screen</label>
+			<font>aller_3_24</font>
+			<textcolor>greyl</textcolor>
+			<focusedcolor>blue</focusedcolor>
+			<align>left</align>
+			<disabledcolor>greyd</disabledcolor>
+			<textureradiofocus>RadiobuttonFo.png</textureradiofocus>
+			<textureradionofocus>RadiobuttonNF.png</textureradionofocus>
+			<onclick>Skin.ToggleSetting(tutorial)</onclick>
+			<selected>!Skin.HasSetting(tutorial)</selected>
+			<visible>ControlGroup(202).HasFocus(-3)</visible>
+			<textoffsetx>20</textoffsetx>
+			<radioposx>635</radioposx>
+		</control>
+	</control>
+	
+	
+  
+</controls>
+  
+</window>

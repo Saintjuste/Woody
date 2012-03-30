@@ -1,0 +1,307 @@
+<window id="2901">
+<defaultcontrol>4</defaultcontrol>
+<allowoverlay>yes</allowoverlay>
+
+
+<coordinates>
+  <system>1</system>
+  <posx>0</posx>
+  <posy>80</posy>
+</coordinates>
+
+	<animation type="WindowOpen">
+		<effect type="zoom" start="99" end="100" center="auto" tween="back" time="200"/>
+		<effect type="fade" start="50" end="100" time="100"/>
+	</animation>
+	<animation type="WindowClose">
+		<effect type="zoom" start="100" end="95" center="auto" time="200"/>
+		<effect type="fade" start="100" end="0" time="100"/>
+	</animation>
+
+<controls>
+<control type="group">
+	<control type="image">
+		<!--animation effect="fade" start="0" end="100" time="200" condition="!Window.IsActive(115)">WindowOpen</animation-->
+		<!--animation effect="fade" start="100" end="0" time="200" condition="!Window.IsActive(115)">WindowClose</animation-->
+		<posx>50</posx>
+		<posy>520</posy>
+    		<width>-</width>
+		<height>-</height>
+		<texture>osd_bg.png</texture>
+		<colordiffuse>FFFFFFFF</colordiffuse>
+		<aspectratio>keep</aspectratio>
+	</control>
+
+	<!--Time / End Time-->
+	<control type="group">
+		<posy>-4</posy>
+ 		<control type="label" id="0">
+			<posx>75</posx>
+			<posy>535</posy>
+			<font>aller_4_20</font>
+			<textcolor>greymd</textcolor>
+			<label>TIME</label>
+			<align>left</align>
+		</control>
+ 		<control type="label" id="0">
+			<posx>130</posx>
+			<posy>535</posy>
+			<font>aller_4_20</font>
+			<textcolor>greym</textcolor>
+			<label>$INFO[System.Time]</label>
+			<align>left</align>
+		</control>
+		<control type="label" id="0">
+			<posx>1020</posx>
+			<posy>535</posy>
+			<font>aller_4_20</font>
+			<textcolor>greymd</textcolor>
+			<label>END TIME</label>
+			<align>left</align>
+		</control>
+		<control type="label" id="0">
+			<posx>1200</posx>
+			<posy>535</posy>
+			<font>aller_4_20</font>
+			<textcolor>greym</textcolor>
+			<label>$INFO[Player.FinishTime]</label>
+			<align>right</align>
+		</control>
+	</control>
+
+
+
+	<control type="group">
+		<posx>50</posx>
+		<posy>300</posy>
+		<control type="image">
+			<texture>ff_bg.png</texture>
+			<aspectratio>keep</aspectratio>
+			<visible>player.forwarding | player.rewinding</visible>
+		</control>
+ 		<control type="label">
+			<posx>-166</posx>
+			<posy>15</posy>
+			<font>aller_4_25</font>
+			<textcolor>greym</textcolor>
+			<label>x2</label>
+			<align>center</align>
+			<visible>player.forwarding2x | player.rewinding2x</visible>
+		</control>
+ 		<control type="label">
+			<posx>-166</posx>
+			<posy>15</posy>
+			<font>aller_4_25</font>
+			<textcolor>greym</textcolor>
+			<label>x4</label>
+			<align>center</align>
+			<visible>player.forwarding4x | player.rewinding4x</visible>
+		</control>
+ 		<control type="label">
+			<posx>-166</posx>
+			<posy>15</posy>
+			<font>aller_4_25</font>
+			<textcolor>greym</textcolor>
+			<label>x8</label>
+			<align>center</align>
+			<visible>player.forwarding8x | player.rewinding8x</visible>
+		</control>
+ 		<control type="label">
+			<posx>-166</posx>
+			<posy>15</posy>
+			<font>aller_4_25</font>
+			<textcolor>greym</textcolor>
+			<label>x16</label>
+			<align>center</align>
+			<visible>player.forwarding16x | player.rewinding16x</visible>
+		</control>
+ 		<control type="label">
+			<posx>-166</posx>
+			<posy>15</posy>
+			<font>aller_4_25</font>
+			<textcolor>greym</textcolor>
+			<label>x32</label>
+			<align>center</align>
+			<visible>player.forwarding32x | player.rewinding32x</visible>
+		</control>
+	</control>
+
+	<!--Progress & Duration/Position-->
+	<control type="group">
+		<control type="label" id="402">
+    			<description>current seek position</description>
+			<posx>75</posx>
+			<posy>568</posy>
+			<width>300</width>
+			<font>aller_3_18</font>
+			<textcolor>greym</textcolor>
+			<align>left</align>
+			<label>$INFO[Player.Time]</label>
+		</control>
+		<control type="label" id="0">
+			<posx>1200</posx>
+			<posy>568</posy>
+			<font>aller_3_18</font>
+			<textcolor>greym</textcolor>
+			<align>right</align>
+			<label>$INFO[Player.Duration]</label>
+		</control>
+  		<control type="progress" id="1">
+    			<description>Progress Bar</description>
+	    		<posx>183</posx>
+    			<posy>575</posy>
+			<aspectratio>keep</aspectratio>
+	    		<texturebg>ProgressBackLong.png</texturebg>
+    			<lefttexture>ProgressLeftLong.png</lefttexture>
+    			<midtexture>ProgressMidLong.png</midtexture>
+	    		<righttexture>ProgressRightLong.png</righttexture>
+    			<overlaytexture>-</overlaytexture>
+			<info>Player.Progress</info>
+	  	</control>
+	</control>
+</control>
+
+
+
+	<control type="group">
+		<posx>45</posx>
+		<posy>-6</posy>
+		<control type="button" id="1">
+			<description>Skip Back</description>
+			<posx>430</posx>
+			<posy>550</posy>
+    			<width>-</width>
+    			<height>-</height>
+     			<texturefocus>osd_previousf.png</texturefocus>
+      			<texturenofocus>osd_previous.png</texturenofocus>
+			<onleft>8</onleft>
+			<onright>2</onright>
+			<onclick>xbmc.playercontrol(previous)</onclick>
+		</control>
+		<control type="button" id="2">
+			<description>Rewind</description>
+			<posx>465</posx>
+			<posy>549</posy>
+    			<width>-</width>
+    			<height>-</height>
+			<aspectratio>keep</aspectratio>
+     			<texturefocus>osd_rewindf.png</texturefocus>
+      			<texturenofocus>osd_rewind.png</texturenofocus>
+			<onleft>1</onleft>
+			<onright>3</onright>
+			<onclick>xbmc.playercontrol(rewind)</onclick>
+		</control>
+		<control type="button" id="3">
+			<description>Stop</description>
+			<posx>505</posx>
+			<posy>545</posy>
+    			<width>-</width>
+    			<height>-</height>
+			<aspectratio>keep</aspectratio>
+     			<texturefocus>osd_stopf.png</texturefocus>
+      			<texturenofocus>osd_stop.png</texturenofocus>
+			<onleft>2</onleft>
+			<onright>4</onright>
+			<onclick>PlayerControl(Stop)</onclick>
+		</control>
+		<control type="button" id="4">
+			<description>Play</description>
+			<posx>545</posx>
+			<posy>545</posy>
+			<width>-</width>
+			<height>-</height>
+     			<texturefocus>-</texturefocus>
+      			<texturenofocus>-</texturenofocus>
+			<onleft>3</onleft>
+			<onright>5</onright>
+			<onclick>xbmc.playercontrol(play)</onclick>
+		</control>
+				<control type="group">
+					<posx>545</posx>
+					<posy>545</posy>
+					<control type="image">
+						<texture>osd_pause.png</texture>
+						<aspectratio>keep</aspectratio>
+						<visible>![Player.Paused | Player.Forwarding | Player.Rewinding] + !Control.HasFocus(4)</visible>
+					</control>
+					<control type="image">
+						<texture>osd_play.png</texture>
+						<aspectratio>keep</aspectratio>
+						<visible>[Player.Paused | Player.Forwarding | Player.Rewinding] + !Control.HasFocus(4)</visible>
+					</control>
+					<control type="image">
+						<texture>osd_pausef.png</texture>
+						<aspectratio>keep</aspectratio>
+						<visible>![Player.Paused | Player.Forwarding | Player.Rewinding] + Control.HasFocus(4)</visible>
+					</control>
+					<control type="image">
+						<texture>osd_playf.png</texture>
+						<aspectratio>keep</aspectratio>
+						<visible>[Player.Paused | Player.Forwarding | Player.Rewinding] + Control.HasFocus(4)</visible>
+					</control>
+				</control>
+		<control type="button" id="5">
+			<description>Forward</description>
+			<posx>580</posx>
+			<posy>548</posy>
+    			<width>-</width>
+    			<height>-</height>
+			<aspectratio>keep</aspectratio>
+     			<texturefocus>osd_fff.png</texturefocus>
+      			<texturenofocus>osd_ff.png</texturenofocus>
+			<onleft>4</onleft>
+			<onright>6</onright>
+			<onclick>xbmc.playercontrol(forward)</onclick>
+		</control>
+		<control type="button" id="6">
+			<description>Skip Forward</description>
+			<posx>620</posx>
+			<posy>549</posy>
+    			<width>-</width>
+    			<height>-</height>
+			<aspectratio>keep</aspectratio>
+     			<texturefocus>osd_nextf.png</texturefocus>
+      			<texturenofocus>osd_next.png</texturenofocus>
+			<onleft>5</onleft>
+			<onright>7</onright>
+			<onclick>xbmc.playercontrol(next)</onclick>
+		</control>
+		<control type="image">
+			<posx>665</posx>
+			<posy>527</posy>
+    			<width>-</width>
+			<height>-</height>
+			<texture>osd_sep.png</texture>
+			<colordiffuse>FFFFFFFF</colordiffuse>
+			<aspectratio>keep</aspectratio>
+		</control>
+		<control type="button" id="7">
+			<description>Video Settings</description>
+			<posx>695</posx>
+			<posy>545</posy>
+    			<width>-</width>
+    			<height>-</height>
+			<aspectratio>keep</aspectratio>
+     			<texturefocus>osd_videof.png</texturefocus>
+      			<texturenofocus>osd_video.png</texturenofocus>
+			<onleft>6</onleft>
+			<onright>8</onright>
+			<onclick>xbmc.activatewindow(123)</onclick>
+		</control>
+		<control type="button" id="8">
+			<description>Audio Settings</description>
+			<posx>735</posx>
+			<posy>547</posy>
+    			<width>-</width>
+    			<height>-</height>
+			<aspectratio>keep</aspectratio>
+     			<texturefocus>osd_soundf.png</texturefocus>
+      			<texturenofocus>osd_sound.png</texturenofocus>
+			<onleft>7</onleft>
+			<onright>1</onright>
+			<onclick>xbmc.activatewindow(124)</onclick>
+		</control>
+	</control>
+</controls>
+  
+</window>

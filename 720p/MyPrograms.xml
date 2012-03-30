@@ -1,0 +1,89 @@
+<window id="1">
+<defaultcontrol always="true">50</defaultcontrol>
+<allowoverlay>yes</allowoverlay>
+  
+<controls>
+
+<control type="group">
+<visible>Control.IsVisible(50)</visible>
+<!--Background-->
+<control type="group">
+	<include>background_v</include>
+</control>
+
+<!-----Icons & Description----->
+	<control type="image">
+		<posx>34</posx>
+		<posy>199</posy>
+		<width>303</width>
+		<height>303</height>
+		<aspectratio>keep</aspectratio>
+	    <texture>frames/frame_album_large_special.png</texture>
+	</control>
+	<control type="image">
+		<posx>40</posx>
+		<posy>204</posy>
+		<width>291</width>
+		<height>291</height>
+		<aspectratio>zoom</aspectratio>
+	    <texture diffuse="frames/mask_album_large.png">$INFO[ListItem.Thumb]</texture>
+	</control>
+	<control type="textbox">
+      	<posx>50</posx>
+	    <posy>555</posy>
+	    <width>280</width>
+	    <height>135</height>
+		<label>$INFO[ListItem.PlotOutline]</label>
+	    <visible>true</visible>
+	   	<colordiffuse>FFFFFFFF</colordiffuse>
+	   	<font>aller_2_18</font>
+		<textcolor>FFFFFFFF</textcolor>
+		<pulseonselect></pulseonselect>
+      	<pagecontrol>13</pagecontrol>
+      	<autoscroll delay="5000" time="1400" repeat="10000">true</autoscroll>
+	</control>
+
+<!--List-->				
+	<control type="fixedlist" id="50">
+		<posx>390</posx>
+		<posy>70</posy>
+		<width>850</width>
+		<height>550</height>
+		<onleft>XBMC.ActivateWindow(99)</onleft>
+		<onright>XBMC.ActivateWindow(99)</onright>
+		<onup>50</onup>
+		<ondown>50</ondown>
+		<focusposition>3</focusposition>
+		<viewtype label="list">list</viewtype>
+		<scrolltime>200</scrolltime>
+      	<itemlayout height="45">
+			<control type="label">
+				<posx>90</posx>
+				<posy>25</posy>
+				<width>1000</width>
+				<height>30</height>
+				<font>aller_3_23</font>
+				<label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
+				<textcolor>greyl</textcolor>
+				<scroll>false</scroll>
+			</control>
+		</itemlayout>
+		<focusedlayout height="85">
+			<control type="label">
+			    <posx>40</posx>
+				<posy>40</posy>
+			    <width>1000</width>
+			    <height>30</height>
+				<font>aller_4_40</font>
+			    <textcolor>greyd</textcolor>
+			    <label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
+		    </control>
+	    </focusedlayout>
+	</control>
+</control>
+
+
+<include>time</include>
+</controls>
+
+</window>

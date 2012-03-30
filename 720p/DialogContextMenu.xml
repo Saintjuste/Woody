@@ -1,0 +1,60 @@
+<window id="106">
+<defaultcontrol always="true">1000</defaultcontrol>
+<allowoverlay>yes</allowoverlay>
+
+<include>popup</include>
+
+<coordinates>
+  <system>1</system>
+  <origin x="385" y="200">true</origin>
+</coordinates>
+  
+<controls>
+
+		
+	<control type="group">
+    	<posy>-40</posy>
+    	<control type="image" id="997">
+		<posx>78</posx>
+		<posy>15</posy>
+    		<height>30</height>
+		<width>350</width>
+		<texture>DialogContextMenu_Up.png</texture>
+    		<aspectratio>stretch</aspectratio>
+	</control>
+    	<control type="image" id="999">
+		<posx>78</posx>
+		<posy>45</posy>
+    		<height>20</height>
+		<width>350</width>
+		<texture>DialogContextMenu_Mid.png</texture>
+    		<aspectratio>stretch</aspectratio>
+		</control>
+    	<control type="image" id="998">
+		<posx>78</posx>
+		<posy>75</posy>
+    		<height>30</height>
+		<width>350</width>
+		<texture>DialogContextMenu_Down.png</texture>
+    		<aspectratio>stretch</aspectratio>
+		</control>
+  	</control>
+
+	<control type="button" id="1000">
+    		<posx>6</posx>
+    		<posy>-50</posy>
+		<width>500</width>
+    		<height>36</height>
+    		<align>center</align>
+    		<aligny>center</aligny>
+		<onright>Window.Close(106)</onright>
+    		<font>aller_2_c_22</font>
+    		<textcolor>AA777777</textcolor>
+    		<focusedcolor>blue</focusedcolor>
+    		<disabledcolor>blue</disabledcolor>
+    		<pulseonselect>false</pulseonselect>
+	</control>
+  
+</controls>
+
+</window>

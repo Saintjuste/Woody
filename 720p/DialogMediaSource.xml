@@ -1,0 +1,175 @@
+<window id="129">
+<defaultcontrol always="true">10</defaultcontrol>
+<allowoverlay>yes</allowoverlay>
+  
+<coordinates>
+  <system>1</system>
+  <posx>350</posx>
+  <posy>80</posy>
+</coordinates>
+
+<include>popup</include>
+
+  
+<controls>
+
+    	<control type="image">
+		<posx>0</posx>
+		<posy>0</posy>
+		<texture>dialogmediasource_bg.png</texture>
+    		<aspectratio>keep</aspectratio>
+	</control>
+	
+	<control type="label" id="0">
+		<description>Path</description>
+		<posx>40</posx>
+		<posy>30</posy>
+		<font>aller_4_24</font>
+		<textcolor>blue</textcolor>
+		<align>center</align>
+		<width>500</width>
+		<label>Enter path for media location</label>
+	</control>
+
+  <control type="list" id="10">
+    <posx>50</posx>
+    <posy>90</posy>
+    <width>340</width>
+    <height>254</height>
+    <onup>19</onup>
+    <onleft>9000</onleft>
+    <onright>9000</onright>
+    <ondown>12</ondown>
+    <itemlayout height="32">
+      	<control type="label">
+        	<posx>5</posx>
+        	<width>330</width>
+        	<height>30</height>
+		<font>aller_3_24</font>
+		<textcolor>greyl</textcolor>
+        	<info>ListItem.Label</info>
+        	<scroll>false</scroll>
+      	</control>
+    </itemlayout>
+    <focusedlayout height="32">
+    	<control type="label">
+       		<posx>5</posx>
+        	<width>330</width>
+        	<height>30</height>
+		<font>aller_3_24</font>
+		<textcolor>blue</textcolor>
+        	<info>ListItem.Label</info>
+     	</control>
+    </focusedlayout>
+  </control>
+    
+	<control type="group" id="9000">
+    <posx>400</posx>
+		<control type="button" id="11">
+			<description>Browse</description>
+			<posy>90</posy>
+			<width>150</width>
+			<label>BROWSE</label>
+			<align>left</align>
+			<font>aller_4_24</font>
+			<focusedcolor>blue</focusedcolor>
+			<onup>18</onup>
+			<onleft>10</onleft>
+			<onright>10</onright>
+			<ondown>13</ondown>
+		</control>
+		<control type="button" id="13">
+			<description>Add</description>
+			<posy>125</posy>
+			<width>150</width>
+			<label>ADD</label>
+			<align>left</align>
+			<font>aller_4_24</font>
+			<focusedcolor>blue</focusedcolor>
+			<onup>11</onup>
+			<onleft>10</onleft>
+			<onright>10</onright>
+			<ondown>14</ondown>
+		</control>
+		<control type="button" id="14">
+			<description>remove</description>
+			<posy>160</posy>
+			<width>150</width>
+			<label>REMOVE</label>
+			<align>left</align>
+			<font>aller_4_24</font>
+			<focusedcolor>blue</focusedcolor>
+			<onup>13</onup>
+			<onleft>10</onleft>
+			<onright>10</onright>
+			<ondown>12</ondown>
+		</control>
+	</control>
+  
+	<control type="label" id="0">
+		<description>Name Label</description>
+		<posx>82</posx>
+		<posy>240</posy>
+		<width>420</width>
+		<font>aller_4_24</font>
+		<textcolor>blue</textcolor>
+		<align>center</align>
+		<label>Enter a name for this media source</label>
+	</control>
+	<control type="image">
+		<posx>106</posx>
+		<posy>275</posy>
+		<texture>keyboard_input.png</texture>
+    	<aspectratio>keep</aspectratio>
+	</control>
+  
+	<control type="button" id="12">
+		<description>Name</description>
+		<posx>115</posx>
+		<posy>273</posy>
+		<label>-</label>
+		<width>500</width>
+		<font>aller_2_20</font>
+    		<textcolor>greyd</textcolor>
+    		<focusedcolor>greyd</focusedcolor>
+    		<disabledcolor>greyd</disabledcolor>
+		<align>left</align>
+		<textoffsetx>0</textoffsetx>
+		<onup>10</onup>
+		<onleft>12</onleft>
+		<onright>18</onright>
+		<ondown>19</ondown>
+	</control>
+
+	<control type="button" id="18">
+		<description>Ok</description>
+		<posx>170</posx>
+		<posy>325</posy>
+		<label>OK</label>
+		<font>aller_4_24</font>
+		<textcolor>greyl</textcolor>
+    		<focusedcolor>blue</focusedcolor>
+    		<disabledcolor>greymd</disabledcolor>
+		<align>left</align>
+		<onup>12</onup>
+		<onleft>17</onleft>
+		<onright>20</onright>
+		<ondown>10</ondown>
+	</control>
+  	<control type="button" id="19">
+    		<description>Cancel</description>
+    		<posx>330</posx>
+    		<posy>325</posy>
+    		<label>CANCEL</label>
+		<font>aller_4_24</font>
+		<textcolor>greyl</textcolor>
+    		<focusedcolor>blue</focusedcolor>
+    		<disabledcolor>FF222222</disabledcolor>
+		<align>left</align>
+    		<onup>12</onup>
+   		<onleft>20</onleft>
+    		<onright>18</onright>
+    		<ondown>10</ondown>
+  	</control>
+</controls>
+</window>

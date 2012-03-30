@@ -1,0 +1,241 @@
+<window id="12">
+<defaultcontrol always="true">99</defaultcontrol>
+<allowoverlay>yes</allowoverlay>
+
+
+
+<controls>
+<!--Background-->  
+   	<control type="image">
+		<posx>0</posx>
+		<posy>0</posy>
+        <texture>settings_bg.png</texture>
+		<aspectratio>keep</aspectratio>
+	</control>
+	
+	<control type="label">
+		<posx>1140</posx>
+		<posy>35</posy>
+		<font>aller_4_28</font>
+		<align>left</align>
+    	<label>$INFO[System.Time]</label>
+		<textcolor>greym</textcolor>
+	</control> 
+	
+	<control type="label">
+	    <posx>30</posx>
+		<posy>50</posy>
+		<width>800</width>
+		<height>30</height>
+		<font>aller_4_38</font>
+		<textcolor>greym</textcolor>
+		<label>PREFERENCES</label>
+	</control>
+	
+	<control type="grouplist">
+    		<posx>30</posx>
+    		<posy>157</posy>
+		<width>300</width>
+    		<height>600</height>
+    		<itemgap>31</itemgap>
+    		<orientation>vertical</orientation>
+	    	<control type="label">
+        		<description>Custom Settings</description>
+	    		<width>150</width>
+	       		<label>[UPPERCASE]Skin[/UPPERCASE]</label>
+			<include>settingsbuttonlabel</include>
+			<visible>!Window.IsActive(56)</visible>
+		</control>
+	    	<control type="label">
+        		<description>Custom Settings</description>
+	    		<width>150</width>
+	       		<label>[UPPERCASE]Skin[/UPPERCASE]</label>
+			<textcolor>blue</textcolor>
+			<include>settingsbuttonlabel</include>
+			<visible>Window.IsActive(56)</visible>
+		</control>
+		<control type="label">
+			<description>Appearance</description>
+	    		<width>220</width>
+			<label>[UPPERCASE]Appearance[/UPPERCASE]</label>
+			<include>settingsbuttonlabel</include>
+			<visible>!Window.IsActive(AppearanceSettings)</visible>
+		</control>
+		<control type="label">
+			<description>Appearance</description>
+	    		<width>220</width>
+			<label>[UPPERCASE]Appearance[/UPPERCASE]</label>
+			<textcolor>blue</textcolor>
+			<include>settingsbuttonlabel</include>
+			<visible>Window.IsActive(AppearanceSettings)</visible>
+		</control>
+		<control type="label">
+			<description>Videos</description>
+	    		<width>142</width>
+			<label>[UPPERCASE]Videos[/UPPERCASE]</label>
+			<include>settingsbuttonlabel</include>
+			<visible>!Window.IsActive(MyVideosSettings)</visible>
+		</control>
+		<control type="label">
+			<description>Videos</description>
+	    		<width>142</width>
+			<label>[UPPERCASE]Videos[/UPPERCASE]</label>
+			<textcolor>blue</textcolor>
+			<include>settingsbuttonlabel</include>
+			<visible>Window.IsActive(MyVideosSettings)</visible>
+		</control>
+		<control type="label">
+			<description>Music</description>
+	    		<width>126</width>
+			<label>[UPPERCASE]Music[/UPPERCASE]</label>
+			<include>settingsbuttonlabel</include>
+			<visible>!Window.IsActive(MyMusicSettings)</visible>
+		</control>
+		<control type="label">
+			<description>Music</description>
+	    		<width>126</width>
+			<label>[UPPERCASE]Music[/UPPERCASE]</label>
+			<textcolor>blue</textcolor>
+			<include>settingsbuttonlabel</include>
+			<visible>Window.IsActive(MyMusicSettings)</visible>
+		</control>
+		<control type="label">
+			<description>Pictures</description>
+	    		<width>170</width>
+			<label>[UPPERCASE]Pictures[/UPPERCASE]</label>
+			<include>settingsbuttonlabel</include>
+			<visible>!Window.IsActive(MyPicturesSettings)</visible>
+		</control>
+		<control type="label">
+			<description>Pictures</description>
+	    		<width>170</width>
+			<label>[UPPERCASE]Pictures[/UPPERCASE]</label>
+			<textcolor>blue</textcolor>
+			<include>settingsbuttonlabel</include>
+			<visible>Window.IsActive(MyPicturesSettings)</visible>
+		</control>
+		<control type="label">
+			<description>System</description>
+	    		<width>150</width>
+			<label>[UPPERCASE]System[/UPPERCASE]</label>
+			<include>settingsbuttonlabel</include>
+			<visible>!Window.IsActive(SystemSettings)</visible>
+		</control>
+		<control type="label">
+			<description>System</description>
+	    		<width>150</width>
+			<label>[UPPERCASE]System[/UPPERCASE]</label>
+			<textcolor>blue</textcolor>
+			<include>settingsbuttonlabel</include>
+			<visible>Window.IsActive(SystemSettings)</visible>
+		</control>
+		<control type="label">
+			<description>Network</description>
+	    		<width>172</width>
+			<label>[UPPERCASE]Network[/UPPERCASE]</label>
+			<include>settingsbuttonlabel</include>
+			<visible>!Window.IsActive(18)</visible>
+		</control>
+		<control type="label">
+			<description>Network</description>
+	    		<width>172</width>
+			<label>[UPPERCASE]Network[/UPPERCASE]</label>
+			<textcolor>blue</textcolor>
+			<include>settingsbuttonlabel</include>
+			<visible>Window.IsActive(18)</visible>
+		</control>
+	</control>
+	
+
+	
+  	<!-- Linke Leiste-->
+	<control type="grouplist" id="3">
+		<animation effect="fade" time="200" start="0" end="100">WindowOpen</animation>
+		<animation effect="fade" time="200" start="100" end="0">WindowClose</animation>
+		<description>Button Area</description>
+    		<posx>335</posx>
+		<posy>157</posy>
+    		<width>350</width>
+    		<height>480</height>
+	    	<itemgap>31</itemgap>
+    		<onleft>XBMC.activatewindow(settings)</onleft>
+	    	<onright>5</onright>
+    		<onup>3</onup>
+	    	<ondown>3</ondown>
+    		<orientation>vertical</orientation>
+	</control>
+	
+  	<!-- Rechte Leiste-->
+	<control type="grouplist" id="5">
+		<animation effect="fade" time="200" start="0" end="100">WindowOpen</animation>
+		<animation effect="fade" time="200" start="100" end="0">WindowClose</animation>
+		<description>Control Area</description>
+    		<posx>590</posx>
+    		<posy>157</posy>
+    		<width>675</width>
+    		<height>480</height>
+    		<itemgap>31</itemgap>
+    		<onleft>3</onleft>
+    		<onright>998</onright>
+    		<onup>5</onup>
+    		<ondown>5</ondown>
+    		<orientation>vertical</orientation>
+	</control>
+	
+
+	<control type="button" id="7">
+    		<textcolor>greym</textcolor>
+		<focusedcolor>blue</focusedcolor>
+    		<font>aller_3_24</font>
+		<aligny>center</aligny>
+    		<align>left</align>
+   		<disabledcolor>greyd</disabledcolor>
+		<textoffsetx>20</textoffsetx>
+	</control>
+	<control type="radiobutton" id="8">
+		<description>Default Radio Button</description>
+    		<font>aller_3_24</font>
+    		<textcolor>greym</textcolor>
+		<focusedcolor>blue</focusedcolor>
+    		<align>left</align>
+   		<disabledcolor>greyd</disabledcolor>
+    		<pulseonselect>false</pulseonselect>
+    		<textureradiofocus>RadiobuttonFo.png</textureradiofocus>
+    		<textureradionofocus>RadiobuttonNF.png</textureradionofocus>
+		<textoffsetx>20</textoffsetx>
+		<radioposx>635</radioposx>
+	</control>
+	<control type="spincontrolex" id="9">
+		<description>Default Spin Control</description>
+    		<posx>0</posx>
+    		<posy>0</posy>
+    		<width>150</width>
+   	 	<height>30</height>
+    		<label>-</label>
+   	 	<font>aller_3_24</font>
+   	 	<textcolor>greym</textcolor>
+		<focusedcolor>blue</focusedcolor>
+    		<align>left</align>
+    		<font>aller_2_24</font>
+    		<textureup>ArrowUpNF.png</textureup>
+	    	<texturedown>ArrowDownNF.png</texturedown>
+    		<textureupfocus>ArrowUpFo.png</textureupfocus>
+	    	<texturedownfocus>ArrowDownFo.png</texturedownfocus>
+   		<disabledcolor>greyd</disabledcolor>
+    		<aligny>center</aligny>
+	    	<reverse>yes</reverse>
+    		<pulseonselect>false</pulseonselect>
+		<textoffsetx>20</textoffsetx>
+	</control>
+	<control type="button" id="10">
+		<width>290</width>
+		<font>aller_2_c_26</font>
+	    <textcolor>greym</textcolor>
+		<focusedcolor>blue</focusedcolor>
+		<aligny>center</aligny>
+   		<disabledcolor>FF444444</disabledcolor>
+    	<align>left</align>
+	</control>
+</controls>
+
+</window>

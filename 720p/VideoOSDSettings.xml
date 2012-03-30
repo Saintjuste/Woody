@@ -1,0 +1,91 @@
+<window id="123">
+<defaultcontrol always="true">5</defaultcontrol>
+<allowoverlay>yes</allowoverlay>
+
+<animation type="WindowOpen">
+		<effect type="zoom" start="99" end="100" center="auto" tween="back" time="200"/>
+		<effect type="fade" start="50" end="100" time="100"/>
+	</animation>
+	<animation type="WindowClose">
+		<effect type="zoom" start="100" end="95" center="auto" time="200"/>
+		<effect type="fade" start="100" end="0" time="100"/>
+	</animation>
+
+<coordinates>
+  <system>1</system>
+  <posx>30</posx>
+  <posy>130</posy>
+</coordinates>
+  
+<controls>
+    
+	<control type="image">
+		<posx>-23</posx>
+		<posy>30</posy>
+		<width>605</width>
+		<texture>VideoOSDSettings_bg.png</texture>
+		<aspectratio>keep</aspectratio>
+		<colordiffuse>FFFFFFFF</colordiffuse>
+	</control>
+
+  	
+  
+	<control type="label" id="2">
+		<description>Settings</description>
+		<posx>50</posx>
+		<posy>55</posy>
+		<width>420</width>
+		<font>aller_4_c_24</font>
+		<align>left</align>
+		<textcolor>greymd</textcolor>
+	</control>
+  
+  	<control type="grouplist" id="5">
+		<description>Control Area</description>
+		<posx>30</posx>
+		<posy>100</posy>
+		<width>490</width>
+		<height>350</height>
+		<itemgap>2</itemgap>
+		<orientation>vertical</orientation>
+		<pagecontrol>60</pagecontrol>
+		<onleft>28</onleft>
+		<onright>28</onright>
+		<onup>28</onup>
+		<ondown>28</ondown>
+	</control>
+
+	<control type="button" id="7">
+		<textcolor>greym</textcolor>
+		<focusedcolor>blue</focusedcolor>
+		<disabledcolor>blue</disabledcolor>
+		<align>left</align>
+		<font>aller_2_20</font>
+		<textoffsetx>20</textoffsetx>
+	</control>
+
+	<control type="radiobutton" id="8">
+		<textcolor>greym</textcolor>
+		<focusedcolor>blue</focusedcolor>
+		<disabledcolor>greyd</disabledcolor>
+		<textureradiofocus>RadiobuttonFo.png</textureradiofocus>
+		<textureradionofocus>RadiobuttonNF.png</textureradionofocus>
+		<font>aller_2_20</font>
+		<textoffsetx>20</textoffsetx>
+		<radioposx>452</radioposx>
+	</control>
+	
+	<control type="spincontrolex" id="9">
+		<font>aller_2_20</font>
+		<textcolor>greym</textcolor>
+		<focusedcolor>blue</focusedcolor>
+		<disabledcolor>blue</disabledcolor>
+		<textoffsetx>20</textoffsetx>
+	</control>
+	<control type="sliderex" id="10">
+		<textoffsetx>20</textoffsetx>
+	</control>
+  
+</controls>
+
+</window>

@@ -1,0 +1,301 @@
+<window id="2003">
+<defaultcontrol always="true">5</defaultcontrol>
+<allowoverlay>yes</allowoverlay>
+
+
+<include>fade</include>
+
+<coordinates>
+  <system>1</system>
+  <posx>0</posx>
+  <posy>0</posy>
+</coordinates>
+  
+<controls>
+  
+	<control type="image">
+		<posx>0</posx>
+		<posy>0</posy>
+		<width>1280</width>
+		<height>720</height>
+	    <texture>nowplayingbackground.png</texture>
+		<aspectratio>stretch</aspectratio>
+	</control>
+	<control type="image">
+		<posx>40</posx>
+		<posy>95</posy>
+		<aspectratio>keep</aspectratio>
+	    <texture border="20" background="true">frames/frame_movie_xlarge.png</texture>
+		<visible>Skin.HasSetting(BlueFrameInfo)</visible>
+	</control>
+	<control type="image">
+		<posx>47</posx>
+		<posy>101</posy>
+		<width>359</width>
+		<height>539</height>
+	    <texture diffuse="frames/mask_movie_xlarge.png" background="false">$INFO[ListItem.Thumb]</texture>
+		<aspectratio scalediffuse="false" align="center">scale</aspectratio>
+	</control>
+  
+	<control type="label">
+	    <posx>460</posx>
+		<posy>115</posy>
+		<width>800</width>
+		<height>30</height>
+		<font>aller_4_48</font>
+		<textcolor>greymd</textcolor>
+		<label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
+		<visible>!Window.IsActive(126)</visible>
+	</control>
+  	
+	<control type="textbox">
+    	<description>Plot</description>
+    	<posx>460</posx>
+    	<posy>178</posy>
+    	<width>370</width>
+    	<height>460</height>
+    	<spinposx>500</spinposx>
+    	<spinposy>-30</spinposy>
+    	<spinwidth>20</spinwidth>
+    	<spinheight>11</spinheight>
+    	<font>aller_2_20</font>
+		<label>$INFO[ListItem.Plot]</label>
+    	<textcolor>greyl</textcolor>
+	     	<autoscroll delay="5000" time="3000" repeat="10000">true</autoscroll>
+		<visible>!Window.IsActive(126)</visible>
+  	</control>
+	
+	<control type="label">
+		<posx>875</posx>
+		<posy>178</posy>
+		<width>950</width>
+		<font>aller_4_28</font>
+   		<label>[UPPERCASE]$INFO[ListItem.Year][/UPPERCASE]</label>
+		<textcolor>greymd</textcolor>
+		<visible>!Window.IsActive(126)</visible>
+	</control>
+	
+	
+	<control type="label">
+		<posx>875</posx>
+		<posy>205</posy>
+		<font>aller_1_17</font>
+ 		<label>[UPPERCASE]$INFO[ListItem.Duration][/UPPERCASE]</label>
+		<textcolor>greyl</textcolor>
+		<visible>!Window.IsActive(126)</visible>
+	</control>
+	<control type="label">
+		<posx>875</posx>
+		<posy>240</posy>
+		<font>aller_1_17</font>
+ 		<label>[UPPERCASE]$INFO[ListItem.Genre][/UPPERCASE]</label>
+		<textcolor>greyl</textcolor>
+		<visible>!Window.IsActive(126)</visible>
+	</control>
+	<control type="label">
+		<posx>875</posx>
+		<posy>275</posy>
+		<font>aller_1_17</font>
+		<textcolor>greyl</textcolor>
+ 		<label>[UPPERCASE]$INFO[ListItem.Director][/UPPERCASE]</label>
+		<visible>!Window.IsActive(126)</visible>
+	</control>
+		
+	<control type="list" id="50">
+		<visible>!Window.IsActive(126)</visible>
+		<posx>875</posx>
+		<posy>310</posy>
+      		<width>380</width>
+      		<height>169</height>
+      		<visible>true</visible>
+      		<orientation>vertical</orientation>
+      		<scrolltime>200</scrolltime>
+      		<itemlayout height="20" width="200">
+        		<control type="label">
+          			<posx>0</posx>
+          			<posy>0</posy>
+	          		<width>500</width>
+        	  		<height>30</height>
+					<font>aller_1_17</font>
+          			<label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
+          			<textcolor>greyl</textcolor>
+        		</control>
+		</itemlayout>
+		<focusedlayout height="20" width="200">
+		        <control type="label">
+			        <posx>0</posx>
+					<posy>0</posy>
+			        <width>500</width>
+			        <height>30</height>
+					<font>aller_1_17</font>
+			        <textcolor>greyl</textcolor>
+			        <label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
+		        </control>
+	      	</focusedlayout>
+	</control>
+
+  
+<control type="group">
+	<posx>0</posx>
+	<posy>20</posy>
+	<control type="button" id ="8">
+		<description>Play</description>
+		<label>PLAY</label>
+		<posx>875</posx>
+		<posy>400</posy>
+		<height>222</height>
+      	<width>90</width>
+		<onleft>12</onleft>
+		<onright>10</onright>
+		<align>left</align>
+    	<focusedcolor>blue</focusedcolor>
+    	<font>aller_1_24</font>
+	</control>
+	<control type="button" id ="10">
+		<description>Get Thumb</description>
+		<posx>970</posx>
+		<posy>400</posy>
+		<height>222</height>
+	  	<label>THUMBNAIL</label>
+      	<width>165</width>
+		<onleft>8</onleft>
+		<onright>12</onright>
+		<align>left</align>
+    	<focusedcolor>blue</focusedcolor>
+    	<font>aller_1_24</font>	
+	</control>
+    <control type="button" id="12">
+      	<description>FANART</description>
+		<posx>1140</posx>
+		<posy>400</posy>
+		<height>222</height>
+      	<label>FANART</label>
+      	<width>100</width>
+		<onleft>10</onleft>
+		<onright>8</onright>
+		<align>left</align>
+    	<focusedcolor>blue</focusedcolor>
+    	<font>aller_1_24</font>
+    </control>
+</control>
+
+	<control type="button" id ="5">
+		<description>Plot/Cast</description>
+		<posx>875</posx>
+		<posy>2000</posy>
+		<height>222</height>
+		<onup>8</onup>
+		<ondown>8</ondown>
+		<onright>8</onright>
+		<onleft>8</onleft>
+		<label>CAST</label>
+		<width>0</width>
+		<align>left</align>
+    	<focusedcolor>blue</focusedcolor>
+    	<font>aller_1_24</font>	
+		<onfocus>SendClick(movieinformation,5)</onfocus>
+	</control>
+	
+	<control type="image">
+		<posx>1080</posx>
+		<posy>175</posy>
+		<width>140</width>
+		<height>70</height>
+		<align>left</align>
+		<texture>$INFO[Listitem.Property(mediaTag-Studio),Studios/,.png]</texture>
+		<colordiffuse>greyl</colordiffuse>
+		<aspectratio align="center">keep</aspectratio>
+	</control>
+
+<control type="group">
+	<posx>0</posx>
+	<posy>30</posy>
+	<!--IMDB Rating-->
+	<control type="label">
+		<posx>1245</posx>
+		<posy>572</posy>
+		<font>aller_4_20</font>
+		<align>right</align>
+ 		<label>IMDB</label>
+		<textcolor>greyd</textcolor>
+	</control>
+	<control type="label">
+		<posx>1245</posx>
+		<posy>597</posy>
+		<width>90</width>
+		<scroll>false</scroll>
+		<font>aller_4_34</font>
+		<align>right</align>
+    	<label>$INFO[ListItem.Rating]</label>
+		<textcolor>greyl</textcolor>
+	</control>
+
+	<!--Media Flags-->
+	<control type="image">
+		<posx>867</posx>
+		<posy>540</posy>
+		<width>56</width>
+		<height>64</height>
+		<texture>$INFO[Listitem.Property(mediaTag-videoResolution),flags/resolution/,.png]</texture>
+		<colordiffuse>greyl</colordiffuse>
+		<aspectratio align="right">keep</aspectratio>
+	</control>
+	<control type="image">
+		<posx>935</posx>
+		<posy>540</posy>
+		<width>56</width>
+		<height>64</height>
+		<texture>$INFO[Listitem.Property(mediaTag-aspectRatio),flags/aspect/,.png]</texture>
+		<colordiffuse>greyl</colordiffuse>
+		<aspectratio align="right">keep</aspectratio>
+	</control>
+	<control type="image">
+		<posx>1007</posx>
+		<posy>540</posy>
+		<width>56</width>
+		<height>64</height>
+		<texture>$INFO[Listitem.Property(mediaTag-videoFrameRate),flags/videoframerate/,.png]</texture>
+		<colordiffuse>greyl</colordiffuse>
+		<aspectratio align="right">keep</aspectratio>
+	</control>
+	<control type="image">
+		<posx>1075</posx>
+		<posy>540</posy>
+		<width>80</width>
+		<height>64</height>
+		<texture>$INFO[Listitem.mpaa,flags/contentrating/,.png]</texture>
+		<colordiffuse>greyl</colordiffuse>
+		<aspectratio align="left">keep</aspectratio>
+	</control>
+	<control type="image">
+		<posx>874</posx>
+		<posy>585</posy>
+		<width>76</width>
+		<height>64</height>
+		<texture>$INFO[Listitem.Property(mediaTag-videoCodec),flags/type/,.png]</texture>
+		<colordiffuse>greyl</colordiffuse>
+		<aspectratio align="right">keep</aspectratio>
+	</control>
+	<control type="image">
+		<posx>975</posx>
+		<posy>585</posy>
+		<width>76</width>
+		<height>64</height>
+		<texture>$INFO[Listitem.Property(mediaTag-audioCodec),flags/type/,.png]</texture>
+		<colordiffuse>greyl</colordiffuse>
+		<aspectratio align="right">keep</aspectratio>
+	</control>
+	<control type="image">
+		<posx>1075</posx>
+		<posy>585</posy>
+		<width>56</width>
+		<height>64</height>
+		<texture>$INFO[Listitem.Property(mediaTag-audioChannels),flags/audiochannels/,.png]</texture>
+		<colordiffuse>greyl</colordiffuse>
+		<aspectratio align="left">keep</aspectratio>
+	</control>
+</control>
+
+</controls>
+  
+</window>

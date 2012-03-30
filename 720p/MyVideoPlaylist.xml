@@ -1,0 +1,139 @@
+<window id="6">
+<defaultcontrol always="true">50</defaultcontrol>
+<allowoverlay>yes</allowoverlay>
+  
+
+
+<controls>  
+
+	<control type="image">
+		<posx>0</posx>
+		<posy>0</posy>
+	     <texture>videoplaylist_bg.png</texture>
+		<aspectratio>keep</aspectratio>
+	</control>
+	
+	<control type="image">
+		<posx>40</posx>
+		<posy>95</posy>
+		<aspectratio>keep</aspectratio>
+	    <texture border="20" background="true">frames/frame_movie_xlarge.png</texture>
+		<visible>Skin.HasSetting(BlueFrameInfo)</visible>
+	</control>
+	<control type="image">
+		<posx>47</posx>
+		<posy>101</posy>
+		<width>359</width>
+		<height>539</height>
+	    <texture diffuse="frames/mask_movie_xlarge.png" background="false">$INFO[ListItem.Thumb]</texture>
+		<aspectratio scalediffuse="false" align="center">scale</aspectratio>
+	</control>
+
+
+	<control type="label">
+	        <posx>460</posx>
+		<posy>115</posy>
+		<width>800</width>
+		<height>30</height>
+		<font>aller_4_48</font>
+		<textcolor>greyd</textcolor>
+		<label>VIDEO PLAYLIST</label>
+	</control>
+
+	<control type="grouplist" id="9000">
+		<posx>1000</posx>
+		<posy>190</posy>
+		<width>400</width>
+    	<height>480</height>
+		<itemgap>2</itemgap>
+    	<onleft>50</onleft>
+    	<onright>50</onright>
+		<onup>9000</onup>
+    	<ondown>9000</ondown>
+		<orientation>vertical</orientation>
+    	<control type="button" id="20">
+			<description>shuffle</description>
+      		<label>Shuffle</label>
+			<align>left</align>
+			<textcolor>greyl</textcolor>
+	    	<focusedcolor>blue</focusedcolor>
+    		<disabledcolor>greyd</disabledcolor>
+    		<font>aller_2_24</font>
+    	</control>
+		<control type="togglebutton" id="28">
+			<description>Randomize button</description>
+			<label>Randomize: On</label>
+			<altlabel>Randomize: Off</altlabel>
+			<align>left</align>
+			<width>400</width>
+			<textcolor>greyl</textcolor>
+	    	<focusedcolor>blue</focusedcolor>
+    		<disabledcolor>greyd</disabledcolor>
+    		<font>aller_2_24</font>
+		</control>
+    	<control type="button" id="26">
+      		<description>repeat</description>
+      		<label>-</label>
+			<textcolor>greyl</textcolor>
+    		<focusedcolor>blue</focusedcolor>
+    		<disabledcolor>greyd</disabledcolor>
+			<align>left</align>
+    		<font>aller_2_24</font>
+    	</control>
+    	<control type="button" id="21">
+      		<description>save</description>
+      		<label>Save</label>
+			<textcolor>greyl</textcolor>
+    		<focusedcolor>blue</focusedcolor>
+    		<disabledcolor>greyd</disabledcolor>
+			<align>left</align>
+    		<font>aller_2_24</font>
+    	</control>
+    	<control type="button" id="22">
+      		<description>clear</description>
+      		<label>Clear</label>
+			<textcolor>greyl</textcolor>
+    		<focusedcolor>blue</focusedcolor>
+    		<disabledcolor>greyd</disabledcolor>
+			<align>left</align>
+    		<font>aller_2_24</font>
+    	</control>
+	</control>
+    
+	<control type="list" id="50">
+			<posx>360</posx>
+			<posy>190</posy>
+			<width>1000</width>
+			<height>430</height>
+			<onleft>9000</onleft>
+			<onright>9000</onright>
+			<onup>50</onup>
+			<ondown>50</ondown>
+			<scrolltime>200</scrolltime>
+      			<itemlayout height="45">
+        		<control type="label">
+          			<posx>100</posx>
+		         	<width>1000</width>
+        		 	<height>30</height>
+					<font>aller_3_24</font>
+          			<label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
+          			<textcolor>greyl</textcolor>
+		          	<scroll>false</scroll>
+        		</control>
+      			</itemlayout>
+				<focusedlayout height="45">
+        		<control type="label">
+          			<posx>100</posx>
+		         	<width>1000</width>
+        		 	<height>30</height>
+					<font>aller_3_24</font>
+          			<label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
+          			<textcolor>blue</textcolor>
+		          	<scroll>false</scroll>
+        		</control>
+		      </focusedlayout>
+		</control>
+    
+</controls>
+
+</window>
