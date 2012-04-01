@@ -2,7 +2,7 @@
 <defaultcontrol always="true">6000</defaultcontrol>
 <onunload>SetFocus(50)</onunload>
 <allowoverlay>yes</allowoverlay>
-<type>dialog</type>
+<type>dialog</type> 
 
   <animation type="WindowOpen">
 		<effect type="zoom" start="80" end="100" center="640,360" tween="back" time="300"/>

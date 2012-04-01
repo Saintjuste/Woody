@@ -2,7 +2,7 @@
 <defaultcontrol always="true">202</defaultcontrol>
 <allowoverlay>yes</allowoverlay>
   
-<controls>
+<controls> 
    	<control type="image">
 		<posx>0</posx>
 		<posy>0</posy>
@@ -183,7 +183,7 @@
 			<posx>50</posx>
 			<posy>100</posy>
 			<width>630</width>
-			<label>Enable Home Screen Slideshow</label>
+			<label>Enable slideshow</label>
 			<font>aller_3_24</font>
 			<textcolor>greyl</textcolor>
 			<focusedcolor>blue</focusedcolor>
@@ -201,7 +201,7 @@
 			<posx>50</posx>
 			<posy>100</posy>
 			<width>630</width>
-			<label>Turn off Tutorial on Home Screen</label>
+			<label>Turn off tutorial</label>
 			<font>aller_3_24</font>
 			<textcolor>greyl</textcolor>
 			<focusedcolor>blue</focusedcolor>
@@ -211,6 +211,24 @@
 			<textureradionofocus>RadiobuttonNF.png</textureradionofocus>
 			<onclick>Skin.ToggleSetting(tutorial)</onclick>
 			<selected>!Skin.HasSetting(tutorial)</selected>
+			<visible>ControlGroup(202).HasFocus(-3)</visible>
+			<textoffsetx>20</textoffsetx>
+			<radioposx>635</radioposx>
+		</control>
+		<control type="radiobutton" id="12">
+			<posx>50</posx>
+			<posy>100</posy>
+			<width>630</width>
+			<label>Show "Recently Added" first</label>
+			<font>aller_3_24</font>
+			<textcolor>greyl</textcolor>
+			<focusedcolor>blue</focusedcolor>
+			<align>left</align>
+			<disabledcolor>greyd</disabledcolor>
+			<textureradiofocus>RadiobuttonFo.png</textureradiofocus>
+			<textureradionofocus>RadiobuttonNF.png</textureradionofocus>
+			<onclick>Skin.ToggleSetting(recentlyaddedfirst)</onclick>
+			<selected>Skin.HasSetting(recentlyaddedfirst)</selected>
 			<visible>ControlGroup(202).HasFocus(-3)</visible>
 			<textoffsetx>20</textoffsetx>
 			<radioposx>635</radioposx>

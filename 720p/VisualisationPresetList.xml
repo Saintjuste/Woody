@@ -12,7 +12,7 @@
     
 <include>DialogBack</include>
 
-  <control type="label">
+  <control type="label"> 
 	  <include>DialogID</include>
 	  <label>VisualisationPresetList.xml</label>
   </control>

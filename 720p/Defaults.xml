@@ -1,6 +1,6 @@
 <includes>
   
-	<default type="label">
+	<default type="label"> 
 		<description>heading</description>
 		<width>400</width>
 		<font>aller_4_30</font>

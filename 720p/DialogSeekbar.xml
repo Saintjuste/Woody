@@ -3,7 +3,7 @@
 <allowoverlay>yes</allowoverlay>
 
 <visible>!Window.IsActive(0) + !Window.IsActive(50) + !Player.Caching + !Window.IsActive(2901) + [player.seeking | player.displayafterSeek | player.paused | player.forwarding | player.rewinding]</visible>
-
+ 
 	<animation type="WindowOpen">
 		<effect type="zoom" start="99" end="100" center="auto" tween="back" time="200"/>
 		<effect type="fade" start="50" end="100" time="100"/>

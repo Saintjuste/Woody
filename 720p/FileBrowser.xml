@@ -1,7 +1,7 @@
 <window id="126">
 <defaultcontrol always="true">450</defaultcontrol>
 <allowoverlay>yes</allowoverlay>
-
+ 
  <coordinates>
   <system>1</system>
   <origin x="450" y="50">Window.IsActive(2003)</origin>

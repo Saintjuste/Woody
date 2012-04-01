@@ -1,5 +1,5 @@
 <includes>
-  
+   
 <include file="Defaults.xml" />
 <include file="CommonViews.xml" />
 <include file="ViewsVideo.xml" />
@@ -135,7 +135,7 @@
 		<randomize>true</randomize>
 		<loop>yes</loop>
 	</control>
-	<!-- on deck -->
+	<!-- on deck bg-->
 	<control type="multiimage">
 		<visible>Control.HasFocus(11001)</visible>
 		<animation effect="fade" end="100" time="300" delay="0">Visible</animation>
@@ -148,7 +148,7 @@
 		<height>720</height>
 		<fadetime>400</fadetime>
 	</control>
-	<!-- recently added -->
+	<!-- recently added bg-->
 	<control type="multiimage">
 		<visible>Control.HasFocus(11000)</visible>
 		<animation effect="fade" end="100" time="300" delay="0">Visible</animation>
@@ -161,7 +161,7 @@
 		<height>720</height>
 		<fadetime>400</fadetime>
 	</control>
-	<!-- recently used -->
+	<!-- recently used bg-->
 	<control type="multiimage">
 		<visible>ControlGroup(5002).HasFocus</visible>
 		<animation effect="fade" end="100" time="300" delay="0">Visible</animation>
@@ -194,7 +194,721 @@
 	</control>
 </include>
 
+<!-------------------------------------On Deck First-------------------------------->
+<include name="ondeckfirst">
+<control type="label">
+		<visible allowhiddenfocus="true">Control.IsVisible(11000) + Container(11000).ListItem(0).Type(movie) + [Control.HasFocus(11000) | !Control.IsVisible(11001)]</visible>
+		<animation effect="fade" start="0" end="100" time="200" delay="0">Visible</animation>
+		<posx>415</posx>
+		<posy>426</posy>
+		<width>450</width>
+		<label>ADDED</label>
+		<font>aller_2_24</font>
+		<textcolor>99666666</textcolor>
+        <scroll>false</scroll>
+        <align>center</align>
+	</control>
+	<control type="label">
+		<visible allowhiddenfocus="true">Control.IsVisible(11001) + Container(11001).ListItem(0).Type(movie) + !Control.HasFocus(11000)</visible>
+		<animation effect="fade" start="0" end="100" time="200" delay="0">Visible</animation>
+		<posx>415</posx>
+		<posy>426</posy>
+		<width>450</width>
+		<label>ON DECK</label>
+		<font>aller_2_24</font>
+		<textcolor>99666666</textcolor>
+        <scroll>false</scroll>
+        <align>center</align>
+	</control>
+	<control type="label">
+		<visible allowhiddenfocus="true">Control.IsVisible(11001) + Container(11001).ListItem(0).Type(episode) + !Control.HasFocus(11000)</visible>
+		<animation effect="fade" start="0" end="100" time="200" delay="0">Visible</animation>
+		<posx>415</posx>
+		<posy>426</posy>
+		<width>450</width>
+		<label>ON DECK</label>
+		<font>aller_2_24</font>
+      	<textcolor>99666666</textcolor>
+      	<scroll>false</scroll>
+        <align>center</align>
+	</control>
+	<control type="label">
+		<visible allowhiddenfocus="true">Control.IsVisible(11000) + Container(11000).ListItem(0).Type(episode) + [Control.HasFocus(11000) | !Control.IsVisible(11001)]</visible>
+		<animation effect="fade" start="0" end="100" time="200" delay="0">Visible</animation>
+		<posx>415</posx>
+		<posy>426</posy>
+		<width>450</width>
+		<label>ADDED</label>
+		<font>aller_2_24</font>
+		<textcolor>99666666</textcolor>
+		<scroll>false</scroll>
+        <align>center</align>
+	</control>
+<control type="grouplist">
+	<animation effect="fade" start="0" end="100" time="400" delay="0">Visible</animation>
+	<visible>Control.IsVisible(11000) | Control.IsVisible(11001)</visible>
+	<posx>-5</posx>
+	<posy>540</posy>
+	<height>170</height>
+	<itemgap>0</itemgap>
+	<onup>300</onup>
+	<control type="list" id="11001">
+		<posx>0</posx>
+		<posy>0</posy>
+		<width>1290</width>
+		<height>170</height>
+		<onup>300</onup>
+		<ondown>11000</ondown>
+		<scrolltime>200</scrolltime>
+		<orientation>horizontal</orientation>
+		<itemlayout height="200" width="138" condition="Container(11001).ListItem(0).Type(movie)">
+			<control type="image">
+				<posx>41</posx>
+				<posy>16</posy>
+				<aspectratio>keep</aspectratio>
+				<texture border="20" background="true">frames/uframe_movie_small.png</texture>
+			</control>
+			<control type="image">
+				<posx>47</posx>
+				<posy>21</posy>
+				<width>93</width>
+				<height>138</height>
+		        <texture diffuse="frames/mask_movie_small.png" background="false">$INFO[ListItem.Thumb]</texture>
+				<aspectratio scalediffuse="false" align="center">scale</aspectratio>
+			</control>
+		</itemlayout>
+		<itemlayout height="200" width="138" condition="Container(11001).ListItem(0).Type(episode)">
+			<control type="image">
+				<posx>41</posx>
+				<posy>16</posy>
+				<aspectratio>keep</aspectratio>
+				<texture border="20" background="true">frames/uframe_movie_small.png</texture>
+			</control>
+			<control type="image">
+				<posx>47</posx>
+				<posy>21</posy>
+				<width>93</width>
+				<height>138</height>
+				<texture diffuse="frames/mask_movie_small.png" background="false">$INFO[ListItem.GrandparentThumb]</texture>
+				<aspectratio scalediffuse="false" align="center">scale</aspectratio>
+			</control>
+			<control type="image">
+				<posx>54</posx>
+				<posy>132</posy>
+		        <texture>home_posterlabel.png</texture>
+				<aspectratio>keep</aspectratio>
+			</control>
+			<control type="label">
+				<posx>94</posx>
+				<posy>132</posy>
+				<height>20</height>
+				<width>100</width>
+				<font>aller_3_13</font>
+				<label>S$INFO[ListItem.Season] - E$INFO[ListItem.Episode]</label>
+				<align>center</align>
+			</control>
+		</itemlayout>
+		<focusedlayout height="200" width="138" condition="Container(11001).ListItem(0).Type(movie)">
+			<control type="image">
+				<posx>41</posx>
+				<posy>16</posy>
+				<width></width>
+				<height></height>
+				<aspectratio>keep</aspectratio>
+				<texture border="20" background="true">frames/frame_movie_small.png</texture>
+			</control>
+			<control type="image">
+				<posx>47</posx>
+				<posy>21</posy>
+				<width>93</width>
+				<height>138</height>
+				<texture diffuse="frames/mask_movie_small.png" background="false">$INFO[ListItem.Thumb]</texture>
+				<aspectratio scalediffuse="false" align="center">scale</aspectratio>
+			</control>
+	    </focusedlayout>
+		<focusedlayout height="200" width="138" condition="Container(11001).ListItem(0).Type(episode)">
+			<control type="image">
+				<posx>41</posx>
+				<posy>16</posy>
+				<width></width>
+				<height></height>
+				<aspectratio>keep</aspectratio>
+				<texture border="20" background="true">frames/frame_movie_small.png</texture>
+			</control>
+			<control type="image">
+				<posx>47</posx>
+				<posy>21</posy>
+				<width>93</width>
+				<height>138</height>
+				<texture diffuse="frames/mask_movie_small.png" background="false">$INFO[ListItem.GrandparentThumb]</texture>
+				<aspectratio scalediffuse="false" align="center">scale</aspectratio>
+			</control>
+			<control type="image">
+				<posx>54</posx>
+				<posy>132</posy>
+		        <texture>home_posterlabel.png</texture>
+				<aspectratio>keep</aspectratio>
+			</control>
+			<control type="label">
+				<posx>94</posx>
+				<posy>132</posy>
+				<height>20</height>
+				<width>100</width>
+				<font>aller_3_13</font>
+				<label>S$INFO[ListItem.Season] - E$INFO[ListItem.Episode]</label>
+				<align>center</align>
+			</control>
+	    </focusedlayout>
+	</control>
+	<control type="list" id="11000">
+		<posx>0</posx>
+		<posy>0</posy>
+		<width>1290</width>
+		<height>170</height>
+		<onup>11001</onup>
+		<ondown>-</ondown>
+		<scrolltime>200</scrolltime>
+		<orientation>horizontal</orientation>
+		<itemlayout height="200" width="138" condition="Container(11000).ListItem(0).Type(movie)">
+			<control type="image">
+				<posx>41</posx>
+				<posy>16</posy>
+				<aspectratio>keep</aspectratio>
+				<texture border="20" background="true">frames/uframe_movie_small.png</texture>
+			</control>
+			<control type="image">
+				<posx>47</posx>
+				<posy>21</posy>
+				<width>93</width>
+				<height>138</height>
+		        <texture diffuse="frames/mask_movie_small.png" background="false">$INFO[ListItem.Thumb]</texture>
+				<aspectratio scalediffuse="false" align="center">scale</aspectratio>
+			</control>
+		</itemlayout>
+		<itemlayout height="200" width="138" condition="Container(11000).ListItem(0).Type(episode)">
+			<control type="image">
+				<posx>41</posx>
+				<posy>16</posy>
+				<aspectratio>keep</aspectratio>
+				<texture border="20" background="true">frames/uframe_movie_small.png</texture>
+			</control>
+			<control type="image">
+				<posx>47</posx>
+				<posy>21</posy>
+				<width>93</width>
+				<height>138</height>
+				<texture diffuse="frames/mask_movie_small.png" background="false">$INFO[ListItem.GrandparentThumb]</texture>
+				<aspectratio scalediffuse="false" align="center">scale</aspectratio>
+			</control>
+			<control type="image">
+				<posx>54</posx>
+				<posy>132</posy>
+		        <texture>home_posterlabel.png</texture>
+				<aspectratio>keep</aspectratio>
+			</control>
+			<control type="label">
+				<posx>94</posx>
+				<posy>132</posy>
+				<height>20</height>
+				<width>100</width>
+				<font>aller_3_13</font>
+				<label>S$INFO[ListItem.Season] - E$INFO[ListItem.Episode]</label>
+				<align>center</align>
+			</control>
+		</itemlayout>
+		<itemlayout height="200" width="158" condition="Container(11000).ListItem(0).Type(album)">
+			<control type="image">
+				<posx>34</posx>
+				<posy>28</posy>
+				<height>-</height>
+				<width>-</width>
+				<aspectratio>keep</aspectratio>
+			    <texture>frames/uframe_album_small.png</texture>
+			</control>
+			<control type="image">
+				<posx>40</posx>
+				<posy>33</posy>
+				<width>111</width>
+				<height>111</height>
+				<align>center</align>
+				<aligny>center</aligny>
+				<texture diffuse="frames/mask_album_small.png">$INFO[ListItem.Thumb]</texture>
+				<aspectratio scalediffuse="false" align="center">scale</aspectratio>
+			</control>
+		</itemlayout>
+		<itemlayout height="200" width="158" condition="Container(11000).ListItem(0).Type(photo)">
+			<control type="image">
+				<posx>34</posx>
+				<posy>28</posy>
+				<height>-</height>
+				<width>-</width>
+				<aspectratio>keep</aspectratio>
+			    <texture>frames/uframe_album_small.png</texture>
+			</control>
+			<control type="image">
+				<posx>40</posx>
+				<posy>33</posy>
+				<width>111</width>
+				<height>111</height>
+				<align>center</align>
+				<aligny>center</aligny>
+				<texture diffuse="frames/mask_album_small.png">$INFO[ListItem.Thumb]</texture>
+				<aspectratio scalediffuse="false" align="center">scale</aspectratio>
+			</control>
+		</itemlayout>
+		<focusedlayout height="200" width="138" condition="Container(11000).ListItem(0).Type(movie)">
+			<control type="image">
+				<posx>41</posx>
+				<posy>16</posy>
+				<width></width>
+				<height></height>
+				<aspectratio>keep</aspectratio>
+				<texture border="20" background="true">frames/frame_movie_small.png</texture>
+			</control>
+			<control type="image">
+				<posx>47</posx>
+				<posy>21</posy>
+				<width>93</width>
+				<height>138</height>
+				<texture diffuse="frames/mask_movie_small.png" background="false">$INFO[ListItem.Thumb]</texture>
+				<aspectratio scalediffuse="false" align="center">scale</aspectratio>
+			</control>
+	      	</focusedlayout>
+		<focusedlayout height="200" width="138" condition="Container(11000).ListItem(0).Type(episode)">
+			<control type="image">
+				<posx>41</posx>
+				<posy>16</posy>
+				<width></width>
+				<height></height>
+				<aspectratio>keep</aspectratio>
+				<texture border="20" background="true">frames/frame_movie_small.png</texture>
+			</control>
+			<control type="image">
+				<posx>47</posx>
+				<posy>21</posy>
+				<width>93</width>
+				<height>138</height>
+				<texture diffuse="frames/mask_movie_small.png" background="false">$INFO[ListItem.GrandparentThumb]</texture>
+				<aspectratio scalediffuse="false" align="center">scale</aspectratio>
+			</control>
+			<control type="image">
+				<posx>54</posx>
+				<posy>132</posy>
+		        <texture>home_posterlabel.png</texture>
+				<aspectratio>keep</aspectratio>
+			</control>
+			<control type="label">
+				<posx>94</posx>
+				<posy>132</posy>
+				<height>20</height>
+				<width>100</width>
+				<font>aller_3_13</font>
+				<label>S$INFO[ListItem.Season] - E$INFO[ListItem.Episode]</label>
+				<align>center</align>
+			</control>
+	    </focusedlayout>
+		<focusedlayout height="200" width="158" condition="Container(11000).ListItem(0).Type(album)">
+			<control type="image">
+				<posx>34</posx>
+				<posy>28</posy>
+				<height>-</height>
+				<width>-</width>
+				<aspectratio>keep</aspectratio>
+			    <texture>frames/frame_album_small.png</texture>
+			</control>
+			<control type="image">
+				<posx>40</posx>
+				<posy>33</posy>
+				<width>111</width>
+				<height>111</height>
+				<align>center</align>
+				<aligny>center</aligny>
+				<texture diffuse="frames/mask_album_small.png">$INFO[ListItem.Thumb]</texture>
+				<aspectratio scalediffuse="false" align="center">scale</aspectratio>
+			</control>
+		</focusedlayout>
+		<focusedlayout height="200" width="158" condition="Container(11000).ListItem(0).Type(photo)">
+			<control type="image">
+				<posx>34</posx>
+				<posy>28</posy>
+				<height>-</height>
+				<width>-</width>
+				<aspectratio>keep</aspectratio>
+			    <texture>frames/frame_album_small.png</texture>
+			</control>
+			<control type="image">
+				<posx>40</posx>
+				<posy>33</posy>
+				<width>111</width>
+				<height>111</height>
+				<align>center</align>
+				<aligny>center</aligny>
+				<texture diffuse="frames/mask_album_small.png">$INFO[ListItem.Thumb]</texture>
+				<aspectratio scalediffuse="false" align="center">scale</aspectratio>
+			</control>
+		</focusedlayout>
+	</control>
+</control>
+</include>
 
+<!-------------------------------------Recently Added First-------------------------------->
+<include name="recentlyaddedfirst">
+<control type="label">
+		<visible allowhiddenfocus="true">Control.IsVisible(11000) + Container(11000).ListItem(0).Type(movie) + !Control.HasFocus(11001)</visible>
+		<animation effect="fade" start="0" end="100" time="200" delay="0">Visible</animation>
+		<posx>415</posx>
+		<posy>426</posy>
+		<width>450</width>
+		<label>ADDED</label>
+		<font>aller_2_24</font>
+		<textcolor>99666666</textcolor>
+        <scroll>false</scroll>
+        <align>center</align>
+	</control>
+	<control type="label">
+		<visible allowhiddenfocus="true">Control.IsVisible(11001) + Container(11001).ListItem(0).Type(movie) + [Control.HasFocus(11001) | !Control.IsVisible(11000)]</visible>
+		<animation effect="fade" start="0" end="100" time="200" delay="0">Visible</animation>
+		<posx>415</posx>
+		<posy>426</posy>
+		<width>450</width>
+		<label>ON DECK</label>
+		<font>aller_2_24</font>
+		<textcolor>99666666</textcolor>
+        <scroll>false</scroll>
+        <align>center</align>
+	</control>
+	<control type="label">
+		<visible allowhiddenfocus="true">Control.IsVisible(11001) + Container(11001).ListItem(0).Type(episode) + [Control.HasFocus(11001) | !Control.IsVisible(11000)]</visible>
+		<animation effect="fade" start="0" end="100" time="200" delay="0">Visible</animation>
+		<posx>415</posx>
+		<posy>426</posy>
+		<width>450</width>
+		<label>ON DECK</label>
+		<font>aller_2_24</font>
+      	<textcolor>99666666</textcolor>
+      	<scroll>false</scroll>
+        <align>center</align>
+	</control>
+	<control type="label">
+		<visible allowhiddenfocus="true">Control.IsVisible(11000) + Container(11000).ListItem(0).Type(episode) + !Control.HasFocus(11001)</visible>
+		<animation effect="fade" start="0" end="100" time="200" delay="0">Visible</animation>
+		<posx>415</posx>
+		<posy>426</posy>
+		<width>450</width>
+		<label>ADDED</label>
+		<font>aller_2_24</font>
+		<textcolor>99666666</textcolor>
+		<scroll>false</scroll>
+        <align>center</align>
+	</control>
+
+<control type="grouplist">
+	<animation effect="fade" start="0" end="100" time="400" delay="0">Visible</animation>
+	<visible>Control.IsVisible(11000) | Control.IsVisible(11001)</visible>
+	<posx>-5</posx>
+	<posy>540</posy>
+	<height>170</height>
+	<itemgap>0</itemgap>
+	<onup>300</onup>
+	<control type="list" id="11000">
+		<posx>0</posx>
+		<posy>0</posy>
+		<width>1290</width>
+		<height>170</height>
+		<onup>300</onup>
+		<ondown>11000</ondown>
+		<scrolltime>200</scrolltime>
+		<orientation>horizontal</orientation>
+		<itemlayout height="200" width="138" condition="Container(11000).ListItem(0).Type(movie)">
+			<control type="image">
+				<posx>41</posx>
+				<posy>16</posy>
+				<aspectratio>keep</aspectratio>
+				<texture border="20" background="true">frames/uframe_movie_small.png</texture>
+			</control>
+			<control type="image">
+				<posx>47</posx>
+				<posy>21</posy>
+				<width>93</width>
+				<height>138</height>
+		        <texture diffuse="frames/mask_movie_small.png" background="false">$INFO[ListItem.Thumb]</texture>
+				<aspectratio scalediffuse="false" align="center">scale</aspectratio>
+			</control>
+		</itemlayout>
+		<itemlayout height="200" width="138" condition="Container(11000).ListItem(0).Type(episode)">
+			<control type="image">
+				<posx>41</posx>
+				<posy>16</posy>
+				<aspectratio>keep</aspectratio>
+				<texture border="20" background="true">frames/uframe_movie_small.png</texture>
+			</control>
+			<control type="image">
+				<posx>47</posx>
+				<posy>21</posy>
+				<width>93</width>
+				<height>138</height>
+				<texture diffuse="frames/mask_movie_small.png" background="false">$INFO[ListItem.GrandparentThumb]</texture>
+				<aspectratio scalediffuse="false" align="center">scale</aspectratio>
+			</control>
+			<control type="image">
+				<posx>54</posx>
+				<posy>132</posy>
+		        <texture>home_posterlabel.png</texture>
+				<aspectratio>keep</aspectratio>
+			</control>
+			<control type="label">
+				<posx>94</posx>
+				<posy>132</posy>
+				<height>20</height>
+				<width>100</width>
+				<font>aller_3_13</font>
+				<label>S$INFO[ListItem.Season] - E$INFO[ListItem.Episode]</label>
+				<align>center</align>
+			</control>
+		</itemlayout>
+		<itemlayout height="200" width="158" condition="Container(11000).ListItem(0).Type(album)">
+			<control type="image">
+				<posx>34</posx>
+				<posy>28</posy>
+				<height>-</height>
+				<width>-</width>
+				<aspectratio>keep</aspectratio>
+			    <texture>frames/uframe_album_small.png</texture>
+			</control>
+			<control type="image">
+				<posx>40</posx>
+				<posy>33</posy>
+				<width>111</width>
+				<height>111</height>
+				<align>center</align>
+				<aligny>center</aligny>
+				<texture diffuse="frames/mask_album_small.png">$INFO[ListItem.Thumb]</texture>
+				<aspectratio scalediffuse="false" align="center">scale</aspectratio>
+			</control>
+		</itemlayout>
+		<itemlayout height="200" width="158" condition="Container(11000).ListItem(0).Type(photo)">
+			<control type="image">
+				<posx>34</posx>
+				<posy>28</posy>
+				<height>-</height>
+				<width>-</width>
+				<aspectratio>keep</aspectratio>
+			    <texture>frames/uframe_album_small.png</texture>
+			</control>
+			<control type="image">
+				<posx>40</posx>
+				<posy>33</posy>
+				<width>111</width>
+				<height>111</height>
+				<align>center</align>
+				<aligny>center</aligny>
+				<texture diffuse="frames/mask_album_small.png">$INFO[ListItem.Thumb]</texture>
+				<aspectratio scalediffuse="false" align="center">scale</aspectratio>
+			</control>
+		</itemlayout>
+		<focusedlayout height="200" width="138" condition="Container(11000).ListItem(0).Type(movie)">
+			<control type="image">
+				<posx>41</posx>
+				<posy>16</posy>
+				<width></width>
+				<height></height>
+				<aspectratio>keep</aspectratio>
+				<texture border="20" background="true">frames/frame_movie_small.png</texture>
+			</control>
+			<control type="image">
+				<posx>47</posx>
+				<posy>21</posy>
+				<width>93</width>
+				<height>138</height>
+				<texture diffuse="frames/mask_movie_small.png" background="false">$INFO[ListItem.Thumb]</texture>
+				<aspectratio scalediffuse="false" align="center">scale</aspectratio>
+			</control>
+	      	</focusedlayout>
+		<focusedlayout height="200" width="138" condition="Container(11000).ListItem(0).Type(episode)">
+			<control type="image">
+				<posx>41</posx>
+				<posy>16</posy>
+				<width></width>
+				<height></height>
+				<aspectratio>keep</aspectratio>
+				<texture border="20" background="true">frames/frame_movie_small.png</texture>
+			</control>
+			<control type="image">
+				<posx>47</posx>
+				<posy>21</posy>
+				<width>93</width>
+				<height>138</height>
+				<texture diffuse="frames/mask_movie_small.png" background="false">$INFO[ListItem.GrandparentThumb]</texture>
+				<aspectratio scalediffuse="false" align="center">scale</aspectratio>
+			</control>
+			<control type="image">
+				<posx>54</posx>
+				<posy>132</posy>
+		        <texture>home_posterlabel.png</texture>
+				<aspectratio>keep</aspectratio>
+			</control>
+			<control type="label">
+				<posx>94</posx>
+				<posy>132</posy>
+				<height>20</height>
+				<width>100</width>
+				<font>aller_3_13</font>
+				<label>S$INFO[ListItem.Season] - E$INFO[ListItem.Episode]</label>
+				<align>center</align>
+			</control>
+	    </focusedlayout>
+		<focusedlayout height="200" width="158" condition="Container(11000).ListItem(0).Type(album)">
+			<control type="image">
+				<posx>34</posx>
+				<posy>28</posy>
+				<height>-</height>
+				<width>-</width>
+				<aspectratio>keep</aspectratio>
+			    <texture>frames/frame_album_small.png</texture>
+			</control>
+			<control type="image">
+				<posx>40</posx>
+				<posy>33</posy>
+				<width>111</width>
+				<height>111</height>
+				<align>center</align>
+				<aligny>center</aligny>
+				<texture diffuse="frames/mask_album_small.png">$INFO[ListItem.Thumb]</texture>
+				<aspectratio scalediffuse="false" align="center">scale</aspectratio>
+			</control>
+		</focusedlayout>
+		<focusedlayout height="200" width="158" condition="Container(11000).ListItem(0).Type(photo)">
+			<control type="image">
+				<posx>34</posx>
+				<posy>28</posy>
+				<height>-</height>
+				<width>-</width>
+				<aspectratio>keep</aspectratio>
+			    <texture>frames/frame_album_small.png</texture>
+			</control>
+			<control type="image">
+				<posx>40</posx>
+				<posy>33</posy>
+				<width>111</width>
+				<height>111</height>
+				<align>center</align>
+				<aligny>center</aligny>
+				<texture diffuse="frames/mask_album_small.png">$INFO[ListItem.Thumb]</texture>
+				<aspectratio scalediffuse="false" align="center">scale</aspectratio>
+			</control>
+		</focusedlayout>
+	</control>
+	<control type="list" id="11001">
+		<posx>0</posx>
+		<posy>0</posy>
+		<width>1290</width>
+		<height>170</height>
+		<onup>11001</onup>
+		<ondown>-</ondown>
+		<scrolltime>200</scrolltime>
+		<orientation>horizontal</orientation>
+		<itemlayout height="200" width="138" condition="Container(11001).ListItem(0).Type(movie)">
+			<control type="image">
+				<posx>41</posx>
+				<posy>16</posy>
+				<aspectratio>keep</aspectratio>
+				<texture border="20" background="true">frames/uframe_movie_small.png</texture>
+			</control>
+			<control type="image">
+				<posx>47</posx>
+				<posy>21</posy>
+				<width>93</width>
+				<height>138</height>
+		        <texture diffuse="frames/mask_movie_small.png" background="false">$INFO[ListItem.Thumb]</texture>
+				<aspectratio scalediffuse="false" align="center">scale</aspectratio>
+			</control>
+		</itemlayout>
+		<itemlayout height="200" width="138" condition="Container(11001).ListItem(0).Type(episode)">
+			<control type="image">
+				<posx>41</posx>
+				<posy>16</posy>
+				<aspectratio>keep</aspectratio>
+				<texture border="20" background="true">frames/uframe_movie_small.png</texture>
+			</control>
+			<control type="image">
+				<posx>47</posx>
+				<posy>21</posy>
+				<width>93</width>
+				<height>138</height>
+				<texture diffuse="frames/mask_movie_small.png" background="false">$INFO[ListItem.GrandparentThumb]</texture>
+				<aspectratio scalediffuse="false" align="center">scale</aspectratio>
+			</control>
+			<control type="image">
+				<posx>54</posx>
+				<posy>132</posy>
+		        <texture>home_posterlabel.png</texture>
+				<aspectratio>keep</aspectratio>
+			</control>
+			<control type="label">
+				<posx>94</posx>
+				<posy>132</posy>
+				<height>20</height>
+				<width>100</width>
+				<font>aller_3_13</font>
+				<label>S$INFO[ListItem.Season] - E$INFO[ListItem.Episode]</label>
+				<align>center</align>
+			</control>
+		</itemlayout>
+		<focusedlayout height="200" width="138" condition="Container(11001).ListItem(0).Type(movie)">
+			<control type="image">
+				<posx>41</posx>
+				<posy>16</posy>
+				<width></width>
+				<height></height>
+				<aspectratio>keep</aspectratio>
+				<texture border="20" background="true">frames/frame_movie_small.png</texture>
+			</control>
+			<control type="image">
+				<posx>47</posx>
+				<posy>21</posy>
+				<width>93</width>
+				<height>138</height>
+				<texture diffuse="frames/mask_movie_small.png" background="false">$INFO[ListItem.Thumb]</texture>
+				<aspectratio scalediffuse="false" align="center">scale</aspectratio>
+			</control>
+	    </focusedlayout>
+		<focusedlayout height="200" width="138" condition="Container(11001).ListItem(0).Type(episode)">
+			<control type="image">
+				<posx>41</posx>
+				<posy>16</posy>
+				<width></width>
+				<height></height>
+				<aspectratio>keep</aspectratio>
+				<texture border="20" background="true">frames/frame_movie_small.png</texture>
+			</control>
+			<control type="image">
+				<posx>47</posx>
+				<posy>21</posy>
+				<width>93</width>
+				<height>138</height>
+				<texture diffuse="frames/mask_movie_small.png" background="false">$INFO[ListItem.GrandparentThumb]</texture>
+				<aspectratio scalediffuse="false" align="center">scale</aspectratio>
+			</control>
+			<control type="image">
+				<posx>54</posx>
+				<posy>132</posy>
+		        <texture>home_posterlabel.png</texture>
+				<aspectratio>keep</aspectratio>
+			</control>
+			<control type="label">
+				<posx>94</posx>
+				<posy>132</posy>
+				<height>20</height>
+				<width>100</width>
+				<font>aller_3_13</font>
+				<label>S$INFO[ListItem.Season] - E$INFO[ListItem.Episode]</label>
+				<align>center</align>
+			</control>
+	    </focusedlayout>
+	</control>
+</control>
+</include>
+	
 <include name="keyboardButton">
 	<font>aller_2_24</font>
 	<textcolor>greyl</textcolor>

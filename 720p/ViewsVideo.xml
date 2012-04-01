@@ -8,7 +8,7 @@
 	
 <!--Background Vertical-->
 <control type="group">
-	<include>background_v</include>
+	<include>background_v</include> 
 </control>
 
 <control type="group">
@@ -773,11 +773,11 @@
 		<visible>!Skin.HasSetting(Plot)</visible>
 	</control>	
 	<control type="textbox">
-      	      	<posx>500</posx>
+      	     <posx>500</posx>
 	        <posy>100</posy>
 	      	<width>350</width>
 	      	<height>300</height>
-		<info>Container.Property(description)</info>
+			<info>Container.Property(description)</info>
 	      	<visible>true</visible>
 	      	<colordiffuse>FFFFFFFF</colordiffuse>
 	      	<font>aller_2_16</font>

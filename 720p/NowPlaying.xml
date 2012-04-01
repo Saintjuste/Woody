@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <window id="50">
 	<defaultcontrol always="true">50</defaultcontrol>
-	<controls>
+	<controls> 
 		<control type="image">
 			<posx>0</posx>
 			<posy>0</posy>

@@ -1,7 +1,7 @@
 <window type="buttonMenu" id="111">
 <defaultcontrol always="true">-</defaultcontrol>
 <allowoverlay>yes</allowoverlay>
-  
+   
 
 <coordinates>
   <system>1</system>

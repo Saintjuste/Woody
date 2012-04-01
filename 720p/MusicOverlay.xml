@@ -3,7 +3,7 @@
 <allowoverlay>yes</allowoverlay>
 <visible>Window.IsActive(Home) + Player.HasAudio</visible>
 
-
+ 
 
 <coordinates>
   <system>1</system>
