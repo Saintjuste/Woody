@@ -809,12 +809,14 @@
 		<orientation>horizontal</orientation>
 		<itemlayout height="200" width="138" condition="Container(11001).ListItem(0).Type(movie)">
 			<control type="image">
+				<visible>Control.IsVisible(11000) | [!Control.IsVisible(11000) + Control.IsVisible(11001)]</visible>
 				<posx>41</posx>
 				<posy>16</posy>
 				<aspectratio>keep</aspectratio>
 				<texture border="20" background="true">frames/uframe_movie_small.png</texture>
 			</control>
 			<control type="image">
+				<visible>Control.IsVisible(11000) | [!Control.IsVisible(11000) + Control.IsVisible(11001)]</visible>
 				<posx>47</posx>
 				<posy>21</posy>
 				<width>93</width>
