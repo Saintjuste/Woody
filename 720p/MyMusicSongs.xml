@@ -123,6 +123,8 @@
 	</control>
 </control>
 
+
+<!--------------------------------------------Thumb View------------------------------------------------>
 <control type="group">
 <visible>Control.IsVisible(56)</visible>
 
@@ -181,7 +183,7 @@
 	
 <!--Artist / Album Labels-->
 	<control type="grouplist">
-			<posx>-10</posx>
+			<posx>45</posx>
 			<posy>618</posy>
       		<width>1200</width>
       		<height>300</height>
@@ -195,7 +197,7 @@
 				<font>aller_4_48</font>
 	        	<textcolor>FFFFFFFF</textcolor>
 		        <label>[UPPERCASE]$INFO[Container.SecondTitle][/UPPERCASE]</label>
-				<visible>Container.Content(albums)</visible>
+				<visible>Container.Content(albums) + !IsEmpty(Container.SecondTitle)</visible>
 			</control>
 			<control type="label">
 				<width min="29" max="800">auto</width>

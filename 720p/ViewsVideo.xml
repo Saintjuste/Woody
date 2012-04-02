@@ -2191,14 +2191,15 @@
 	      	</focusedlayout>
 	</control>
 
-       	<control type="label">
-	       	<posx>370</posx>
+    <control type="label">
+	   	<posx>370</posx>
 		<posy>150</posy>
-	        <width>870</width>
-	        <height>30</height>
+	    <width>890</width>
+	    <height>30</height>
 		<font>aller_4_40</font>
-	       	<textcolor>greyd</textcolor>
-	        <label>[COLOR greyl]$INFO[ListItem.Episode][/COLOR]   [UPPERCASE]$INFO[ListItem.Title][/UPPERCASE]</label>
+	   	<textcolor>greyd</textcolor>
+	    <label>[COLOR greyl]$INFO[ListItem.Episode][/COLOR]   [UPPERCASE]$INFO[ListItem.Title][/UPPERCASE]</label>
+        <scroll>false</scroll>
 		<visible>IsEmpty(Container.Property(mixedParents)) + Control.HasFocus(55)</visible>
 	</control>
 	<control type="label">
