@@ -4,22 +4,96 @@
  
 <coordinates>
   <system>1</system>
-  <posx>100</posx>
-  <posy>80</posy>
+  <!--posx>110</posx>
+  <posy>80</posy-->
+  <posx>547</posx>
+  <posy>225</posy>
 </coordinates>
 
-<include>popup</include>
+<!--include>popup</include-->
   
 
 <controls>
 
+<!-- Loading indicator -->
+		<control type="group">
+			<posx>0</posx>
+			<posy>0</posy>
+			<control type="image">
+				<posx>12</posx>
+				<posy>8</posy>
+				<visible>Control.IsVisible(1)</visible>
+				<aspectratio>keep</aspectratio>
+				<texture>loading/bg/loading_bg.png</texture>
+			</control>
+			<control type="multiimage" id="1">
+				<width>184</width>
+				<height>64</height>
+				<imagepath background="false">loading</imagepath>
+				<timeperimage>65</timeperimage>
+				<fadetime>1</fadetime>
+				<loop>yes</loop>
+				<aspectratio>keep</aspectratio>
+			</control>
+		</control>
+
+
+
+
+
+		<!--
+		
+		<control type="group">
+			<posx>450</posx>
+			<posy>140</posy>
+			<control type="image">
+				<posx>10</posx>
+				<posy>8</posy>
+				<visible>Control.IsVisible(1)</visible>
+				<aspectratio>keep</aspectratio>
+				<texture>loading/bg/loading_bg.png</texture>
+			</control>
+		</control> 
+			
 	<control type="image">
 		<posx>270</posx>
 		<posy>60</posy>
 		<texture>DialogProgress.png</texture>
     	<aspectratio>keep</aspectratio>
 	</control>
-
+			
+	<control type="multiimage" id="1">
+		<posx>447</posx>
+		<posy>145</posy>
+		<width>184</width>
+		<height>64</height>
+		<imagepath background="false">loading</imagepath>
+		<timeperimage>65</timeperimage>
+		<fadetime>1</fadetime>
+		<loop>yes</loop>
+		<aspectratio>keep</aspectratio>
+	</control>
+	
+	<control type="button" id="10">
+		<description>Cancel</description>
+		<posx>466</posx>
+		<posy>226</posy>
+		<label>CANCEL</label>
+		<onleft>10</onleft>
+		<onright>10</onright>
+		<onup>10</onup>
+		<ondown>10</ondown>
+    	<width>150</width>
+		<height>30</height>
+    	<align>center</align>
+    	<aligny>center</aligny>
+    	<font>aller_4_24</font>
+    	<textcolor>greyl</textcolor>
+    	<focusedcolor>blue</focusedcolor>
+    	<disabledcolor>blue</disabledcolor>
+    	<pulseonselect>false</pulseonselect>
+	</control>
+	
 	<control type="label" id="1">
 		<description>Heading</description>
 		<posx>290</posx>
@@ -27,7 +101,7 @@
 		<label>-</label>
 		<font>aller_4_24</font>
 		<textcolor>greymd</textcolor>
-    		<width>500</width>
+		<width>500</width>
 		<align>center</align>
 	</control>
 
@@ -50,7 +124,7 @@
 		<textcolor>AA777777</textcolor>
 		<font>aller_3_18</font>
 		<align>center</align>
-    		<width>500</width>
+    	<width>500</width>
 	</control>
 
 	<control type="label" id="4">
@@ -60,7 +134,7 @@
 		<label>-</label>
 		<font>aller_2_16</font>
 		<textcolor>greymd</textcolor>
-    		<width>500</width>
+    	<width>500</width>
 		<align>center</align>
 	</control>
   
@@ -70,27 +144,9 @@
 		<posx>310</posx>
 		<width>450</width>
 		<aspectratio>scale</aspectratio>
-	</control>
- 
-	<control type="button" id="10">
-		<description>Cancel</description>
-		<posx>466</posx>
-		<posy>227</posy>
-		<label>CANCEL</label>
-		<onleft>10</onleft>
-		<onright>10</onright>
-		<onup>10</onup>
-		<ondown>10</ondown>
-    		<width>150</width>
-		<height>30</height>
-    		<align>center</align>
-    		<aligny>center</aligny>
-    		<font>aller_4_24</font>
-    		<textcolor>greyl</textcolor>
-    		<focusedcolor>blue</focusedcolor>
-    		<disabledcolor>blue</disabledcolor>
-    		<pulseonselect>false</pulseonselect>
-	</control>
+	</control> 
+	
+	-->
   
 </controls>
   

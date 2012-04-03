@@ -1,0 +1,79 @@
+<window id="98">
+<defaultcontrol always="true">6000</defaultcontrol>
+<allowoverlay>yes</allowoverlay>
+<type>dialog</type> 
+
+  <animation type="WindowOpen">
+		<effect type="zoom" start="80" end="100" center="640,360" tween="back" time="300"/>
+		<effect type="fade" start="0" end="100" time="200"/>
+	</animation>
+	<animation type="WindowClose">
+		<effect type="zoom" start="100" end="90" center="640,360" time="100"/>
+		<effect type="fade" start="100" end="0" time="100"/>
+	</animation>
+	
+<controls>
+<control type="group">
+	<posx>35</posx>
+	<posy>-70</posy>
+	<!---Background--->
+	<control type="image">	
+		<posx>474</posx>
+		<posy>234</posy>
+		<texture>exit_bg.png</texture>
+    	<aspectratio>keep</aspectratio>
+	</control>
+	
+	<control type="grouplist" id="6000">
+			<posx>459</posx>
+      		<posy>265</posy>
+      		<width>400</width>
+			<height>400</height>
+      		<itemgap>15</itemgap>
+      		<scrolltime>200</scrolltime>
+			<orientation>vertical</orientation>
+      		<onup>6000</onup>
+      		<ondown>6000</ondown>
+			<onleft>-</onleft>
+      		<onright>-</onright>
+			<control type="button" id="6001">
+				<label>QUIT</label>
+				<align>center</align>
+				<aligny>center</aligny>
+				<font>aller_2_24</font>
+				<textcolor>AA777777</textcolor>
+				<focusedcolor>blue</focusedcolor>
+				<disabledcolor>blue</disabledcolor>
+				<pulseonselect>false</pulseonselect>
+				<onclick>Container.SetViewMode(50)</onclick>
+				<onclick>SetFocus(6000)</onclick>
+			</control>
+			<control type="button" id="6002">
+				<label>SLEEP</label>
+				<align>center</align>
+				<aligny>center</aligny>
+				<font>aller_2_24</font>
+				<textcolor>AA777777</textcolor>
+				<focusedcolor>blue</focusedcolor>
+				<disabledcolor>blue</disabledcolor>
+				<pulseonselect>false</pulseonselect>
+				<onclick>Container.SetViewMode(51)</onclick>
+				<onclick>SetFocus(6000)</onclick>
+			</control>
+			<control type="button" id="6003">
+				<label>SHUTDOWN</label>
+				<align>center</align>
+				<aligny>center</aligny>
+				<font>aller_2_24</font>
+				<textcolor>AA777777</textcolor>
+				<focusedcolor>blue</focusedcolor>
+				<disabledcolor>blue</disabledcolor>
+				<pulseonselect>false</pulseonselect>
+				<onclick>Container.SetViewMode(52)</onclick>
+				<onclick>SetFocus(6000)</onclick>
+			</control>
+	</control>
+</control>
+</controls>
+  
+</window>

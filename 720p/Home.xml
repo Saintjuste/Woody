@@ -235,7 +235,8 @@
         <texturefocus>home_quit_focused.png</texturefocus>
         <texturenofocus>home_quit_unfocused.png</texturenofocus>
      	<focusedcolor>greyd</focusedcolor>
-		<onclick>Plex.ShutDown</onclick>
+		<onclick>Plex.ActivateWindow(98)</onclick>
+		<!--onclick>Plex.ShutDown</onclick-->
 	</control>
 	<control type="button" id="302">
 		<description>Preferences</description>

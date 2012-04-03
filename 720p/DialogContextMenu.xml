@@ -17,10 +17,10 @@
     	<control type="image" id="997">
 		<posx>78</posx>
 		<posy>15</posy>
-    		<height>30</height>
+    	<height>30</height>
 		<width>350</width>
 		<texture>DialogContextMenu_Up.png</texture>
-    		<aspectratio>stretch</aspectratio>
+    	<aspectratio>stretch</aspectratio>
 	</control>
     	<control type="image" id="999">
 		<posx>78</posx>
@@ -43,11 +43,10 @@
 	<control type="button" id="1000">
     		<posx>6</posx>
     		<posy>-50</posy>
-		<width>500</width>
+			<width>500</width>
     		<height>36</height>
     		<align>center</align>
     		<aligny>center</aligny>
-		<onright>Window.Close(106)</onright>
     		<font>aller_2_c_22</font>
     		<textcolor>AA777777</textcolor>
     		<focusedcolor>blue</focusedcolor>

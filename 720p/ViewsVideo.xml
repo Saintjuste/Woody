@@ -49,7 +49,7 @@
 	      	<textcolor>FFFFFFFF</textcolor>
 			<align>justify</align>
 	      	<autoscroll delay="5000" time="1400" repeat="10000">true</autoscroll>
-		<visible>!Skin.HasSetting(Plot)</visible>
+			<visible>!Skin.HasSetting(Plot)</visible>
 	</control>
 	<control type="textbox">
 		<posx>45</posx>
@@ -478,23 +478,29 @@
 </control>
 </control>
 	
-	<!--Poster / Preview in Video Plugin Section (NEEDS FRAME)-->
+	<!--Poster / Preview in Video Plugin Section-->
 	<control type="image">
-		<posx>34</posx>
-		<posy>199</posy>
-		<width>303</width>
-		<height>303</height>
-		<aspectratio>keep</aspectratio>
-	    <texture>frames/frame_album_large_special.png</texture>
-		<visible>[Container.Content(plugins) | Container.Content(plugincontent)] + !IsEmpty(ListItem.Thumb)</visible>
+		<posx>10</posx>
+		<posy>180</posy>
+		<width>360</width>
+		<height>330</height>
+		<aspectratio aligny="bottom" align="center">keep</aspectratio>
+	    <texture background="true" diffuse="frames/mask_album_large_channels.png">$INFO[ListItem.Thumb]</texture>
+		<bordertexture>frames/frame_album_large_special.png</bordertexture>
+		<fadetime>1</fadetime>
+		<visible>[Container.Content(plugins) | Container.Content(plugincontent)]</visible>
 	</control>
-	<control type="image">
-		<posx>40</posx>
-		<posy>204</posy>
-		<width>291</width>
-		<height>291</height>
-		<aspectratio>zoom</aspectratio>
-	    <texture diffuse="frames/mask_album_large.png">$INFO[ListItem.Thumb]</texture>
+	<control type="textbox">
+        <posx>45</posx>
+	    <posy>565</posy>
+	   	<width>285</width>
+	   	<height>138</height>
+		<label>$INFO[ListItem.Plot]</label>
+	   	<visible>true</visible>
+	   	<font>aller_2_16</font>
+	   	<textcolor>FFFFFFFF</textcolor>
+		<align>justify</align>
+	   	<autoscroll delay="5000" time="1400" repeat="10000">true</autoscroll>
 		<visible>[Container.Content(plugins) | Container.Content(plugincontent)]</visible>
 	</control>
 </control>

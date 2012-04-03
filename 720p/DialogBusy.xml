@@ -4,11 +4,11 @@
    
 <coordinates>
   <system>1</system>
-  <posx>550</posx>
-  <posy>220</posy>
+  <posx>547</posx>
+  <posy>225</posy>
 </coordinates>
 
-<include>popup</include>
+<!--include>popup</include-->
         
 <controls>
   	<!-- Loading indicator -->
@@ -16,13 +16,16 @@
 			<posx>0</posx>
 			<posy>0</posy>
 			<control type="image">
+				<posx>12</posx>
+				<posy>8</posy>
+				<visible>Control.IsVisible(1)</visible>
 				<aspectratio>keep</aspectratio>
 				<texture>loading/bg/loading_bg.png</texture>
 			</control>
-			<control type="multiimage">
+			<control type="multiimage" id="1">
 				<width>184</width>
 				<height>64</height>
-				<imagepath background="true">loading</imagepath>
+				<imagepath background="false">loading</imagepath>
 				<timeperimage>65</timeperimage>
 				<fadetime>1</fadetime>
 				<loop>yes</loop>
