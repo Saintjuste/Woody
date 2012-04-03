@@ -603,7 +603,7 @@
 	</control>
 
 <control type="grouplist">
-	<animation effect="fade" start="0" end="100" time="400" delay="0">Visible</animation>
+	<animation effect="fade" start="0" end="100" time="400" delay="50">Visible</animation>
 	<visible>Control.IsVisible(11000) | Control.IsVisible(11001)</visible>
 	<posx>-5</posx>
 	<posy>540</posy>
@@ -809,14 +809,12 @@
 		<orientation>horizontal</orientation>
 		<itemlayout height="200" width="138" condition="Container(11001).ListItem(0).Type(movie)">
 			<control type="image">
-				<visible>Control.IsVisible(11000) | [!Control.IsVisible(11000) + Control.IsVisible(11001)]</visible>
 				<posx>41</posx>
 				<posy>16</posy>
 				<aspectratio>keep</aspectratio>
 				<texture border="20" background="true">frames/uframe_movie_small.png</texture>
 			</control>
 			<control type="image">
-				<visible>Control.IsVisible(11000) | [!Control.IsVisible(11000) + Control.IsVisible(11001)]</visible>
 				<posx>47</posx>
 				<posy>21</posy>
 				<width>93</width>
@@ -937,6 +935,12 @@
 		<effect type="fade" start="100" end="0" time="200"/>
 	</animation>
 </include>
+
+<include name="fade_vh">
+		<animation effect="fade" end="100" time="200" delay="0">Visible</animation>
+		<animation effect="fade" end="0" time="200" delay="0">Hidden</animation>
+</include>
+
 
 <include name="settingsbuttonlabel">
     <textcolor>greym</textcolor>
