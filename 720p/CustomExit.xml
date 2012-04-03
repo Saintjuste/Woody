@@ -45,8 +45,8 @@
 				<focusedcolor>blue</focusedcolor>
 				<disabledcolor>blue</disabledcolor>
 				<pulseonselect>false</pulseonselect>
-				<onclick>Container.SetViewMode(50)</onclick>
-				<onclick>SetFocus(6000)</onclick>
+				<onclick>dialog.close(all,true)</onclick>
+				<onclick>Plex.Shutdown()</onclick>
 			</control>
 			<control type="button" id="6002">
 				<label>SLEEP</label>
@@ -57,8 +57,9 @@
 				<focusedcolor>blue</focusedcolor>
 				<disabledcolor>blue</disabledcolor>
 				<pulseonselect>false</pulseonselect>
-				<onclick>Container.SetViewMode(51)</onclick>
-				<onclick>SetFocus(6000)</onclick>
+				<onclick>Dialog.Close(all,true)</onclick>
+				<onclick>SetFocus(300)</onclick>
+				<onclick>Plex.Suspend()</onclick>
 			</control>
 			<control type="button" id="6003">
 				<label>SHUTDOWN</label>
@@ -69,8 +70,8 @@
 				<focusedcolor>blue</focusedcolor>
 				<disabledcolor>blue</disabledcolor>
 				<pulseonselect>false</pulseonselect>
-				<onclick>Container.SetViewMode(52)</onclick>
-				<onclick>SetFocus(6000)</onclick>
+				<onclick>Dialog.Close(all,true)</onclick>
+				<onclick>Plex.Powerdown()</onclick>
 			</control>
 	</control>
 </control>

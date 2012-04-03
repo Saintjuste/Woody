@@ -233,6 +233,82 @@
 			<textoffsetx>20</textoffsetx>
 			<radioposx>635</radioposx>
 		</control>
+		<control type="radiobutton" id="13">
+			<posx>50</posx>
+			<posy>100</posy>
+			<width>630</width>
+			<label>Exit button: Quit Plex</label>
+			<font>aller_3_24</font>
+			<textcolor>greyl</textcolor>
+			<focusedcolor>blue</focusedcolor>
+			<align>left</align>
+			<disabledcolor>greyd</disabledcolor>
+			<textureradiofocus>RadiobuttonFo.png</textureradiofocus>
+			<textureradionofocus>RadiobuttonNF.png</textureradionofocus>
+			<onclick>Skin.ToggleSetting(quit)</onclick>
+			<selected>Skin.HasSetting(quit)</selected>
+			<enable>!Skin.HasSetting(sleep) + !Skin.HasSetting(shutdown) + !Skin.HasSetting(pop)</enable>
+			<visible>ControlGroup(202).HasFocus(-3)</visible>
+			<textoffsetx>20</textoffsetx>
+			<radioposx>635</radioposx>
+		</control>
+		<control type="radiobutton" id="14">
+			<posx>50</posx>
+			<posy>100</posy>
+			<width>630</width>
+			<label>Exit button: Sleep system</label>
+			<font>aller_3_24</font>
+			<textcolor>greyl</textcolor>
+			<focusedcolor>blue</focusedcolor>
+			<align>left</align>
+			<disabledcolor>greyd</disabledcolor>
+			<textureradiofocus>RadiobuttonFo.png</textureradiofocus>
+			<textureradionofocus>RadiobuttonNF.png</textureradionofocus>
+			<onclick>Skin.ToggleSetting(sleep)</onclick>
+			<selected>Skin.HasSetting(sleep)</selected>
+			<enable>!Skin.HasSetting(quit) + !Skin.HasSetting(shutdown) + !Skin.HasSetting(pop)</enable>
+			<visible>ControlGroup(202).HasFocus(-3)</visible>
+			<textoffsetx>20</textoffsetx>
+			<radioposx>635</radioposx>
+		</control>
+		<control type="radiobutton" id="15">
+			<posx>50</posx>
+			<posy>100</posy>
+			<width>630</width>
+			<label>Exit button: Shutdown system</label>
+			<font>aller_3_24</font>
+			<textcolor>greyl</textcolor>
+			<focusedcolor>blue</focusedcolor>
+			<align>left</align>
+			<disabledcolor>greyd</disabledcolor>
+			<textureradiofocus>RadiobuttonFo.png</textureradiofocus>
+			<textureradionofocus>RadiobuttonNF.png</textureradionofocus>
+			<onclick>Skin.ToggleSetting(shutdown)</onclick>
+			<selected>Skin.HasSetting(shutdown)</selected>
+			<enable>!Skin.HasSetting(quit) + !Skin.HasSetting(sleep) + !Skin.HasSetting(pop)</enable>
+			<visible>ControlGroup(202).HasFocus(-3)</visible>
+			<textoffsetx>20</textoffsetx>
+			<radioposx>635</radioposx>
+		</control>
+		<control type="radiobutton" id="16">
+			<posx>50</posx>
+			<posy>100</posy>
+			<width>630</width>
+			<label>Exit button: Pop up menu</label>
+			<font>aller_3_24</font>
+			<textcolor>greyl</textcolor>
+			<focusedcolor>blue</focusedcolor>
+			<align>left</align>
+			<disabledcolor>greyd</disabledcolor>
+			<textureradiofocus>RadiobuttonFo.png</textureradiofocus>
+			<textureradionofocus>RadiobuttonNF.png</textureradionofocus>
+			<onclick>Skin.ToggleSetting(pop)</onclick>
+			<selected>Skin.HasSetting(pop)</selected>
+			<enable>!Skin.HasSetting(quit) + !Skin.HasSetting(sleep) + !Skin.HasSetting(shutdown)</enable>
+			<visible>ControlGroup(202).HasFocus(-3)</visible>
+			<textoffsetx>20</textoffsetx>
+			<radioposx>635</radioposx>
+		</control>
 	</control>
 	
 	

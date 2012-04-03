@@ -235,8 +235,11 @@
         <texturefocus>home_quit_focused.png</texturefocus>
         <texturenofocus>home_quit_unfocused.png</texturenofocus>
      	<focusedcolor>greyd</focusedcolor>
-		<onclick>Plex.ActivateWindow(98)</onclick>
-		<!--onclick>Plex.ShutDown</onclick-->
+		<include condition="Skin.HasSetting(popup)">popup1</include>
+		<include condition="Skin.HasSetting(quit)">quit1</include>
+		<include condition="Skin.HasSetting(sleep)">sleep1</include>
+		<include condition="Skin.HasSetting(shutdown)">shutdown1</include>
+		<include condition="!Skin.HasSetting(popup) + !Skin.HasSetting(quit) + !Skin.HasSetting(shutdown) + !Skin.HasSetting(sleep)">popup1</include>
 	</control>
 	<control type="button" id="302">
 		<description>Preferences</description>

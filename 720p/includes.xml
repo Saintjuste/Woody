@@ -960,6 +960,23 @@
     	<pulseonselect>false</pulseonselect>
 </include>
 
+<include name="quit1">
+	<onclick>dialog.close(all,true)</onclick>
+	<onclick>Plex.Shutdown()</onclick>
+</include>
+<include name="sleep1">
+	<onclick>dialog.close(all,true)</onclick>
+	<onclick>SetFocus(300)</onclick>
+	<onclick>Plex.Suspend()</onclick>
+</include>
+<include name="shutdown1">
+	<onclick>dialog.close(all,true)</onclick>
+	<onclick>Plex.Powerdown()</onclick>
+</include>
+<include name="popup1">
+	<onclick>Plex.ActivateWindow(98)</onclick>
+</include>
+
 <include name="time">
 	<control type="label">
 		<posx>1140</posx>
