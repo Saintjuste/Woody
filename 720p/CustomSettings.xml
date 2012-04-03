@@ -233,6 +233,24 @@
 			<textoffsetx>20</textoffsetx>
 			<radioposx>635</radioposx>
 		</control>
+		<!--control type="radiobutton" id="17">
+			<posx>50</posx>
+			<posy>100</posy>
+			<width>630</width>
+			<label>Show metadata for focused movie</label>
+			<font>aller_3_24</font>
+			<textcolor>greyl</textcolor>
+			<focusedcolor>blue</focusedcolor>
+			<align>left</align>
+			<disabledcolor>greyd</disabledcolor>
+			<textureradiofocus>RadiobuttonFo.png</textureradiofocus>
+			<textureradionofocus>RadiobuttonNF.png</textureradionofocus>
+			<onclick>Skin.ToggleSetting(home_metadata)</onclick>
+			<selected>Skin.HasSetting(home_metadata)</selected>
+			<visible>ControlGroup(202).HasFocus(-3)</visible>
+			<textoffsetx>20</textoffsetx>
+			<radioposx>635</radioposx>
+		</control-->
 		<control type="radiobutton" id="13">
 			<posx>50</posx>
 			<posy>100</posy>

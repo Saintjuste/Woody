@@ -603,7 +603,7 @@
 	</control>
 
 <control type="grouplist">
-	<animation effect="fade" start="0" end="100" time="400" delay="50">Visible</animation>
+	<animation effect="fade" start="0" end="100" time="400" delay="70">Visible</animation>
 	<visible>Control.IsVisible(11000) | Control.IsVisible(11001)</visible>
 	<posx>-5</posx>
 	<posy>540</posy>
